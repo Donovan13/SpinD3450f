@@ -11,6 +11,7 @@ import UIKit
 class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var activity = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,7 +20,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return activity.count
-        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -27,4 +27,5 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         cell.textLabel?.text = activity[indexPath.row]
         return cell
     }
+    
 }

@@ -17,7 +17,7 @@ class CatagoryViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var pickerView = UIPickerView()
     let pickerView1 = UIPickerView()
     let pickerView2 = UIPickerView()
-    var toolBar = UIToolbar()
+//    var toolBar = UIToolbar()
 
     var genderOption = ["Male", "Female"]
     var ageOption = ["Do not matter", "18 ~ 25", "26 ~33", "34 ~ 41", "42 ~ 49", "50 +"]
@@ -26,15 +26,14 @@ class CatagoryViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pickerView = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
-        pickerView.backgroundColor = .whiteColor()
-        pickerView.showsSelectionIndicator = true
-        pickerView.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        pickerView.sizeToFit()
-        
+//        pickerView = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
+//        pickerView.backgroundColor = .whiteColor()
+//        pickerView.showsSelectionIndicator = true
+//        pickerView.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+//        pickerView.sizeToFit()
 //        let doneButton = UIBarButtonItem(title: "Done", style:.Plain, target: self, action: )
 //        toolBar.setItems([doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
+//        toolBar.userInteractionEnabled = true
         
         
         pickerView.delegate = self
@@ -44,7 +43,7 @@ class CatagoryViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         pickerView1.tag = 102
         pickerView2.tag = 103
         GenderTextField.inputView = pickerView
-        GenderTextField.inputAccessoryView = toolBar
+//        GenderTextField.inputAccessoryView = toolBar
         ageTextField.inputView = pickerView1
         distanceTextField.inputView = pickerView2
         
@@ -88,12 +87,9 @@ class CatagoryViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         } else if pickerView.tag == 103 {
             distanceTextField.text = distanceOption[row]
         }
-//            self.view.endEditing(true)
+            self.view.endEditing(true)
     }
     
-    func donePressed() {
-        pickerView.resignFirstResponder()
-    }
     
 
     
