@@ -14,7 +14,7 @@ class SpindersCollectionViewController: UICollectionViewController {
 
     @IBOutlet var spinderCollectionView: UICollectionView!
     
-    var spinders = [Spinder]()
+    var spinders = [Spinders]()
     var indexPath: NSIndexPath?
     var test = "test"
     
@@ -24,13 +24,10 @@ class SpindersCollectionViewController: UICollectionViewController {
         collectionView?.delegate = self
         collectionView?.backgroundColor = UIColor.whiteColor()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
     }
 
 
@@ -43,10 +40,6 @@ class SpindersCollectionViewController: UICollectionViewController {
 //        // #warning Incomplete implementation, return the number of sections
 //        return 1
 //    }
-
-//    override func viewWillAppear(animated: Bool) {
-//        self.spinderCollectionView.reloadData()
-//    }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(spinders.count)
 
@@ -55,7 +48,7 @@ class SpindersCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SpinderCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SpinderCell
 //        let spinder = spinders[indexPath.row]
 //        cell.imageView.image = UIImage (named: "test")
 //        cell.nameLabel.text = test

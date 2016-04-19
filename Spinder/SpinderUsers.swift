@@ -9,7 +9,7 @@
 import UIKit
 
 
-class Spinder: NSObject {
+class Spinders: NSObject {
 
     
     var name = String()

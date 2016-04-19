@@ -15,7 +15,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activity = ["Basketball", "Soccer", "VolleyBall", "BaseBall", "Fitness", ]
+        activity = ["Basketball", "Soccer", "VolleyBall", "BaseBall", "Fitness"]
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -17,7 +17,7 @@ class CatagoryViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var pickerView = UIPickerView()
     let pickerView1 = UIPickerView()
     let pickerView2 = UIPickerView()
-//    var toolBar = UIToolbar()
+    var toolBar = UIToolbar()
 
     var genderOption = ["Male", "Female"]
     var ageOption = ["Do not matter", "18 ~ 25", "26 ~33", "34 ~ 41", "42 ~ 49", "50 +"]
@@ -26,27 +26,33 @@ class CatagoryViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        pickerView = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
-//        pickerView.backgroundColor = .whiteColor()
-//        pickerView.showsSelectionIndicator = true
-//        pickerView.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-//        pickerView.sizeToFit()
-//        let doneButton = UIBarButtonItem(title: "Done", style:.Plain, target: self, action: )
-//        toolBar.setItems([doneButton], animated: false)
-//        toolBar.userInteractionEnabled = true
+        pickerView = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
+        pickerView.backgroundColor = .whiteColor()
+        pickerView.showsSelectionIndicator = true
+        toolBar.barStyle = UIBarStyle.Default
+        pickerView.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        pickerView.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style:.Plain, target: self, action:#selector(CatagoryViewController.doneButton))
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
         
         
         pickerView.delegate = self
+        pickerView.dataSource = self
         pickerView1.delegate = self
         pickerView2.delegate = self
         pickerView.tag = 101
         pickerView1.tag = 102
         pickerView2.tag = 103
         GenderTextField.inputView = pickerView
-//        GenderTextField.inputAccessoryView = toolBar
+        GenderTextField.inputAccessoryView = toolBar
         ageTextField.inputView = pickerView1
         distanceTextField.inputView = pickerView2
         
+    }
+    
+    func doneButton() {
+        GenderTextField.resignFirstResponder()
     }
 
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
