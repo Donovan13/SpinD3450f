@@ -91,6 +91,14 @@ class CatagoryViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     
+    @IBAction func backButtonTapped(sender: UIButton) {
+    self.dismissViewControllerAnimated(false, completion: nil)
 
+    }
+
+
+    @IBAction func findSpinderButtonTapped(sender: AnyObject) {
+        print("Spinder Information Uploaded")
+    }
     
 }
