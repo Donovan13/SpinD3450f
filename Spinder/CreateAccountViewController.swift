@@ -10,7 +10,7 @@ import UIKit
 import CoreImage
 import Firebase
 
-class CreateAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -21,18 +21,61 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
-    var picker = UIImagePickerController()
+    
+    var genderPickerView = UIPickerView()
+    let agePickerView = UIPickerView()
+
+    
+    var gender = ["Male", "Female"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        genderPickerView.delegate = self
+        genderPickerView.tag = 201
+        genderTextField.inputView = genderPickerView
+
     }
     
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView.tag == 201 {
+            return gender.count
+
+        }
+        
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView.tag == 201 {
+            return gender[row]
+
+        }
+        
+        return " "
+        
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if pickerView.tag == 201 {
+            genderTextField.text = gender[row]
+
+        }
+        self.view.endEditing(true)
+    }
+    
+    
     @IBAction func addPhotoButtonTapped(sender: AnyObject) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
-        picker.sourceType = .PhotoLibrary
-        self.presentViewController(picker, animated: true, completion: nil)
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .PhotoLibrary
+        self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
