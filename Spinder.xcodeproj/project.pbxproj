@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0949095A1CC7CC75001FB811 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094909591CC7CC75001FB811 /* Firebase.framework */; };
 		096D20EA1CC5351000FDE8D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D20E91CC5351000FDE8D5 /* AppDelegate.swift */; };
 		096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */; };
 		096D20EF1CC5351000FDE8D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096D20ED1CC5351000FDE8D5 /* Main.storyboard */; };
@@ -22,10 +23,11 @@
 		7B3B94441CC67B0B005B3B2B /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3B94431CC67B0B005B3B2B /* Firebase.framework */; };
 		7BBB18431CC5440A007E2B00 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB18421CC5440A007E2B00 /* ActivityViewController.swift */; };
 		7BBB184B1CC54B7C007E2B00 /* CatagoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB184A1CC54B7C007E2B00 /* CatagoryViewController.swift */; };
-		8745B454EE56CC3D1DE17EB3 /* Pods_Spinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22176B85EF02E74D054B425 /* Pods_Spinder.framework */; };
+		E25E745CE74357204A57F8CE /* Pods_Spinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22176B85EF02E74D054B425 /* Pods_Spinder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		094909591CC7CC75001FB811 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-gsoejbquvjfekddbswzpggmqmjpg/Build/Products/Debug-iphonesimulator/Firebase.framework"; sourceTree = "<group>"; };
 		096D20E61CC5351000FDE8D5 /* Spinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		096D20E91CC5351000FDE8D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = Spinder/LogInViewController.swift; sourceTree = "<group>"; };
@@ -57,9 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B3B94441CC67B0B005B3B2B /* Firebase.framework in Frameworks */,
+				0949095A1CC7CC75001FB811 /* Firebase.framework in Frameworks */,
 				09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */,
-				8745B454EE56CC3D1DE17EB3 /* Pods_Spinder.framework in Frameworks */,
+				E25E745CE74357204A57F8CE /* Pods_Spinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +129,7 @@
 		AA0F9E5CA7CF50E3A27C37E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				094909591CC7CC75001FB811 /* Firebase.framework */,
 				7B3B94431CC67B0B005B3B2B /* Firebase.framework */,
 				7BAF50921CC5EAC100233D94 /* Firebase.framework */,
 				09D570291CC59BF100442D07 /* CoreImage.framework */,

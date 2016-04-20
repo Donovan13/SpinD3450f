@@ -15,9 +15,9 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
     
-    var pickerView = UIPickerView()
-    let pickerView1 = UIPickerView()
-    let pickerView2 = UIPickerView()
+    var genderPickerView = UIPickerView()
+    let agePickerView = UIPickerView()
+    let distancePickerView = UIPickerView()
     var toolBar = UIToolbar()
     var activity = [String]()
     
@@ -31,28 +31,28 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
         activity = ["Basketball", "Soccer", "VolleyBall", "BaseBall", "Fitness"]
         
-        pickerView = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
-        pickerView.backgroundColor = .whiteColor()
-        pickerView.showsSelectionIndicator = true
+        genderPickerView = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
+        genderPickerView.backgroundColor = .whiteColor()
+        genderPickerView.showsSelectionIndicator = true
         toolBar.barStyle = UIBarStyle.Default
-        pickerView.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        pickerView.sizeToFit()
+        genderPickerView.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        genderPickerView.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style:.Plain, target: self, action:#selector(ActivityViewController.doneButton))
         toolBar.setItems([doneButton], animated: false)
         toolBar.userInteractionEnabled = true
         
         
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        pickerView1.delegate = self
-        pickerView2.delegate = self
-        pickerView.tag = 101
-        pickerView1.tag = 102
-        pickerView2.tag = 103
-        GenderTextField.inputView = pickerView
+        genderPickerView.delegate = self
+        genderPickerView.dataSource = self
+        agePickerView.delegate = self
+        distancePickerView.delegate = self
+        genderPickerView.tag = 101
+        agePickerView.tag = 102
+        distancePickerView.tag = 103
+        GenderTextField.inputView = genderPickerView
         GenderTextField.inputAccessoryView = toolBar
-        ageTextField.inputView = pickerView1
-        distanceTextField.inputView = pickerView2
+        ageTextField.inputView = agePickerView
+        distanceTextField.inputView = distancePickerView
         
     }
     
