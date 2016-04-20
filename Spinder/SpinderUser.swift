@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct User {
+struct SpinderUser {
     let uid: String
     let email: String
     let password: String

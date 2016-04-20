@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 private let reuseIdentifier = "Cell"
 
@@ -14,23 +15,41 @@ class SpindersCollectionViewController: UICollectionViewController {
 
     @IBOutlet var spinderCollectionView: UICollectionView!
     
-    var spinders = [Spinders]()
-    var indexPath: NSIndexPath?
-    var test = "test"
+    
+    var user = [Users]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("loaded")
-        collectionView?.delegate = self
-        collectionView?.backgroundColor = UIColor.whiteColor()
-
+        loadUsers()
 
         // Register cell classes
 //        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
     }
+    
+    func loadUsers() {
+        FirebaseService.firebaseSerivce.FirebaseUserRef.observeEventType(.Value, withBlock: { snapshot in
+            print(snapshot.value)
+            
+            self.user = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots {
+                    if let userDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let user = Users(key: key, dictionary: userDictionary)
+                        self.user.insert(user, atIndex: 0)
+                    }
+                }
+            }
+            self.spinderCollectionView.reloadData()
+        })
+        
+    }
 
-
+    
     
     
 
@@ -41,22 +60,25 @@ class SpindersCollectionViewController: UICollectionViewController {
 //        return 1
 //    }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(spinders.count)
+        print(user.count)
 
-        return 1
+        return user.count
         
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SpinderCell
-//        let spinder = spinders[indexPath.row]
-//        cell.imageView.image = UIImage (named: "test")
-//        cell.nameLabel.text = test
-        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? SpinderCell
+        let users = user[indexPath.row]
+        cell?.nameLabel.text = users.userName
+        cell?.ageLabel.text = users.userAge
+        cell?.imageView.image = conversion(users.userPhoto)
+        return cell!
+    }
     
-        // Configure the cell
-    
-        return cell
+    func conversion(photo: String) -> UIImage {
+        let imageData = NSData(base64EncodedString: photo, options: [] )
+        let image = UIImage(data: imageData!)
+        return image!
     }
 
     // MARK: UICollectionViewDelegate

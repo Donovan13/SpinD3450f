@@ -59,7 +59,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                 print(error)
             } else {
                 FirebaseService.firebaseSerivce.FirebaseRef.authUser(email, password: password, withCompletionBlock: { (error, authData) in
-                    let user = ["provider":authData.provider!, "email": email!, "name": name!, "age": age!, "gender": gender!]
+                    let user = ["profilePicture": self.coversion(self.profileImageView.image!), "email": email!, "name": name!, "age": age!, "gender": gender!]
                     FirebaseService.firebaseSerivce.createNewAccount(authData.uid, user: user)
                     self.performSegueWithIdentifier("CreateAccountSegue", sender: self)
                 })
@@ -67,6 +67,11 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         }
     }
     
+    func coversion(image: UIImage) -> String {
+        let data = UIImageJPEGRepresentation(image, 0.5)
+        let base64String = data!.base64EncodedStringWithOptions([])
+        return base64String
+    }
     
     
 }

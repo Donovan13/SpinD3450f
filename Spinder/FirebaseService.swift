@@ -13,7 +13,6 @@ class FirebaseService {
     
     static let firebaseSerivce = FirebaseService()
     
-    var firebaseUrl = "https://spinder.firebaseio.com/"
     var ref = Firebase(url: "https://spinder.firebaseio.com/")
     var userRef = Firebase(url: "https://spinder.firebaseio.com/users")
     
