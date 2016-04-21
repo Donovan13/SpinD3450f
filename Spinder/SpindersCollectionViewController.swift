@@ -24,17 +24,11 @@ class SpindersCollectionViewController: UICollectionViewController {
         print("loaded")
         loadUsers()
 
-        // Register cell classes
-//        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
     }
     
     func loadUsers() {
         FirebaseService.firebaseSerivce.FirebaseUserRef.observeEventType(.Value, withBlock: { snapshot in
-            print(snapshot.value)
-            
             self.user = []
-            
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 for snap in snapshots {
                     if let userDictionary = snap.value as? Dictionary<String, AnyObject> {
@@ -46,7 +40,6 @@ class SpindersCollectionViewController: UICollectionViewController {
             }
             self.spinderCollectionView.reloadData()
         })
-        
     }
 
     
@@ -60,8 +53,7 @@ class SpindersCollectionViewController: UICollectionViewController {
 //        return 1
 //    }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(user.count)
-
+//        print(user.count)
         return user.count
         
     }

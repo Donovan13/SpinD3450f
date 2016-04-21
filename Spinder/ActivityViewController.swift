@@ -14,29 +14,25 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var GenderTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
+    @IBOutlet weak var activityDescriptionTextView: UITextView!
     
     var genderPickerView = UIPickerView()
     let agePickerView = UIPickerView()
     let distancePickerView = UIPickerView()
     var toolBar = UIToolbar()
-    var activity = [String]()
-    
     var genderOption = ["Male", "Female"]
     var ageOption = ["Do not matter", "18 ~ 25", "26 ~33", "34 ~ 41", "42 ~ 49", "50 +"]
     var distanceOption = ["Within 1 Miles", "Within 2 Miles", "Within 3 Miles", "Within 4 Miles", "Within 5 Miles"]
-    
+    var activity = ["Basketball", "Soccer", "VolleyBall", "BaseBall", "Fitness"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activity = ["Basketball", "Soccer", "VolleyBall", "BaseBall", "Fitness"]
         
-        genderPickerView = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
-        genderPickerView.backgroundColor = .whiteColor()
         genderPickerView.showsSelectionIndicator = true
         toolBar.barStyle = UIBarStyle.Default
-        genderPickerView.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        genderPickerView.sizeToFit()
+        
+//        genderPickerView.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style:.Plain, target: self, action:#selector(ActivityViewController.doneButton))
         toolBar.setItems([doneButton], animated: false)
         toolBar.userInteractionEnabled = true
@@ -56,6 +52,9 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    func toolBarButton() {
+        
+    }
     
     func doneButton() {
         GenderTextField.resignFirstResponder()
@@ -73,7 +72,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         } else if pickerView.tag == 103 {
             return distanceOption.count
         }
-        
         return 1
     }
     
@@ -85,9 +83,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         } else if pickerView.tag == 103 {
             return distanceOption[row]
         }
-        
         return " "
-        
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -105,9 +101,10 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func findSpinderButtonTapped(sender: AnyObject) {
         print("Spinder Information Uploaded")
+        performSegueWithIdentifier("FindSpindersSegue", sender: nil)
     }
-    
 
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return activity.count
     }

@@ -10,7 +10,6 @@
 		0949095A1CC7CC75001FB811 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094909591CC7CC75001FB811 /* Firebase.framework */; };
 		096D20EA1CC5351000FDE8D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D20E91CC5351000FDE8D5 /* AppDelegate.swift */; };
 		096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */; };
-		096D20EF1CC5351000FDE8D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096D20ED1CC5351000FDE8D5 /* Main.storyboard */; };
 		096D20F11CC5351000FDE8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F01CC5351000FDE8D5 /* Assets.xcassets */; };
 		096D20F41CC5351000FDE8D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */; };
 		096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */; };
@@ -20,9 +19,8 @@
 		7B1341681CC69BCF00F2CEE5 /* SpinderUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341671CC69BCF00F2CEE5 /* SpinderUser.swift */; };
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
 		7B31D63D1CC7DD4B0066AFA9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* Users.swift */; };
-		7B3B94441CC67B0B005B3B2B /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3B94431CC67B0B005B3B2B /* Firebase.framework */; };
 		7BBB18431CC5440A007E2B00 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB18421CC5440A007E2B00 /* ActivityViewController.swift */; };
-		7BBB184B1CC54B7C007E2B00 /* CatagoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB184A1CC54B7C007E2B00 /* CatagoryViewController.swift */; };
+		7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */; };
 		E25E745CE74357204A57F8CE /* Pods_Spinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22176B85EF02E74D054B425 /* Pods_Spinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +29,6 @@
 		096D20E61CC5351000FDE8D5 /* Spinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		096D20E91CC5351000FDE8D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = Spinder/LogInViewController.swift; sourceTree = "<group>"; };
-		096D20EE1CC5351000FDE8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		096D20F01CC5351000FDE8D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		096D20F31CC5351000FDE8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		096D20F51CC5351000FDE8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +43,7 @@
 		7B3B94431CC67B0B005B3B2B /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/Firebase.framework"; sourceTree = "<group>"; };
 		7BAF50921CC5EAC100233D94 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "Pods/../build/Debug-iphoneos/Firebase.framework"; sourceTree = "<group>"; };
 		7BBB18421CC5440A007E2B00 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = Spinder/ActivityViewController.swift; sourceTree = "<group>"; };
-		7BBB184A1CC54B7C007E2B00 /* CatagoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatagoryViewController.swift; path = Spinder/CatagoryViewController.swift; sourceTree = "<group>"; };
+		7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8490D706261958AACC191358 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		88E1DB7B33EE9E0C23944683 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C22176B85EF02E74D054B425 /* Pods_Spinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,11 +88,11 @@
 			isa = PBXGroup;
 			children = (
 				096D20E91CC5351000FDE8D5 /* AppDelegate.swift */,
-				09D5702D1CC5A43F00442D07 /* SpinderCell.swift */,
-				7B1341671CC69BCF00F2CEE5 /* SpinderUser.swift */,
-				7B31D63C1CC7DD4B0066AFA9 /* Users.swift */,
 				7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */,
-				096D20ED1CC5351000FDE8D5 /* Main.storyboard */,
+				09D5702D1CC5A43F00442D07 /* SpinderCell.swift */,
+				7B31D63C1CC7DD4B0066AFA9 /* Users.swift */,
+				7B1341671CC69BCF00F2CEE5 /* SpinderUser.swift */,
+				7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */,
 				096D20F01CC5351000FDE8D5 /* Assets.xcassets */,
 				096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */,
 				096D20F51CC5351000FDE8D5 /* Info.plist */,
@@ -109,7 +106,6 @@
 				096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */,
 				096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */,
 				7BBB18421CC5440A007E2B00 /* ActivityViewController.swift */,
-				7BBB184A1CC54B7C007E2B00 /* CatagoryViewController.swift */,
 				09D5702B1CC5A39B00442D07 /* SpindersCollectionViewController.swift */,
 			);
 			name = ViewControllers;
@@ -203,7 +199,7 @@
 			files = (
 				096D20F41CC5351000FDE8D5 /* LaunchScreen.storyboard in Resources */,
 				096D20F11CC5351000FDE8D5 /* Assets.xcassets in Resources */,
-				096D20EF1CC5351000FDE8D5 /* Main.storyboard in Resources */,
+				7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +261,6 @@
 				096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */,
 				7B1341681CC69BCF00F2CEE5 /* SpinderUser.swift in Sources */,
 				7B31D63D1CC7DD4B0066AFA9 /* Users.swift in Sources */,
-				7BBB184B1CC54B7C007E2B00 /* CatagoryViewController.swift in Sources */,
 				09D5702C1CC5A39B00442D07 /* SpindersCollectionViewController.swift in Sources */,
 				09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */,
 				096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */,
@@ -278,14 +273,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		096D20ED1CC5351000FDE8D5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				096D20EE1CC5351000FDE8D5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

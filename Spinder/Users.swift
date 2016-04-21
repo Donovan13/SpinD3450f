@@ -19,6 +19,8 @@ class Users {
     private var _userName: String!
     private var _userAge: String!
     private var _userPhoto: String!
+    private var _userDescription: String!
+    
     
     var userName: String {
         return _userName
@@ -32,6 +34,10 @@ class Users {
         return _userPhoto
     }
     
+    var userDescription: String {
+        return _userDescription
+    }
+    
     init(key: String, dictionary: Dictionary<String, AnyObject>) {
         self._userKey = key
         if let name = dictionary["name"] as? String {
@@ -42,6 +48,9 @@ class Users {
         }
         if let age = dictionary["age"] as? String {
             self._userAge = age
+        }
+        if let description = dictionary["description"] as? String{
+            self._userDescription = description
         }
         
         self.userRef = FirebaseService.firebaseSerivce.userRef.childByAppendingPath(self._userKey)
