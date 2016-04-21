@@ -61,8 +61,7 @@ class SpindersCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? SpinderCell
         let users = user[indexPath.row]
-        cell?.nameLabel.text = users.userName
-        cell?.ageLabel.text = users.userAge
+        cell?.nameAgeLabel.text = "\(users.userName), \(users.userAge), \(users.userGender)"
         cell?.imageView.image = conversion(users.userPhoto)
         return cell!
     }

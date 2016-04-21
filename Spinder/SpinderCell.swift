@@ -10,9 +10,8 @@ import UIKit
 
 class SpinderCell: UICollectionViewCell {
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameAgeLabel: UILabel!
     
-    @IBOutlet weak var ageLabel: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
     
