@@ -11,19 +11,19 @@ import Firebase
 
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
+    
     //    MARK : OUTLETS
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
+    
     //    MARK : VARIABLES AND LET S
     let userDefault = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
-
     
     //    MARK : LOGIN BUTTON
     @IBAction func loginButtonTapped(sender: AnyObject) {

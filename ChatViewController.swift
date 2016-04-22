@@ -31,6 +31,11 @@ class ChatViewController: JSQMessagesViewController {
         
         
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        observeMessages()
+    }
 //    MARK : JSQCollectionView Delegate
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
         return messages[indexPath.item]
@@ -84,13 +89,22 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         let itemRef = messageRef.childByAutoId()
-        let messageItem = ["text": text, "senderId": senderId, "timeStamp": date]
+        let messageItem = ["text": text, "senderId": senderId]
         itemRef.setValue(messageItem)
         
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
     }
     
-    
+    private func observeMessages() {
+        let messagesQuery = messageRef.queryLimitedToLast(25)
+        messagesQuery.observeEventType(.ChildAdded) { (snapshot: FDataSnapshot!) in
+            let id = snapshot.value["senderId"] as! String
+            let text = snapshot.value["text"] as! String
+            self.addMessage(id, text: text)
+            
+            self.finishReceivingMessage()
+        }
+    }
     
 }

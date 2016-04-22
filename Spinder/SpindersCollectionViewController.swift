@@ -94,10 +94,14 @@ class SpindersCollectionViewController: UICollectionViewController {
         let users = filteredUsers[indexPath.row]
             cell?.nameAgeLabel.text = "\(users.userName), \(users.userAge), \(users.userGender)"
             cell?.imageView.image = conversion(users.userPhoto)
+            cell?.descriptionTextView.text = users.userDescription
+            chatUser = [users.userName]
+            
         } else {
         let users = user[indexPath.row]
             cell?.nameAgeLabel.text = "\(users.userName), \(users.userAge), \(users.userGender)"
             cell?.imageView.image = conversion(users.userPhoto)
+            cell?.descriptionTextView.text = users.userDescription
         }
         return cell!
     }

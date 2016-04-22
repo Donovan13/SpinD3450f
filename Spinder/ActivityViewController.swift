@@ -13,7 +13,6 @@ import Firebase
 class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var GenderTextField: UITextField!
-    @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var activityDescriptionTextView: UITextView!
     
@@ -24,7 +23,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     let distancePickerView = UIPickerView()
     var toolBar = UIToolbar()
     var genderOption = ["Male", "Female"]
-    var ageOption = ["Do not matter", "18 ~ 25", "26 ~33", "34 ~ 41", "42 ~ 49", "50 +"]
     var distanceOption = ["Within 1 Miles", "Within 2 Miles", "Within 3 Miles", "Within 4 Miles", "Within 5 Miles"]
     var activity = ["Basketball", "Soccer", "VolleyBall", "BaseBall", "Fitness"]
     
@@ -44,7 +42,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
+//            locationManager.startUpdatingLocation()
             
         }
         
@@ -59,20 +57,17 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
         genderPickerView.delegate = self
         genderPickerView.dataSource = self
-        agePickerView.delegate = self
         distancePickerView.delegate = self
         genderPickerView.tag = 101
-        agePickerView.tag = 102
         distancePickerView.tag = 103
         GenderTextField.inputView = genderPickerView
         GenderTextField.inputAccessoryView = toolBar
-        ageTextField.inputView = agePickerView
         distanceTextField.inputView = distancePickerView
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locValue = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
         
     }
 
@@ -92,8 +87,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 101 {
             return genderOption.count
-        } else if pickerView.tag == 102 {
-            return ageOption.count
         } else if pickerView.tag == 103 {
             return distanceOption.count
         }
@@ -103,8 +96,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 101 {
             return genderOption[row]
-        } else if pickerView.tag == 102 {
-            return ageOption[row]
         } else if pickerView.tag == 103 {
             return distanceOption[row]
         }
@@ -115,8 +106,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
         if pickerView.tag == 101 {
             GenderTextField.text = genderOption[row]
-        } else if pickerView.tag == 102 {
-            ageTextField.text = ageOption[row]
         } else if pickerView.tag == 103 {
             distanceTextField.text = distanceOption[row]
         }
@@ -129,14 +118,14 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         locationRef = FirebaseService.firebaseSerivce.currentUserRef.childByAppendingPath("location")
         
 //        let locRef = locationRef.childByAutoId()
-        let location = ["latitude": locValue.latitude, "longitude": locValue.longitude]
+//        let location = ["latitude": locValue.latitude, "longitude": locValue.longitude]
         
-        locationRef.setValue(location)
+//        locationRef.setValue(location)
         
         
         performSegueWithIdentifier("FindSpindersSegue", sender: nil)
         
-        self.locationManager.stopUpdatingLocation()
+//        self.locationManager.stopUpdatingLocation()
         
         
 

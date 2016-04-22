@@ -281,17 +281,6 @@
                                     <rect key="frame" x="73" y="88" width="254" height="41"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zqc-hu-nnT">
-                                <rect key="frame" x="197" y="119" width="207" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="97" y="197" width="207" height="30"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="uRo-YY-6tm" id="CGq-mF-Aqe"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Distance" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tba-mD-DFd">
                                 <rect key="frame" x="197" y="162" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -357,7 +346,6 @@
                     <connections>
                         <outlet property="GenderTextField" destination="PrU-zt-qMz" id="ISW-ys-3jU"/>
                         <outlet property="activityDescriptionTextView" destination="Ig2-3v-JSj" id="cqU-uC-bOs"/>
-                        <outlet property="ageTextField" destination="Zqc-hu-nnT" id="7A7-uZ-oQg"/>
                         <outlet property="distanceTextField" destination="Tba-mD-DFd" id="aaa-tg-vaN"/>
                         <segue destination="laN-gK-vDZ" kind="show" identifier="FindSpindersSegue" id="rzI-jo-Edq"/>
                     </connections>
@@ -394,7 +382,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="Oyj-CE-Zli"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1FG-id-aJr">
@@ -477,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Kr-Hm-Uaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="1156"/>
+            <point key="canvasLocation" x="1790" y="1156"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="MTN-v8-dnt">
