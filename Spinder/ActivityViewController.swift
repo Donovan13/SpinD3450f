@@ -16,6 +16,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var activityDescriptionTextView: UITextView!
+    @IBOutlet weak var homeTownTextField: UITextField!
     
     let locationManager = CLLocationManager()
     
@@ -26,7 +27,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     var genderOption = ["Male", "Female"]
     var ageOption = ["Do not matter", "18 ~ 25", "26 ~33", "34 ~ 41", "42 ~ 49", "50 +"]
     var distanceOption = ["Within 1 Miles", "Within 2 Miles", "Within 3 Miles", "Within 4 Miles", "Within 5 Miles"]
-    var activity = ["Basketball", "Soccer", "VolleyBall", "BaseBall", "Fitness"]
+    var activity = ["Fitness", "Sports", "Gaming", "Dog Walks", "Coding"]
     
     var locationRef: Firebase!
     
@@ -44,7 +45,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
+//            locationManager.startUpdatingLocation()
             
         }
         
@@ -126,17 +127,17 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func findSpinderButtonTapped(sender: AnyObject) {
         print("Spinder Information Uploaded")
-        locationRef = FirebaseService.firebaseSerivce.currentUserRef.childByAppendingPath("location")
+//        locationRef = FirebaseService.firebaseSerivce.currentUserRef.childByAppendingPath("location")
         
 //        let locRef = locationRef.childByAutoId()
-        let location = ["latitude": locValue.latitude, "longitude": locValue.longitude]
+//        let location = ["latitude": locValue.latitude, "longitude": locValue.longitude]
         
-        locationRef.setValue(location)
+//        locationRef.setValue(location)
         
         
         performSegueWithIdentifier("FindSpindersSegue", sender: nil)
         
-        self.locationManager.stopUpdatingLocation()
+//        self.locationManager.stopUpdatingLocation()
         
         
 
@@ -158,6 +159,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         if let vc = segue.destinationViewController as? SpindersCollectionViewController {
             vc.filterGender = GenderTextField.text!
             vc.filterDistance = distanceTextField.text!
+            vc.filterHomeTown = homeTownTextField.text!
             
         }
     }
