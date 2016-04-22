@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import CoreLocation
+import Firebase
 
-class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-
+class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var GenderTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var activityDescriptionTextView: UITextView!
+    
+    let locationManager = CLLocationManager()
     
     var genderPickerView = UIPickerView()
     let agePickerView = UIPickerView()
@@ -25,9 +28,25 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     var distanceOption = ["Within 1 Miles", "Within 2 Miles", "Within 3 Miles", "Within 4 Miles", "Within 5 Miles"]
     var activity = ["Basketball", "Soccer", "VolleyBall", "BaseBall", "Fitness"]
     
+    var locationRef: Firebase!
+    
+    var locValue: CLLocationCoordinate2D!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+            
+        }
         
         genderPickerView.showsSelectionIndicator = true
         toolBar.barStyle = UIBarStyle.Default
@@ -51,6 +70,13 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         distanceTextField.inputView = distancePickerView
         
     }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locValue = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+    }
+
     
     func toolBarButton() {
         
@@ -101,7 +127,20 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func findSpinderButtonTapped(sender: AnyObject) {
         print("Spinder Information Uploaded")
+        locationRef = FirebaseService.firebaseSerivce.currentUserRef.childByAppendingPath("location")
+        
+//        let locRef = locationRef.childByAutoId()
+        let location = ["latitude": locValue.latitude, "longitude": locValue.longitude]
+        
+        locationRef.setValue(location)
+        
+        
         performSegueWithIdentifier("FindSpindersSegue", sender: nil)
+        
+        self.locationManager.stopUpdatingLocation()
+        
+        
+
     }
 
     
@@ -113,6 +152,15 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath)
         cell.textLabel?.text = activity[indexPath.row]
         return cell
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? SpindersCollectionViewController {
+            vc.filterGender = GenderTextField.text!
+            vc.filterDistance = distanceTextField.text!
+            
+        }
     }
     
 }

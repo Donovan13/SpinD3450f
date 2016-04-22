@@ -21,7 +21,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
+
     
     //    MARK : LOGIN BUTTON
     @IBAction func loginButtonTapped(sender: AnyObject) {

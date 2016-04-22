@@ -15,8 +15,15 @@ class SpindersCollectionViewController: UICollectionViewController {
 
     @IBOutlet var spinderCollectionView: UICollectionView!
     
+    var filterAge = String()
+    var filterGender = String()
+    var filterDistance = String()
+    
     
     var user = [Users]()
+    
+    var filteredUsers = [Users]()
+    
     
     
     override func viewDidLoad() {
@@ -24,6 +31,19 @@ class SpindersCollectionViewController: UICollectionViewController {
         print("loaded")
         loadUsers()
 
+    }
+    
+    func filterUsers(){
+        for userSingular in user {
+            if userSingular.userGender == filterGender {
+                filteredUsers.append(userSingular)
+                collectionView?.reloadData()
+                
+//                if Int(userSingular.userAge) > filterAge && userSingular.userGender = filterGender {
+//                    filteredUsers.append(userSingular)
+
+            }
+        }
     }
     
     func loadUsers() {
@@ -35,9 +55,14 @@ class SpindersCollectionViewController: UICollectionViewController {
                         let key = snap.key
                         let user = Users(key: key, dictionary: userDictionary)
                         self.user.insert(user, atIndex: 0)
+                        
                     }
                 }
             }
+            print("Total Number of Registered Users: \(self.user.count.description)")
+            print("Total Number of Filtered Users: \(self.filteredUsers.count.description)")
+
+            self.filterUsers()
             self.spinderCollectionView.reloadData()
         })
     }
@@ -54,15 +79,24 @@ class SpindersCollectionViewController: UICollectionViewController {
 //    }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        print(user.count)
+        if filteredUsers.count > 0 {
+            return filteredUsers.count
+        } else {
         return user.count
-        
+        }
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? SpinderCell
+        if filteredUsers.count > 0 {
+        let users = filteredUsers[indexPath.row]
+            cell?.nameAgeLabel.text = "\(users.userName), \(users.userAge), \(users.userGender)"
+            cell?.imageView.image = conversion(users.userPhoto)
+        } else {
         let users = user[indexPath.row]
-        cell?.nameAgeLabel.text = "\(users.userName), \(users.userAge), \(users.userGender)"
-        cell?.imageView.image = conversion(users.userPhoto)
+            cell?.nameAgeLabel.text = "\(users.userName), \(users.userAge), \(users.userGender)"
+            cell?.imageView.image = conversion(users.userPhoto)
+        }
         return cell!
     }
     

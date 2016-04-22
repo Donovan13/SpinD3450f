@@ -21,6 +21,8 @@ class Users {
     private var _userPhoto: String!
     private var _userDescription: String!
     private var _userGender: String!
+    private var _userHomeTown: String!
+
     
     
     
@@ -44,6 +46,9 @@ class Users {
         return _userDescription
     }
     
+    var userHomeTown: String {
+        return _userHomeTown
+    }
     
     
     init(key: String, dictionary: Dictionary<String, AnyObject>) {
@@ -62,6 +67,9 @@ class Users {
         }
         if let gender = dictionary["gender"] as? String {
             self._userGender = gender
+        }
+        if let homeTown = dictionary["homeTown"] as? String {
+            self._userHomeTown = homeTown
         }
         
         self.userRef = FirebaseService.firebaseSerivce.userRef.childByAppendingPath(self._userKey)

@@ -13,6 +13,7 @@
 		096D20F11CC5351000FDE8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F01CC5351000FDE8D5 /* Assets.xcassets */; };
 		096D20F41CC5351000FDE8D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */; };
 		096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */; };
+		09CBA2B21CC97916002BF15E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CBA2B11CC97916002BF15E /* CoreLocation.framework */; };
 		09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D570291CC59BF100442D07 /* CoreImage.framework */; };
 		09D5702C1CC5A39B00442D07 /* SpindersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5702B1CC5A39B00442D07 /* SpindersCollectionViewController.swift */; };
 		09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5702D1CC5A43F00442D07 /* SpinderCell.swift */; };
@@ -33,6 +34,7 @@
 		096D20F31CC5351000FDE8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		096D20F51CC5351000FDE8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Spinder/CreateAccountViewController.swift; sourceTree = "<group>"; };
+		09CBA2B11CC97916002BF15E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		09D570291CC59BF100442D07 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		09D5702B1CC5A39B00442D07 /* SpindersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpindersCollectionViewController.swift; path = Spinder/SpindersCollectionViewController.swift; sourceTree = "<group>"; };
 		09D5702D1CC5A43F00442D07 /* SpinderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinderCell.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09CBA2B21CC97916002BF15E /* CoreLocation.framework in Frameworks */,
 				0949095A1CC7CC75001FB811 /* Firebase.framework in Frameworks */,
 				09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */,
 				E25E745CE74357204A57F8CE /* Pods_Spinder.framework in Frameworks */,
@@ -125,6 +128,7 @@
 		AA0F9E5CA7CF50E3A27C37E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09CBA2B11CC97916002BF15E /* CoreLocation.framework */,
 				094909591CC7CC75001FB811 /* Firebase.framework */,
 				7B3B94431CC67B0B005B3B2B /* Firebase.framework */,
 				7BAF50921CC5EAC100233D94 /* Firebase.framework */,

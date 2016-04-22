@@ -16,6 +16,8 @@ struct SpinderUser {
     let name: String
     let age: Int
     let gender: String
+
+    
     
     init(authData: FAuthData) {
         uid = authData.uid
@@ -24,16 +26,19 @@ struct SpinderUser {
         name = authData.providerData["name"] as! String
         age = authData.providerData["age"] as! Int
         gender = authData.providerData["gender"] as! String
+
+        
         
     }
     
-    init(uid: String, email: String, password: String, name: String, age: Int, gender: String) {
+    init(uid: String, email: String, password: String, name: String, age: Int, gender: String, latitude: Double, longitude: Double) {
         self.uid = uid
         self.email = email
         self.password = password
         self.name = name
         self.age = age
         self.gender = gender
+
         
     }
     

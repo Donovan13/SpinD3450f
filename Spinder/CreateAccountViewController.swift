@@ -20,6 +20,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var homeTownTextFiled: UITextField!
     
     
     var genderPickerView = UIPickerView()
@@ -100,8 +101,9 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         let gender = genderTextField.text
         let photo = profileImageView.image
         let description = userDescriptionTextView.text
+        let homeTown = homeTownTextFiled.text
         
-        if name != "" && email != "" && password != "" && age != "" && gender != "" && photo != nil {
+        if name != "" && email != "" && password != "" && age != "" && gender != "" && homeTown != "" && photo != nil {
             if password == confirmPassword {
                     FirebaseService.firebaseSerivce.FirebaseRef.createUser(email, password: password) { (error, result) in
                         if error != nil {
@@ -109,7 +111,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                             self.errorAlert("Oops! Something went wrong", message: "please try again")
                         } else {
                             FirebaseService.firebaseSerivce.FirebaseRef.authUser(email, password: password, withCompletionBlock: { (error, authData) in
-                                let user = ["profilePicture": self.coversion(photo!), "email": email!, "name": name!, "age": age!, "gender": gender!, "description": description!]
+                                let user = ["profilePicture": self.coversion(photo!), "email": email!, "name": name!, "age": age!, "gender": gender!, "description": description!, "homeTown": homeTown!]
                                 FirebaseService.firebaseSerivce.createNewAccount(authData.uid, user: user)
                                 self.performSegueWithIdentifier("CreateAccountSegue", sender: self)
                             })

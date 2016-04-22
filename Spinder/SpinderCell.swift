@@ -12,7 +12,6 @@ class SpinderCell: UICollectionViewCell {
     
     @IBOutlet weak var nameAgeLabel: UILabel!
     
-    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var descriptionTextView: UITextView!
