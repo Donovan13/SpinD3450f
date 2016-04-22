@@ -97,7 +97,7 @@
                                     <constraint firstAttribute="height" constant="30" id="X4X-Dd-3vA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="122" y="387" width="157" height="30"/>
                                 </variation>
@@ -105,7 +105,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qfu-3m-XZ3">
                                 <rect key="frame" x="20" y="287" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="122" y="430" width="157" height="30"/>
                                 </variation>
@@ -113,7 +113,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Mf-tV-jAl">
                                 <rect key="frame" x="20" y="341" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="122" y="475" width="157" height="30"/>
                                 </variation>
@@ -156,6 +156,11 @@
                                     <outlet property="delegate" destination="jhf-NZ-Hgx" id="8GA-IR-Opo"/>
                                 </connections>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home Town" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4D-OU-Wsd">
+                                <rect key="frame" x="20" y="476" width="205" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -202,6 +207,7 @@
                         <outlet property="confirmPasswordTextField" destination="3Mf-tV-jAl" id="6Vi-Nv-WcG"/>
                         <outlet property="emailTextField" destination="nof-Yv-4Iu" id="Yti-bc-uWg"/>
                         <outlet property="genderTextField" destination="hfI-WT-WD3" id="KgF-T3-sQU"/>
+                        <outlet property="homeTownTextFiled" destination="o4D-OU-Wsd" id="V9d-79-yL2"/>
                         <outlet property="nameTextField" destination="3Bx-7p-le5" id="HzU-24-ezV"/>
                         <outlet property="passwordTextField" destination="Qfu-3m-XZ3" id="hbg-EG-wci"/>
                         <outlet property="profileImageView" destination="og7-4l-s2y" id="3nm-ET-WdT"/>
@@ -491,7 +497,7 @@
                                     <constraint firstAttribute="height" constant="30" id="t3U-dx-Fuj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="103" y="178" width="194" height="30"/>
                                 </variation>
@@ -505,7 +511,7 @@
                                     <constraint firstAttribute="height" constant="30" id="G5g-c2-B2K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="103" y="256" width="194" height="30"/>
                                 </variation>
