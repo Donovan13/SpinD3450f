@@ -305,7 +305,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Knv-5v-0sr" id="6XO-ZG-vVd">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -412,6 +412,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-DH-KFU">
                                             <rect key="frame" x="179" y="334" width="103" height="30"/>
                                             <state key="normal" title="DirectMessage"/>
+                                            <connections>
+                                                <segue destination="5en-fF-Dg2" kind="presentation" identifier="DirectMessageSegue" id="fdL-G3-OCt"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAi-Zt-pcX">
                                             <rect key="frame" x="358" y="336" width="46" height="30"/>
@@ -451,6 +454,25 @@
             </objects>
             <point key="canvasLocation" x="1112" y="440"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="h8b-FL-uJ8">
+            <objects>
+                <viewController id="Xbo-Jx-2ut" customClass="ChatViewController" customModule="Spinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4ch-2D-WZG"/>
+                        <viewControllerLayoutGuide type="bottom" id="MeV-iR-V6Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YRa-MX-TKt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="u96-lX-l50"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Kr-Hm-Uaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="1156"/>
+        </scene>
         <!--Log In View Controller-->
         <scene sceneID="MTN-v8-dnt">
             <objects>
@@ -473,6 +495,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="103" y="178" width="194" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="aYg-Fh-ZXN" id="eay-h7-SyI"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFC-UT-cpm">
                                 <rect key="frame" x="20" y="199" width="560" height="30"/>
@@ -484,6 +509,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="103" y="256" width="194" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="aYg-Fh-ZXN" id="RcS-ci-39I"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ue2-fp-mcz">
                                 <rect key="frame" x="277" y="285" width="46" height="30"/>
@@ -572,11 +600,29 @@
             </objects>
             <point key="canvasLocation" x="-254" y="440"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kJ5-CO-iXO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5en-fF-Dg2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ibj-wN-g5o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xbo-Jx-2ut" kind="relationship" relationship="rootViewController" id="nIz-wm-UOd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aj-ib-whY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1112" y="1156"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Anonymous_emblem.svg" width="2000" height="2000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SRU-sr-N2F"/>
+        <segue reference="wwv-Pf-BON"/>
     </inferredMetricsTieBreakers>
 </document>

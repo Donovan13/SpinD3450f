@@ -48,6 +48,7 @@ class Users {
     
     init(key: String, dictionary: Dictionary<String, AnyObject>) {
         self._userKey = key
+        
         if let name = dictionary["name"] as? String {
             self._userName = name
         }

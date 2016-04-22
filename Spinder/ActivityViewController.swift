@@ -49,7 +49,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         GenderTextField.inputAccessoryView = toolBar
         ageTextField.inputView = agePickerView
         distanceTextField.inputView = distancePickerView
-        
     }
     
     func toolBarButton() {

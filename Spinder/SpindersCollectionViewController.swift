@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import JavaScriptCore
 
 private let reuseIdentifier = "Cell"
 
@@ -17,6 +18,7 @@ class SpindersCollectionViewController: UICollectionViewController {
     
     
     var user = [Users]()
+    var chatUser = []
     
     
     override func viewDidLoad() {
@@ -44,7 +46,7 @@ class SpindersCollectionViewController: UICollectionViewController {
 
     
     
-    
+
 
     // MARK: UICollectionViewDataSource
 
@@ -64,6 +66,14 @@ class SpindersCollectionViewController: UICollectionViewController {
         cell?.nameAgeLabel.text = "\(users.userName), \(users.userAge), \(users.userGender)"
         cell?.imageView.image = conversion(users.userPhoto)
         return cell!
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        let navVc = segue.destinationViewController as! UINavigationController
+        let chatVc = navVc.viewControllers.first as! ChatViewController
+        chatVc.senderId = FirebaseService.firebaseSerivce.currentUserRef.authData.uid
+        chatVc.senderDisplayName = ""
     }
     
     func conversion(photo: String) -> UIImage {

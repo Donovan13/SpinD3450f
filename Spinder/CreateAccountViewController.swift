@@ -114,8 +114,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                                 self.performSegueWithIdentifier("CreateAccountSegue", sender: self)
                             })
                         }
-                        
-                    
+    
                 }
             } else {
                 errorAlert("Password Does Not Match", message: "Please check your password")
