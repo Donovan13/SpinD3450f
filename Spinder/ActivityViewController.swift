@@ -16,6 +16,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var activityDescriptionTextView: UITextView!
+    @IBOutlet weak var homeTownTextField: UITextField!
     
     let locationManager = CLLocationManager()
     
@@ -44,7 +45,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
+//            locationManager.startUpdatingLocation()
             
         }
         
@@ -159,6 +160,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         if let vc = segue.destinationViewController as? SpindersCollectionViewController {
             vc.filterGender = GenderTextField.text!
             vc.filterDistance = distanceTextField.text!
+            vc.filterHomeTown = homeTownTextField.text!
             
         }
     }

@@ -18,6 +18,7 @@ class SpindersCollectionViewController: UICollectionViewController {
     var filterAge = String()
     var filterGender = String()
     var filterDistance = String()
+    var filterHomeTown = String()
     
     
     var user = [Users]()
@@ -35,7 +36,7 @@ class SpindersCollectionViewController: UICollectionViewController {
     
     func filterUsers(){
         for userSingular in user {
-            if userSingular.userGender == filterGender {
+            if userSingular.userGender == filterGender && userSingular.userHomeTown == filterHomeTown {
                 filteredUsers.append(userSingular)
                 collectionView?.reloadData()
                 
