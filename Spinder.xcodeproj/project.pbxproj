@@ -15,16 +15,16 @@
 		096D20F11CC5351000FDE8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F01CC5351000FDE8D5 /* Assets.xcassets */; };
 		096D20F41CC5351000FDE8D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */; };
 		096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */; };
+		09B7A7271CD289D000EFD7CD /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A7251CD289D000EFD7CD /* PathMenu.swift */; };
+		09B7A7281CD289D000EFD7CD /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A7261CD289D000EFD7CD /* PathMenuItem.swift */; };
+		09B7A72B1CD289E400EFD7CD /* LoginParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A7291CD289E400EFD7CD /* LoginParallax.swift */; };
+		09B7A72C1CD289E400EFD7CD /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A72A1CD289E400EFD7CD /* ParallaxItem.swift */; };
 		09CBA2B21CC97916002BF15E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CBA2B11CC97916002BF15E /* CoreLocation.framework */; };
 		09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D570291CC59BF100442D07 /* CoreImage.framework */; };
 		09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5702D1CC5A43F00442D07 /* SpinderCell.swift */; };
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
 		7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* User.swift */; };
 		7B9F88B91CD280B300845CDF /* Pods_Spinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */; };
-		7B9F88BC1CD286DB00845CDF /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BA1CD286DB00845CDF /* PathMenu.swift */; };
-		7B9F88BD1CD286DB00845CDF /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BB1CD286DB00845CDF /* PathMenuItem.swift */; };
-		7B9F88C01CD286EF00845CDF /* LoginParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BE1CD286EF00845CDF /* LoginParallax.swift */; };
-		7B9F88C11CD286EF00845CDF /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BF1CD286EF00845CDF /* ParallaxItem.swift */; };
 		7BE369CF1CD1179400B4D987 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE369CE1CD1179400B4D987 /* Message.swift */; };
 		7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */; };
 		7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */; };
@@ -41,16 +41,16 @@
 		096D20F31CC5351000FDE8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		096D20F51CC5351000FDE8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Spinder/CreateAccountViewController.swift; sourceTree = "<group>"; };
+		09B7A7251CD289D000EFD7CD /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathMenu.swift; path = Spinder/PathMenu.swift; sourceTree = SOURCE_ROOT; };
+		09B7A7261CD289D000EFD7CD /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathMenuItem.swift; path = Spinder/PathMenuItem.swift; sourceTree = SOURCE_ROOT; };
+		09B7A7291CD289E400EFD7CD /* LoginParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginParallax.swift; path = Spinder/LoginParallax.swift; sourceTree = SOURCE_ROOT; };
+		09B7A72A1CD289E400EFD7CD /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParallaxItem.swift; path = Spinder/ParallaxItem.swift; sourceTree = SOURCE_ROOT; };
 		09CBA2B11CC97916002BF15E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		09D570291CC59BF100442D07 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		09D5702D1CC5A43F00442D07 /* SpinderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpinderCell.swift; path = Spinder/SpinderCell.swift; sourceTree = "<group>"; };
 		7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Spinder/FirebaseService.swift; sourceTree = "<group>"; };
 		7B31D63C1CC7DD4B0066AFA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spinder/User.swift; sourceTree = "<group>"; };
 		7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Spinder.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/Pods_Spinder.framework"; sourceTree = "<group>"; };
-		7B9F88BA1CD286DB00845CDF /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenu.swift; sourceTree = "<group>"; };
-		7B9F88BB1CD286DB00845CDF /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenuItem.swift; sourceTree = "<group>"; };
-		7B9F88BE1CD286EF00845CDF /* LoginParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginParallax.swift; sourceTree = "<group>"; };
-		7B9F88BF1CD286EF00845CDF /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxItem.swift; sourceTree = "<group>"; };
 		7BE369CE1CD1179400B4D987 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Spinder/Message.swift; sourceTree = "<group>"; };
 		7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 		096014171CD11A1A00F6ABAD /* Animated Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				7B9F88BA1CD286DB00845CDF /* PathMenu.swift */,
-				7B9F88BB1CD286DB00845CDF /* PathMenuItem.swift */,
+				09B7A7251CD289D000EFD7CD /* PathMenu.swift */,
+				09B7A7261CD289D000EFD7CD /* PathMenuItem.swift */,
 			);
 			name = "Animated Buttons";
 			path = /Users/mingu/Desktop/SpinderFB/SpinderFB;
@@ -85,8 +85,8 @@
 		0960141C1CD11A2C00F6ABAD /* Parallax Effect */ = {
 			isa = PBXGroup;
 			children = (
-				7B9F88BE1CD286EF00845CDF /* LoginParallax.swift */,
-				7B9F88BF1CD286EF00845CDF /* ParallaxItem.swift */,
+				09B7A7291CD289E400EFD7CD /* LoginParallax.swift */,
+				09B7A72A1CD289E400EFD7CD /* ParallaxItem.swift */,
 			);
 			name = "Parallax Effect";
 			path = /Users/mingu/Desktop/SpinderFB/SpinderFB;
@@ -299,14 +299,14 @@
 				096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */,
 				7BE369CF1CD1179400B4D987 /* Message.swift in Sources */,
 				7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */,
-				7B9F88BC1CD286DB00845CDF /* PathMenu.swift in Sources */,
 				7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */,
 				096014201CD11D8500F6ABAD /* ActivityViewController.swift in Sources */,
-				7B9F88BD1CD286DB00845CDF /* PathMenuItem.swift in Sources */,
+				09B7A7271CD289D000EFD7CD /* PathMenu.swift in Sources */,
 				096014241CD1249C00F6ABAD /* ActivityTableView.swift in Sources */,
-				7B9F88C01CD286EF00845CDF /* LoginParallax.swift in Sources */,
+				09B7A7281CD289D000EFD7CD /* PathMenuItem.swift in Sources */,
+				09B7A72B1CD289E400EFD7CD /* LoginParallax.swift in Sources */,
 				096D20EA1CC5351000FDE8D5 /* AppDelegate.swift in Sources */,
-				7B9F88C11CD286EF00845CDF /* ParallaxItem.swift in Sources */,
+				09B7A72C1CD289E400EFD7CD /* ParallaxItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
