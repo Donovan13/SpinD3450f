@@ -21,6 +21,7 @@
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
 		7B31D63D1CC7DD4B0066AFA9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* Users.swift */; };
 		7BBB18431CC5440A007E2B00 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB18421CC5440A007E2B00 /* ActivityViewController.swift */; };
+		7BE369CF1CD1179400B4D987 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE369CE1CD1179400B4D987 /* Message.swift */; };
 		7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */; };
 		7BF568961CC9605200E32E5B /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF568951CC9605200E32E5B /* JSQMessagesViewController.framework */; };
 		7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */; };
@@ -47,6 +48,8 @@
 		7B3B94431CC67B0B005B3B2B /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/Firebase.framework"; sourceTree = "<group>"; };
 		7BAF50921CC5EAC100233D94 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "Pods/../build/Debug-iphoneos/Firebase.framework"; sourceTree = "<group>"; };
 		7BBB18421CC5440A007E2B00 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = Spinder/ActivityViewController.swift; sourceTree = "<group>"; };
+		7BE369CE1CD1179400B4D987 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7BE369D41CD1299A00B4D987 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7BF568951CC9605200E32E5B /* JSQMessagesViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQMessagesViewController.framework; path = "Pods/../build/Debug-iphoneos/JSQMessagesViewController.framework"; sourceTree = "<group>"; };
 		7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 		096D20E81CC5351000FDE8D5 /* Spinder */ = {
 			isa = PBXGroup;
 			children = (
+				7BE369D41CD1299A00B4D987 /* Header.h */,
+				7BE369CE1CD1179400B4D987 /* Message.swift */,
 				096D20E91CC5351000FDE8D5 /* AppDelegate.swift */,
 				7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */,
 				09D5702D1CC5A43F00442D07 /* SpinderCell.swift */,
@@ -275,6 +280,7 @@
 				09D5702C1CC5A39B00442D07 /* SpindersCollectionViewController.swift in Sources */,
 				09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */,
 				096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */,
+				7BE369CF1CD1179400B4D987 /* Message.swift in Sources */,
 				7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */,
 				7BBB18431CC5440A007E2B00 /* ActivityViewController.swift in Sources */,
 				7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */,

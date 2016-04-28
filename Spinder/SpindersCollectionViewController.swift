@@ -19,6 +19,7 @@ class SpindersCollectionViewController: UICollectionViewController {
     var filterAge = String()
     var filterGender = String()
     var filterDistance = String()
+    var indexPath = NSIndexPath()
     
     
     var user = [Users]()
@@ -57,10 +58,10 @@ class SpindersCollectionViewController: UICollectionViewController {
                         let key = snap.key
                         let user = Users(key: key, dictionary: userDictionary)
                         self.user.insert(user, atIndex: 0)
-                        
                     }
                 }
             }
+            
             print("Total Number of Registered Users: \(self.user.count.description)")
             print("Total Number of Filtered Users: \(self.filteredUsers.count.description)")
 
@@ -69,16 +70,6 @@ class SpindersCollectionViewController: UICollectionViewController {
         })
     }
 
-    
-    
-
-
-    // MARK: UICollectionViewDataSource
-
-//    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        print(user.count)
         if filteredUsers.count > 0 {
@@ -111,7 +102,8 @@ class SpindersCollectionViewController: UICollectionViewController {
         let navVc = segue.destinationViewController as! UINavigationController
         let chatVc = navVc.viewControllers.first as! ChatViewController
         chatVc.senderId = FirebaseService.firebaseSerivce.currentUserRef.authData.uid
-        chatVc.senderDisplayName = ""
+        chatVc.senderDisplayName = FirebaseService.firebaseSerivce.currentUserRef.authData.uid
+        
     }
     
     func conversion(photo: String) -> UIImage {

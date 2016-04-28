@@ -28,8 +28,6 @@ class ChatViewController: JSQMessagesViewController {
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
         messageRef = FirebaseService.firebaseSerivce.currentUserRef.childByAppendingPath("messages")
         
-        
-        
     }
     
     override func viewDidAppear(animated: Bool) {
