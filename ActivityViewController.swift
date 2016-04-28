@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
-class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
@@ -26,12 +27,17 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     var chatUser = []
     var filterGender = String()
     var filteredUsers = [User]()
-    
+    let locationManager = CLLocationManager()
+    var locationRef: Firebase!
+    var locValue: CLLocationCoordinate2D!
+
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         loadUsers()
         buttons()
@@ -46,6 +52,20 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         //        toolBar.userInteractionEnabled = true
         
         
+        self.locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+            
+            locationRef = FirebaseService.firebaseSerivce.currentUserRef.childByAppendingPath("location")
+            let locRef = locationRef.childByAutoId()
+            let location = ["latitude": locValue.latitude, "longitude": locValue.longitude]
+            locationRef.setValue(location)
+        
+            
+        }
         
         
         genderPickerView.delegate = self
@@ -61,7 +81,11 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locValue = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+    }
     
     func filterUsers(){
         for user in users {
