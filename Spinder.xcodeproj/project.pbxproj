@@ -23,13 +23,10 @@
 		09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D570291CC59BF100442D07 /* CoreImage.framework */; };
 		09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5702D1CC5A43F00442D07 /* SpinderCell.swift */; };
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
-		7B26B6A11CD27DDA00851025 /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B26B6A01CD27DDA00851025 /* JSQMessagesViewController.framework */; };
-		7B26B6A21CD27DDE00851025 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3B94431CC67B0B005B3B2B /* Firebase.framework */; };
 		7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* User.swift */; };
 		7BE369CF1CD1179400B4D987 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE369CE1CD1179400B4D987 /* Message.swift */; };
 		7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */; };
 		7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */; };
-		E25E745CE74357204A57F8CE /* Pods_Spinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22176B85EF02E74D054B425 /* Pods_Spinder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,17 +47,11 @@
 		09CBA2B11CC97916002BF15E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		09D570291CC59BF100442D07 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		09D5702D1CC5A43F00442D07 /* SpinderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpinderCell.swift; path = Spinder/SpinderCell.swift; sourceTree = "<group>"; };
-		6AB258E74DA7747816740195 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Spinder/FirebaseService.swift; sourceTree = "<group>"; };
-		7B26B6A01CD27DDA00851025 /* JSQMessagesViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQMessagesViewController.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/JSQMessagesViewController.framework"; sourceTree = "<group>"; };
 		7B31D63C1CC7DD4B0066AFA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spinder/User.swift; sourceTree = "<group>"; };
-		7B3B94431CC67B0B005B3B2B /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/Firebase.framework"; sourceTree = "<group>"; };
 		7BE369CE1CD1179400B4D987 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Spinder/Message.swift; sourceTree = "<group>"; };
 		7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		8490D706261958AACC191358 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		88E1DB7B33EE9E0C23944683 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		C22176B85EF02E74D054B425 /* Pods_Spinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C0BB779281BDAC1466E757 /* Pods-Spinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spinder/Pods-Spinder.debug.xcconfig"; sourceTree = "<group>"; };
 		F08A36530B80864884B40105 /* Pods-Spinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spinder/Pods-Spinder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,11 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B26B6A21CD27DDE00851025 /* Firebase.framework in Frameworks */,
-				7B26B6A11CD27DDA00851025 /* JSQMessagesViewController.framework in Frameworks */,
 				09CBA2B21CC97916002BF15E /* CoreLocation.framework in Frameworks */,
 				09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */,
-				E25E745CE74357204A57F8CE /* Pods_Spinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +150,6 @@
 		99971397C0D6715AD80D3B5A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8490D706261958AACC191358 /* Pods.debug.xcconfig */,
-				88E1DB7B33EE9E0C23944683 /* Pods.release.xcconfig */,
 				E9C0BB779281BDAC1466E757 /* Pods-Spinder.debug.xcconfig */,
 				F08A36530B80864884B40105 /* Pods-Spinder.release.xcconfig */,
 			);
@@ -173,12 +159,8 @@
 		AA0F9E5CA7CF50E3A27C37E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7B26B6A01CD27DDA00851025 /* JSQMessagesViewController.framework */,
 				09CBA2B11CC97916002BF15E /* CoreLocation.framework */,
-				7B3B94431CC67B0B005B3B2B /* Firebase.framework */,
 				09D570291CC59BF100442D07 /* CoreImage.framework */,
-				6AB258E74DA7747816740195 /* libPods.a */,
-				C22176B85EF02E74D054B425 /* Pods_Spinder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
