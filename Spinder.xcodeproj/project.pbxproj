@@ -24,6 +24,7 @@
 		09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5702D1CC5A43F00442D07 /* SpinderCell.swift */; };
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
 		7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* User.swift */; };
+		7B9F88B91CD280B300845CDF /* Pods_Spinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */; };
 		7BE369CF1CD1179400B4D987 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE369CE1CD1179400B4D987 /* Message.swift */; };
 		7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */; };
 		7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */; };
@@ -49,6 +50,7 @@
 		09D5702D1CC5A43F00442D07 /* SpinderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpinderCell.swift; path = Spinder/SpinderCell.swift; sourceTree = "<group>"; };
 		7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Spinder/FirebaseService.swift; sourceTree = "<group>"; };
 		7B31D63C1CC7DD4B0066AFA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spinder/User.swift; sourceTree = "<group>"; };
+		7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Spinder.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/Pods_Spinder.framework"; sourceTree = "<group>"; };
 		7BE369CE1CD1179400B4D987 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Spinder/Message.swift; sourceTree = "<group>"; };
 		7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B9F88B91CD280B300845CDF /* Pods_Spinder.framework in Frameworks */,
 				09CBA2B21CC97916002BF15E /* CoreLocation.framework in Frameworks */,
 				09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */,
 			);
@@ -159,6 +162,7 @@
 		AA0F9E5CA7CF50E3A27C37E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */,
 				09CBA2B11CC97916002BF15E /* CoreLocation.framework */,
 				09D570291CC59BF100442D07 /* CoreImage.framework */,
 			);
