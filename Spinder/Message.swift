@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class Message: NSObject, JSQMessageData {
+class Message: NSObject {
     var text_: String
     var sender_: String
     var date_: NSDate
@@ -24,7 +24,7 @@ class Message: NSObject, JSQMessageData {
         self.text_ = text!
         self.sender_ = sender!
         self.date_ = NSDate()
-        self.receiever_ = receiever
+        self.receiever_ = receiever!
     }
     
     func text() -> String! {

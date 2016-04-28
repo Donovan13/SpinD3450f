@@ -22,6 +22,26 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let item1 = ParallaxItem(image: UIImage(named: "image1")!, text: "Go run with someone!")
+        let item2 = ParallaxItem(image: UIImage(named: "image2")!, text: "Puppy Play Date!")
+        let item3 = ParallaxItem(image: UIImage(named: "image3")!, text: "Beach games with new friends!!")
+        let item4 = ParallaxItem(image: UIImage(named: "image4")!, text: "Walk your baby with another mom! Woo!!")
+        
+        
+        
+        let ParallaxViewController = Parallax(items: [item1, item2, item3, item4], motion: false)
+        ParallaxViewController.completionHandler = {
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                ParallaxViewController.view.alpha = 0.0
+            })
+        }
+        
+        // Adding parallax view controller.
+        self.addChildViewController(ParallaxViewController)
+        self.view.addSubview(ParallaxViewController.view)
+        ParallaxViewController.didMoveToParentViewController(self)
+        
         
     }
     
@@ -37,7 +57,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     self.userDefault.setValue(authData.uid, forKey: "uid")
                     print(FirebaseService.firebaseSerivce.currentUserRef)
-                    self.performSegueWithIdentifier("LogInSegue", sender: self)
+                    self.performSegueWithIdentifier("loginSegue", sender: self)
                 }
             }
         } else {
@@ -66,6 +86,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let action = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil)
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 }
 
