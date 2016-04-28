@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0949095A1CC7CC75001FB811 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094909591CC7CC75001FB811 /* Firebase.framework */; };
+		096014181CD11A1A00F6ABAD /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096014151CD11A1A00F6ABAD /* PathMenu.swift */; };
+		096014191CD11A1A00F6ABAD /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096014161CD11A1A00F6ABAD /* PathMenuItem.swift */; };
+		0960141D1CD11A2C00F6ABAD /* LoginParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960141A1CD11A2C00F6ABAD /* LoginParallax.swift */; };
+		0960141E1CD11A2C00F6ABAD /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960141B1CD11A2C00F6ABAD /* ParallaxItem.swift */; };
+		096014201CD11D8500F6ABAD /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960141F1CD11D8500F6ABAD /* ActivityViewController.swift */; };
+		096014241CD1249C00F6ABAD /* ActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096014221CD1249C00F6ABAD /* ActivityTableView.swift */; };
+		096014251CD1249C00F6ABAD /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096014231CD1249C00F6ABAD /* ActivityTableViewCell.swift */; };
 		096D20EA1CC5351000FDE8D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D20E91CC5351000FDE8D5 /* AppDelegate.swift */; };
 		096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */; };
 		096D20F11CC5351000FDE8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F01CC5351000FDE8D5 /* Assets.xcassets */; };
@@ -19,8 +26,7 @@
 		09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5702D1CC5A43F00442D07 /* SpinderCell.swift */; };
 		7B1341681CC69BCF00F2CEE5 /* SpinderUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341671CC69BCF00F2CEE5 /* SpinderUser.swift */; };
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
-		7B31D63D1CC7DD4B0066AFA9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* Users.swift */; };
-		7BBB18431CC5440A007E2B00 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB18421CC5440A007E2B00 /* ActivityViewController.swift */; };
+		7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* User.swift */; };
 		7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */; };
 		7BF568961CC9605200E32E5B /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF568951CC9605200E32E5B /* JSQMessagesViewController.framework */; };
 		7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */; };
@@ -29,6 +35,13 @@
 
 /* Begin PBXFileReference section */
 		094909591CC7CC75001FB811 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-gsoejbquvjfekddbswzpggmqmjpg/Build/Products/Debug-iphonesimulator/Firebase.framework"; sourceTree = "<group>"; };
+		096014151CD11A1A00F6ABAD /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenu.swift; sourceTree = "<group>"; };
+		096014161CD11A1A00F6ABAD /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenuItem.swift; sourceTree = "<group>"; };
+		0960141A1CD11A2C00F6ABAD /* LoginParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginParallax.swift; sourceTree = "<group>"; };
+		0960141B1CD11A2C00F6ABAD /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxItem.swift; sourceTree = "<group>"; };
+		0960141F1CD11D8500F6ABAD /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		096014221CD1249C00F6ABAD /* ActivityTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableView.swift; sourceTree = "<group>"; };
+		096014231CD1249C00F6ABAD /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		096D20E61CC5351000FDE8D5 /* Spinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		096D20E91CC5351000FDE8D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = Spinder/LogInViewController.swift; sourceTree = "<group>"; };
@@ -43,10 +56,9 @@
 		6AB258E74DA7747816740195 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1341671CC69BCF00F2CEE5 /* SpinderUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinderUser.swift; sourceTree = "<group>"; };
 		7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
-		7B31D63C1CC7DD4B0066AFA9 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		7B31D63C1CC7DD4B0066AFA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7B3B94431CC67B0B005B3B2B /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/Firebase.framework"; sourceTree = "<group>"; };
 		7BAF50921CC5EAC100233D94 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "Pods/../build/Debug-iphoneos/Firebase.framework"; sourceTree = "<group>"; };
-		7BBB18421CC5440A007E2B00 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = Spinder/ActivityViewController.swift; sourceTree = "<group>"; };
 		7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7BF568951CC9605200E32E5B /* JSQMessagesViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQMessagesViewController.framework; path = "Pods/../build/Debug-iphoneos/JSQMessagesViewController.framework"; sourceTree = "<group>"; };
 		7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +85,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		096014171CD11A1A00F6ABAD /* Animated Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				096014151CD11A1A00F6ABAD /* PathMenu.swift */,
+				096014161CD11A1A00F6ABAD /* PathMenuItem.swift */,
+			);
+			name = "Animated Buttons";
+			path = ../../SpinderFB/SpinderFB;
+			sourceTree = "<group>";
+		};
+		0960141C1CD11A2C00F6ABAD /* Parallax Effect */ = {
+			isa = PBXGroup;
+			children = (
+				0960141A1CD11A2C00F6ABAD /* LoginParallax.swift */,
+				0960141B1CD11A2C00F6ABAD /* ParallaxItem.swift */,
+			);
+			name = "Parallax Effect";
+			path = ../../SpinderFB/SpinderFB;
+			sourceTree = "<group>";
+		};
+		096014211CD11D9400F6ABAD /* Old Spinder */ = {
+			isa = PBXGroup;
+			children = (
+				09D5702B1CC5A39B00442D07 /* SpindersCollectionViewController.swift */,
+			);
+			name = "Old Spinder";
+			path = ..;
+			sourceTree = "<group>";
+		};
 		096D20DD1CC5351000FDE8D5 = {
 			isa = PBXGroup;
 			children = (
@@ -95,15 +136,20 @@
 		096D20E81CC5351000FDE8D5 /* Spinder */ = {
 			isa = PBXGroup;
 			children = (
+				096014221CD1249C00F6ABAD /* ActivityTableView.swift */,
+				096014231CD1249C00F6ABAD /* ActivityTableViewCell.swift */,
 				096D20E91CC5351000FDE8D5 /* AppDelegate.swift */,
 				7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */,
 				09D5702D1CC5A43F00442D07 /* SpinderCell.swift */,
-				7B31D63C1CC7DD4B0066AFA9 /* Users.swift */,
+				7B31D63C1CC7DD4B0066AFA9 /* User.swift */,
 				7B1341671CC69BCF00F2CEE5 /* SpinderUser.swift */,
 				7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */,
 				096D20F01CC5351000FDE8D5 /* Assets.xcassets */,
 				096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */,
 				096D20F51CC5351000FDE8D5 /* Info.plist */,
+				096014211CD11D9400F6ABAD /* Old Spinder */,
+				096014171CD11A1A00F6ABAD /* Animated Buttons */,
+				0960141C1CD11A2C00F6ABAD /* Parallax Effect */,
 			);
 			path = Spinder;
 			sourceTree = "<group>";
@@ -113,8 +159,7 @@
 			children = (
 				096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */,
 				096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */,
-				7BBB18421CC5440A007E2B00 /* ActivityViewController.swift */,
-				09D5702B1CC5A39B00442D07 /* SpindersCollectionViewController.swift */,
+				0960141F1CD11D8500F6ABAD /* ActivityViewController.swift */,
 				7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */,
 			);
 			name = ViewControllers;
@@ -271,13 +316,19 @@
 			files = (
 				096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */,
 				7B1341681CC69BCF00F2CEE5 /* SpinderUser.swift in Sources */,
-				7B31D63D1CC7DD4B0066AFA9 /* Users.swift in Sources */,
+				7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */,
+				0960141E1CD11A2C00F6ABAD /* ParallaxItem.swift in Sources */,
+				096014181CD11A1A00F6ABAD /* PathMenu.swift in Sources */,
 				09D5702C1CC5A39B00442D07 /* SpindersCollectionViewController.swift in Sources */,
+				096014251CD1249C00F6ABAD /* ActivityTableViewCell.swift in Sources */,
 				09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */,
+				096014191CD11A1A00F6ABAD /* PathMenuItem.swift in Sources */,
 				096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */,
 				7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */,
-				7BBB18431CC5440A007E2B00 /* ActivityViewController.swift in Sources */,
+				0960141D1CD11A2C00F6ABAD /* LoginParallax.swift in Sources */,
 				7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */,
+				096014201CD11D8500F6ABAD /* ActivityViewController.swift in Sources */,
+				096014241CD1249C00F6ABAD /* ActivityTableView.swift in Sources */,
 				096D20EA1CC5351000FDE8D5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

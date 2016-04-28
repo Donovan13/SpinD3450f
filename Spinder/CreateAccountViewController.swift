@@ -113,7 +113,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                             FirebaseService.firebaseSerivce.FirebaseRef.authUser(email, password: password, withCompletionBlock: { (error, authData) in
                                 let user = ["profilePicture": self.coversion(photo!), "email": email!, "name": name!, "age": age!, "gender": gender!, "description": description!, "homeTown": homeTown!]
                                 FirebaseService.firebaseSerivce.createNewAccount(authData.uid, user: user)
-                                self.performSegueWithIdentifier("CreateAccountSegue", sender: self)
+                                self.performSegueWithIdentifier("createAccountSegue", sender: self)
                             })
                         }
     
