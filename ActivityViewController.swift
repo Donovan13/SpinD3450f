@@ -10,12 +10,13 @@ import UIKit
 import Firebase
 import CoreLocation
 
-class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
+class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak var genderTextField: UITextField!
+    @IBOutlet weak var activityViewContriller: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
-    
     @IBOutlet weak var activityTableView: ActivityTableView!
+    
     var genderPickerView = UIPickerView()
     let agePickerView = UIPickerView()
     let distancePickerView = UIPickerView()
@@ -30,8 +31,8 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     let locationManager = CLLocationManager()
     var locationRef: Firebase!
     var locValue: CLLocationCoordinate2D!
+    var lastOffsetY :CGFloat = 0
 
-    
     
     
     override func viewDidLoad() {
@@ -51,23 +52,23 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         //        toolBar.setItems([doneButton], animated: false)
         //        toolBar.userInteractionEnabled = true
         
-        
         self.locationManager.requestWhenInUseAuthorization()
+        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
             
-            locationRef = FirebaseService.firebaseSerivce.currentUserRef.childByAppendingPath("location")
-            let locRef = locationRef.childByAutoId()
-            let location = ["latitude": locValue.latitude, "longitude": locValue.longitude]
-            locationRef.setValue(location)
-        
-            
         }
-        
-        
+//                locationRef = FirebaseService.firebaseSerivce.currentUserRef.childByAppendingPath("location")
+//                let locRef = locationRef.childByAutoId()
+//                let location = ["latitude": locValue.latitude, "longitude": locValue.longitude]
+//                locRef.setValue(location)
+//        
+    
+    
+    
         genderPickerView.delegate = self
         genderPickerView.dataSource = self
         distancePickerView.delegate = self
@@ -81,9 +82,23 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView){
+        lastOffsetY = scrollView.contentOffset.y
+    }
+    
+    func scrollViewWillBeginDecelerating(scrollView: UIScrollView){
+        
+        let hide = scrollView.contentOffset.y > self.lastOffsetY
+        self.navigationController?.setNavigationBarHidden(hide, animated: true)
+        toolBar.hidden = hide
+    }
+    
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locValue = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
+        locationManager.stopUpdatingLocation()
         
     }
     
@@ -95,10 +110,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
                 print("Users reloading")
             }
         }
-        
-        
-        
-        
     }
     
     // DataSource
@@ -115,9 +126,9 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 363.0;
-    }
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return 363.0;
+//    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath) as! ActivityTableViewCell;
@@ -145,6 +156,8 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 101 {
+            filterGender = genderOption[row]
+            filterUsers()
             return genderOption[row]
         } else if pickerView.tag == 102 {
             return distanceOption[row]
