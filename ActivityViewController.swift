@@ -10,11 +10,11 @@ import UIKit
 import Firebase
 import CoreLocation
 
-class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate, UIScrollViewDelegate {
+class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UIScrollViewDelegate, BubbleMenuDelegate {
     
-    @IBOutlet weak var genderTextField: UITextField!
-    @IBOutlet weak var activityViewContriller: UITextField!
-    @IBOutlet weak var distanceTextField: UITextField!
+//    @IBOutlet weak var genderTextField: UITextField!
+//    @IBOutlet weak var activityViewContriller: UITextField!
+//    @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var activityTableView: ActivityTableView!
     
     var genderPickerView = UIPickerView()
@@ -32,6 +32,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     var locationRef: Firebase!
     var locValue: CLLocationCoordinate2D!
     var lastOffsetY :CGFloat = 0
+    var hamburgerView: HamburgerView?
 
     
     
@@ -45,8 +46,8 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         filterUsers()
         
         
-        genderPickerView.showsSelectionIndicator = true
-        toolBar.barStyle = UIBarStyle.Default
+//        genderPickerView.showsSelectionIndicator = true
+//        toolBar.barStyle = UIBarStyle.Default
         
         //        let doneButton = UIBarButtonItem(title: "Done", style:.Plain, target: self, action:#selector(ActivityViewController.doneButton))
         //        toolBar.setItems([doneButton], animated: false)
@@ -60,6 +61,17 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
             
+            
+            
+            // Side Menu
+            navigationController!.navigationBar.clipsToBounds = true
+            
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ActivityViewController.hamburgerViewTapped))
+            hamburgerView = HamburgerView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+            hamburgerView!.addGestureRecognizer(tapGestureRecognizer)
+            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)
+            
+            
         }
 //                locationRef = FirebaseService.firebaseSerivce.currentUserRef.childByAppendingPath("location")
 //                let locRef = locationRef.childByAutoId()
@@ -69,19 +81,34 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     
-        genderPickerView.delegate = self
-        genderPickerView.dataSource = self
-        distancePickerView.delegate = self
-        genderPickerView.tag = 101
-        distancePickerView.tag = 102
-        genderTextField.inputView = genderPickerView
-        genderTextField.inputAccessoryView = toolBar
-        distanceTextField.inputView = distancePickerView
+//        genderPickerView.delegate = self
+//        genderPickerView.dataSource = self
+//        distancePickerView.delegate = self
+//        genderPickerView.tag = 101
+//        distancePickerView.tag = 102
+//        genderTextField.inputView = genderPickerView
+//        genderTextField.inputAccessoryView = toolBar
+//        distanceTextField.inputView = distancePickerView
         
         
         
     }
     
+    func hamburgerViewTapped() {
+        let navigationController = parentViewController as! UINavigationController
+        let containerViewController = navigationController.parentViewController as! ContainerViewController
+        containerViewController.hideOrShowMenu(!containerViewController.showingMenu, animated: true)
+    }
+    
+    var menuItem: NSDictionary? {
+        didSet {
+            if let newMenuItem = menuItem {
+                view.backgroundColor = UIColor(colorArray: newMenuItem["colors"] as! NSArray)
+//                backgroundImageView?.image = UIImage(named: newMenuItem["bigImage"] as! String)
+                
+            }
+        }
+    }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView){
         lastOffsetY = scrollView.contentOffset.y
@@ -145,44 +172,44 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView.tag == 101 {
-            return genderOption.count
-        } else if pickerView.tag == 102 {
-            return distanceOption.count
-        }
-        return 1
-    }
+//    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        if pickerView.tag == 101 {
+//            return genderOption.count
+//        } else if pickerView.tag == 102 {
+//            return distanceOption.count
+//        }
+//        return 1
+//    }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView.tag == 101 {
-            filterGender = genderOption[row]
-            filterUsers()
-            return genderOption[row]
-        } else if pickerView.tag == 102 {
-            return distanceOption[row]
-        }
-        
-        return " "
-    }
+//    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        if pickerView.tag == 101 {
+//            filterGender = genderOption[row]
+//            filterUsers()
+//            return genderOption[row]
+//        } else if pickerView.tag == 102 {
+//            return distanceOption[row]
+//        }
+//        
+//        return " "
+//    }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        if pickerView.tag == 101 {
-            genderTextField.text = genderOption[row]
-        } else if pickerView.tag == 102 {
-            distanceTextField.text = distanceOption[row]
-        }
-        print("Users picked")
-        
-        self.activityTableView.reloadData()
-        self.view.endEditing(true)
-        
-        
-        
+//    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        
+//        if pickerView.tag == 101 {
+//            genderTextField.text = genderOption[row]
+//        } else if pickerView.tag == 102 {
+//            distanceTextField.text = distanceOption[row]
+//        }
+//        print("Users picked")
+//        
+//        self.activityTableView.reloadData()
+//        self.view.endEditing(true)
+    
         
         
-    }
+        
+        
+//    }
     //        MARK : CUSTOM FUNC
     func buttons() {
         let menuItemImage = UIImage(named: "bg-menuitem")!
@@ -217,7 +244,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
         let menu = PathMenu(frame: view.bounds, startItem: startItem, items: items)
         menu.delegate = self
-        menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width/2, view.frame.size.height - 30.0)
+        menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width/2, view.frame.size.height - 750.0)
         menu.menuWholeAngle = (CGFloat(M_PI) - CGFloat(M_PI/5))
         menu.rotateAngle    = -CGFloat(M_PI_2) + CGFloat(M_PI/5) * 1/2
         menu.timeOffset     = 0.05
@@ -226,10 +253,13 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         menu.endRadius      = 80.0
         menu.animationDuration = 0.5
         
+        
         view.addSubview(menu)
         view.backgroundColor = UIColor(red:0.96, green:0.94, blue:0.92, alpha:1)
         
+
     }
+    
     
     func loadUsers() {
         FirebaseService.firebaseSerivce.FirebaseUserRef.observeEventType(.Value, withBlock: { snapshot in
@@ -284,13 +314,45 @@ extension ActivityViewController: PathMenuDelegate {
         print("Menu was closed")
     }
     
-    func doneButton() {
-        genderTextField.resignFirstResponder()
+    
+    
+    // Bubble Menu
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.view.backgroundColor = UIColor(red:0.2, green:0.38, blue:0.8, alpha:1)
+        let start = UIImage(named: "start")
+        let image1 = UIImage(named: "profile")
+        let image2 = UIImage(named: "add")
+        let image3 = UIImage(named: "logout")
+        let images:[UIImage] = [image1!,image2!,image3!]
+        let menu = BubbleMenu(startPoint: CGPointMake(UIScreen.mainScreen().bounds.width - 35.0, view.frame.size.height - 35.0), startImage: start!, submenuImages:images, tapToDismiss:true)
+        menu.delegate = self
+        self.view.addSubview(menu)
+        
+//        menu.startPoint = CGPointMake(UIScreen.mainScreen().bounds.width/2, view.frame.size.height - 750.0)
+
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+    
+    func bubbleDidSelected(index: Int) {
+        print("\(index)")
     }
+    
+    
+    // Dismiss PostViewController
+    @IBAction func dismiss(segue: UIStoryboardSegue) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
+//    func doneButton() {
+//        genderTextField.resignFirstResponder()
+//    }
+    
+//    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
     
     
     
