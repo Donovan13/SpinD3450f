@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Create Account View Controller-->
@@ -503,6 +504,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="uxj-9L-Nk2">
                         <nil key="title"/>
+                        <leftBarButtonItems>
+                            <barButtonItem enabled="NO" title="      " id="dP4-S1-B4e"/>
+                            <barButtonItem image="profile32" id="nCn-Oa-5Dj">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9CL-nt-VAp">
                             <rect key="frame" x="262" y="-10" width="76" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -511,14 +518,23 @@
                                 <segue destination="uKI-ay-Hsf" kind="presentation" id="6Em-Cj-DuU"/>
                             </connections>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" image="message" id="Cs2-pR-WTY">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="CWw-6r-5Se" kind="popoverPresentation" popoverAnchorBarButtonItem="Cs2-pR-WTY" id="F9q-F2-NF4">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="message" id="Cs2-pR-WTY">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="CWw-6r-5Se" kind="popoverPresentation" popoverAnchorBarButtonItem="Cs2-pR-WTY" id="F9q-F2-NF4">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="ZTU-gk-4q2">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oxm-g1-MKU">
+                                    <rect key="frame" x="497" y="6" width="32" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="logout32"/>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
@@ -543,27 +559,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VS6-MY-aao">
-                                <rect key="frame" x="180" y="348" width="240" height="83"/>
+                                <rect key="frame" x="180" y="170" width="240" height="83"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yek-dG-FET">
-                                <rect key="frame" x="283" y="484" width="35" height="30"/>
+                                <rect key="frame" x="283" y="267" width="35" height="30"/>
                                 <state key="normal" title="Post!"/>
                                 <connections>
                                     <segue destination="K55-4u-jyb" kind="unwind" unwindAction="dismiss:" id="Ma5-q5-4J8"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Activity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wvc-k3-3Nx">
-                                <rect key="frame" x="252" y="197" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Wvc-k3-3Nx" firstAttribute="centerX" secondItem="cKJ-vK-hR5" secondAttribute="centerX" id="XgQ-dv-hCe"/>
                             <constraint firstItem="VS6-MY-aao" firstAttribute="centerX" secondItem="cKJ-vK-hR5" secondAttribute="centerX" id="b3h-dp-hAf"/>
                             <constraint firstItem="Yek-dG-FET" firstAttribute="centerX" secondItem="cKJ-vK-hR5" secondAttribute="centerX" id="qoc-jF-YV3"/>
                         </constraints>
@@ -783,8 +793,10 @@
     </scenes>
     <resources>
         <image name="Anonymous_emblem.svg" width="2000" height="2000"/>
+        <image name="logout32" width="32" height="32"/>
         <image name="message" width="32" height="32"/>
         <image name="mingu" width="1280" height="960"/>
+        <image name="profile32" width="32" height="32"/>
         <image name="start" width="68" height="68"/>
     </resources>
 </document>

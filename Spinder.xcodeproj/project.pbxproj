@@ -21,7 +21,6 @@
 		09A7A9341CD6AA98004C31FE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A9331CD6AA98004C31FE /* MenuViewController.swift */; };
 		09A7A9361CD6AB0E004C31FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A9351CD6AB0E004C31FE /* Extensions.swift */; };
 		09A7A9381CD7B302004C31FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A7A9371CD7B302004C31FE /* Assets.xcassets */; };
-		09A7A93C1CD7BF51004C31FE /* BubbleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A93B1CD7BF51004C31FE /* BubbleMenu.swift */; };
 		09A7A93E1CD7F452004C31FE /* CustomPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A93D1CD7F452004C31FE /* CustomPresentationAnimationController.swift */; };
 		09A7A9401CD7F56A004C31FE /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A93F1CD7F56A004C31FE /* CustomPresentationController.swift */; };
 		09A7A9421CD80C84004C31FE /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A9411CD80C84004C31FE /* PostViewController.swift */; };
@@ -57,7 +56,6 @@
 		09A7A9331CD6AA98004C31FE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		09A7A9351CD6AB0E004C31FE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		09A7A9371CD7B302004C31FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		09A7A93B1CD7BF51004C31FE /* BubbleMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleMenu.swift; sourceTree = "<group>"; };
 		09A7A93D1CD7F452004C31FE /* CustomPresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationAnimationController.swift; sourceTree = "<group>"; };
 		09A7A93F1CD7F56A004C31FE /* CustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 		09A7A9411CD80C84004C31FE /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostViewController.swift; path = Spinder/PostViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 		096D20DD1CC5351000FDE8D5 = {
 			isa = PBXGroup;
 			children = (
-				09A7A92A1CD68814004C31FE /* SideMenu */,
 				7BE369DC1CD27BFA00B4D987 /* Customs */,
 				7BAF50941CC674FC00233D94 /* ViewControllers */,
 				096D20E81CC5351000FDE8D5 /* Spinder */,
@@ -175,13 +172,13 @@
 			children = (
 				09A7A93D1CD7F452004C31FE /* CustomPresentationAnimationController.swift */,
 				09A7A93F1CD7F56A004C31FE /* CustomPresentationController.swift */,
-				09A7A93B1CD7BF51004C31FE /* BubbleMenu.swift */,
 				7BE369CE1CD1179400B4D987 /* Message.swift */,
 				096014221CD1249C00F6ABAD /* ActivityTableView.swift */,
 				096014231CD1249C00F6ABAD /* ActivityTableViewCell.swift */,
 				7B31D63C1CC7DD4B0066AFA9 /* User.swift */,
 				09D5702D1CC5A43F00442D07 /* SpinderCell.swift */,
 				7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */,
+				09A7A92A1CD68814004C31FE /* SideMenu */,
 				096014171CD11A1A00F6ABAD /* Animated Buttons */,
 				0960141C1CD11A2C00F6ABAD /* Parallax Effect */,
 			);
@@ -335,7 +332,6 @@
 				096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */,
 				7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */,
 				096014251CD1249C00F6ABAD /* ActivityTableViewCell.swift in Sources */,
-				09A7A93C1CD7BF51004C31FE /* BubbleMenu.swift in Sources */,
 				09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */,
 				096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */,
 				7BE369CF1CD1179400B4D987 /* Message.swift in Sources */,
