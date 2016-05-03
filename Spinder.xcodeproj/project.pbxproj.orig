@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		096014201CD11D8500F6ABAD /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960141F1CD11D8500F6ABAD /* ActivityViewController.swift */; };
+		096014241CD1249C00F6ABAD /* ActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096014221CD1249C00F6ABAD /* ActivityTableView.swift */; };
+		096014251CD1249C00F6ABAD /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096014231CD1249C00F6ABAD /* ActivityTableViewCell.swift */; };
+		096D20EA1CC5351000FDE8D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D20E91CC5351000FDE8D5 /* AppDelegate.swift */; };
+		096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */; };
+		096D20F11CC5351000FDE8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F01CC5351000FDE8D5 /* Assets.xcassets */; };
+		096D20F41CC5351000FDE8D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */; };
+		096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */; };
+		09B7A7271CD289D000EFD7CD /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A7251CD289D000EFD7CD /* PathMenu.swift */; };
+		09B7A7281CD289D000EFD7CD /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A7261CD289D000EFD7CD /* PathMenuItem.swift */; };
+		09B7A72B1CD289E400EFD7CD /* LoginParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A7291CD289E400EFD7CD /* LoginParallax.swift */; };
+		09B7A72C1CD289E400EFD7CD /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A72A1CD289E400EFD7CD /* ParallaxItem.swift */; };
+		09CBA2B21CC97916002BF15E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CBA2B11CC97916002BF15E /* CoreLocation.framework */; };
+		09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D570291CC59BF100442D07 /* CoreImage.framework */; };
+		09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5702D1CC5A43F00442D07 /* SpinderCell.swift */; };
+		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
+		7B2A71C41CD5621E00C55FAA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C31CD5621E00C55FAA /* PostViewController.swift */; };
+		7B2A71C61CD69C8E00C55FAA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */; };
+		7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* User.swift */; };
+		7B9F88B91CD280B300845CDF /* Pods_Spinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */; };
+<<<<<<< HEAD
+		7B9F88BC1CD286DB00845CDF /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BA1CD286DB00845CDF /* PathMenu.swift */; };
+		7B9F88BD1CD286DB00845CDF /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BB1CD286DB00845CDF /* PathMenuItem.swift */; };
+		7B9F88C01CD286EF00845CDF /* LoginParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BE1CD286EF00845CDF /* LoginParallax.swift */; };
+		7B9F88C11CD286EF00845CDF /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BF1CD286EF00845CDF /* ParallaxItem.swift */; };
+		7BC779A51CD70430002E256A /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779A41CD70430002E256A /* ActiveUser.swift */; };
+=======
+		7BE369CF1CD1179400B4D987 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE369CE1CD1179400B4D987 /* Message.swift */; };
+>>>>>>> 0f08867949a2158e85a8f9879d8e10b5da8ac5f5
+		7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */; };
+		7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0960141F1CD11D8500F6ABAD /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		096014221CD1249C00F6ABAD /* ActivityTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityTableView.swift; path = Spinder/ActivityTableView.swift; sourceTree = "<group>"; };
+		096014231CD1249C00F6ABAD /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityTableViewCell.swift; path = Spinder/ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		096D20E61CC5351000FDE8D5 /* Spinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		096D20E91CC5351000FDE8D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = Spinder/LogInViewController.swift; sourceTree = "<group>"; };
+		096D20F01CC5351000FDE8D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		096D20F31CC5351000FDE8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		096D20F51CC5351000FDE8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Spinder/CreateAccountViewController.swift; sourceTree = "<group>"; };
+		09B7A7251CD289D000EFD7CD /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathMenu.swift; path = Spinder/PathMenu.swift; sourceTree = SOURCE_ROOT; };
+		09B7A7261CD289D000EFD7CD /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathMenuItem.swift; path = Spinder/PathMenuItem.swift; sourceTree = SOURCE_ROOT; };
+		09B7A7291CD289E400EFD7CD /* LoginParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginParallax.swift; path = Spinder/LoginParallax.swift; sourceTree = SOURCE_ROOT; };
+		09B7A72A1CD289E400EFD7CD /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParallaxItem.swift; path = Spinder/ParallaxItem.swift; sourceTree = SOURCE_ROOT; };
+		09CBA2B11CC97916002BF15E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		09D570291CC59BF100442D07 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		09D5702D1CC5A43F00442D07 /* SpinderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpinderCell.swift; path = Spinder/SpinderCell.swift; sourceTree = "<group>"; };
+		7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Spinder/FirebaseService.swift; sourceTree = "<group>"; };
+		7B2A71C31CD5621E00C55FAA /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7B31D63C1CC7DD4B0066AFA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spinder/User.swift; sourceTree = "<group>"; };
+		7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Spinder.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/Pods_Spinder.framework"; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		7B9F88BA1CD286DB00845CDF /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenu.swift; sourceTree = "<group>"; };
+		7B9F88BB1CD286DB00845CDF /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenuItem.swift; sourceTree = "<group>"; };
+		7B9F88BE1CD286EF00845CDF /* LoginParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginParallax.swift; sourceTree = "<group>"; };
+		7B9F88BF1CD286EF00845CDF /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxItem.swift; sourceTree = "<group>"; };
+		7BC779A41CD70430002E256A /* ActiveUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
+=======
+		7BE369CE1CD1179400B4D987 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Spinder/Message.swift; sourceTree = "<group>"; };
+>>>>>>> 0f08867949a2158e85a8f9879d8e10b5da8ac5f5
+		7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		E9C0BB779281BDAC1466E757 /* Pods-Spinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spinder/Pods-Spinder.debug.xcconfig"; sourceTree = "<group>"; };
+		F08A36530B80864884B40105 /* Pods-Spinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spinder/Pods-Spinder.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		096D20E31CC5351000FDE8D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B9F88B91CD280B300845CDF /* Pods_Spinder.framework in Frameworks */,
+				09CBA2B21CC97916002BF15E /* CoreLocation.framework in Frameworks */,
+				09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		096014171CD11A1A00F6ABAD /* Animated Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				09B7A7251CD289D000EFD7CD /* PathMenu.swift */,
+				09B7A7261CD289D000EFD7CD /* PathMenuItem.swift */,
+			);
+			name = "Animated Buttons";
+			path = /Users/mingu/Desktop/SpinderFB/SpinderFB;
+			sourceTree = "<absolute>";
+		};
+		0960141C1CD11A2C00F6ABAD /* Parallax Effect */ = {
+			isa = PBXGroup;
+			children = (
+				09B7A7291CD289E400EFD7CD /* LoginParallax.swift */,
+				09B7A72A1CD289E400EFD7CD /* ParallaxItem.swift */,
+			);
+			name = "Parallax Effect";
+			path = /Users/mingu/Desktop/SpinderFB/SpinderFB;
+			sourceTree = "<absolute>";
+		};
+		096D20DD1CC5351000FDE8D5 = {
+			isa = PBXGroup;
+			children = (
+				7BE369DC1CD27BFA00B4D987 /* Customs */,
+				7BAF50941CC674FC00233D94 /* ViewControllers */,
+				096D20E81CC5351000FDE8D5 /* Spinder */,
+				096D20E71CC5351000FDE8D5 /* Products */,
+				99971397C0D6715AD80D3B5A /* Pods */,
+				AA0F9E5CA7CF50E3A27C37E5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		096D20E71CC5351000FDE8D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				096D20E61CC5351000FDE8D5 /* Spinder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		096D20E81CC5351000FDE8D5 /* Spinder */ = {
+			isa = PBXGroup;
+			children = (
+				096D20E91CC5351000FDE8D5 /* AppDelegate.swift */,
+				7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */,
+				096D20F01CC5351000FDE8D5 /* Assets.xcassets */,
+				096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */,
+				096D20F51CC5351000FDE8D5 /* Info.plist */,
+			);
+			path = Spinder;
+			sourceTree = "<group>";
+		};
+		7BAF50941CC674FC00233D94 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				096D20EB1CC5351000FDE8D5 /* LogInViewController.swift */,
+				096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */,
+				0960141F1CD11D8500F6ABAD /* ActivityViewController.swift */,
+				7B2A71C31CD5621E00C55FAA /* PostViewController.swift */,
+				7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */,
+				7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7BE369DC1CD27BFA00B4D987 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				096014221CD1249C00F6ABAD /* ActivityTableView.swift */,
+				096014231CD1249C00F6ABAD /* ActivityTableViewCell.swift */,
+				7B31D63C1CC7DD4B0066AFA9 /* User.swift */,
+				7BC779A41CD70430002E256A /* ActiveUser.swift */,
+				09D5702D1CC5A43F00442D07 /* SpinderCell.swift */,
+				7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */,
+				096014171CD11A1A00F6ABAD /* Animated Buttons */,
+				0960141C1CD11A2C00F6ABAD /* Parallax Effect */,
+			);
+			name = Customs;
+			sourceTree = "<group>";
+		};
+		99971397C0D6715AD80D3B5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9C0BB779281BDAC1466E757 /* Pods-Spinder.debug.xcconfig */,
+				F08A36530B80864884B40105 /* Pods-Spinder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA0F9E5CA7CF50E3A27C37E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */,
+				09CBA2B11CC97916002BF15E /* CoreLocation.framework */,
+				09D570291CC59BF100442D07 /* CoreImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		096D20E51CC5351000FDE8D5 /* Spinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 096D20F81CC5351000FDE8D5 /* Build configuration list for PBXNativeTarget "Spinder" */;
+			buildPhases = (
+				B258F17957E54FF594F2EEB6 /* Check Pods Manifest.lock */,
+				096D20E21CC5351000FDE8D5 /* Sources */,
+				096D20E31CC5351000FDE8D5 /* Frameworks */,
+				096D20E41CC5351000FDE8D5 /* Resources */,
+				1012595DD1CB6D65F184802B /* Embed Pods Frameworks */,
+				2AF3946665A4BA87322B81BD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spinder;
+			productName = Spinder;
+			productReference = 096D20E61CC5351000FDE8D5 /* Spinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		096D20DE1CC5351000FDE8D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Kyle;
+				TargetAttributes = {
+					096D20E51CC5351000FDE8D5 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 695P6D89C6;
+					};
+				};
+			};
+			buildConfigurationList = 096D20E11CC5351000FDE8D5 /* Build configuration list for PBXProject "Spinder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 096D20DD1CC5351000FDE8D5;
+			productRefGroup = 096D20E71CC5351000FDE8D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				096D20E51CC5351000FDE8D5 /* Spinder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		096D20E41CC5351000FDE8D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				096D20F41CC5351000FDE8D5 /* LaunchScreen.storyboard in Resources */,
+				096D20F11CC5351000FDE8D5 /* Assets.xcassets in Resources */,
+				7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1012595DD1CB6D65F184802B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spinder/Pods-Spinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AF3946665A4BA87322B81BD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spinder/Pods-Spinder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B258F17957E54FF594F2EEB6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		096D20E21CC5351000FDE8D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */,
+				7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */,
+				096014251CD1249C00F6ABAD /* ActivityTableViewCell.swift in Sources */,
+				7B2A71C41CD5621E00C55FAA /* PostViewController.swift in Sources */,
+				09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */,
+				096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */,
+				7B2A71C61CD69C8E00C55FAA /* ProfileViewController.swift in Sources */,
+				7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */,
+				7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */,
+				096014201CD11D8500F6ABAD /* ActivityViewController.swift in Sources */,
+				09B7A7271CD289D000EFD7CD /* PathMenu.swift in Sources */,
+				096014241CD1249C00F6ABAD /* ActivityTableView.swift in Sources */,
+<<<<<<< HEAD
+				7B9F88C01CD286EF00845CDF /* LoginParallax.swift in Sources */,
+				7BC779A51CD70430002E256A /* ActiveUser.swift in Sources */,
+=======
+				09B7A7281CD289D000EFD7CD /* PathMenuItem.swift in Sources */,
+				09B7A72B1CD289E400EFD7CD /* LoginParallax.swift in Sources */,
+>>>>>>> 0f08867949a2158e85a8f9879d8e10b5da8ac5f5
+				096D20EA1CC5351000FDE8D5 /* AppDelegate.swift in Sources */,
+				09B7A72C1CD289E400EFD7CD /* ParallaxItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				096D20F31CC5351000FDE8D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		096D20F61CC5351000FDE8D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		096D20F71CC5351000FDE8D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		096D20F91CC5351000FDE8D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9C0BB779281BDAC1466E757 /* Pods-Spinder.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/\"",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = Spinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Donovan.SpinderTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		096D20FA1CC5351000FDE8D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F08A36530B80864884B40105 /* Pods-Spinder.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/\"",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = Spinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Donovan.SpinderTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		096D20E11CC5351000FDE8D5 /* Build configuration list for PBXProject "Spinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				096D20F61CC5351000FDE8D5 /* Debug */,
+				096D20F71CC5351000FDE8D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		096D20F81CC5351000FDE8D5 /* Build configuration list for PBXNativeTarget "Spinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				096D20F91CC5351000FDE8D5 /* Debug */,
+				096D20FA1CC5351000FDE8D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 096D20DE1CC5351000FDE8D5 /* Project object */;
+}
