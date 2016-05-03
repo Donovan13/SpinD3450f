@@ -56,7 +56,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-//        if segue.identifier == "DirectMessageSegue" {
+        if segue.identifier == "DirectMessageSegue" {
             let naVc = segue.destinationViewController as! UINavigationController
             let chatVc = naVc.viewControllers.first as! ChatViewController
             chatVc.senderId = FirebaseService.firebaseSerivce.currentUserRef.authData.uid
@@ -69,9 +69,9 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
 //            let indexPath = self.activityTableView.indexPathForCell(cell)
 //            let user = self.users[indexPath!.row]
 //            chatVc.receiever = user.userName
-//        } else {
+        } else {
         
-//        }
+        }
         //        chatVc.receiever = FirebaseService.firebaseSerivce.userRef.authData.uid
         
     }
