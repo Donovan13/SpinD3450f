@@ -5,6 +5,8 @@ use_frameworks!
 
 target 'Spinder' do
     pod 'Firebase', '>= 2.5.0'
+    pod 'SnapKit' , '~> 0.15.0'
+	
 
     pod 'JSQMessagesViewController'
 end

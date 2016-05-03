@@ -42,7 +42,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(ParallaxViewController.view)
         ParallaxViewController.didMoveToParentViewController(self)
         
-        
+//        print("\(FirebaseService.firebaseSerivce.currentUserRef.authData)")
+
+//        print("\(FirebaseService.firebaseSerivce.currentUserRef)")
     }
     
     //    MARK : LOGIN BUTTON
@@ -56,7 +58,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     self.errorAlert("Invalid User Info", message: "Username or Password does not match our data")
                 } else {
                     self.userDefault.setValue(authData.uid, forKey: "uid")
-                    print(FirebaseService.firebaseSerivce.currentUserRef)
+                    print("\(authData.uid)")
+//                    print(FirebaseService.firebaseSerivce.currentUserRef)
                     self.performSegueWithIdentifier("loginSegue", sender: self)
                 }
             }
@@ -76,9 +79,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func facebookLoginButtonTapped(sender: AnyObject) {
-        
-    }
     
     //    MARK : ALERT
     func errorAlert(title: String, message: String) {

@@ -20,13 +20,20 @@ class ChatViewController: JSQMessagesViewController {
     var messageRef: Firebase!
     
     
+    var currentUser:Dictionary<String, AnyObject>?
+    var name: String!
+    var receiever: String!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadUserProfile()
         title = "Messages"
         setupBubbles()
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
-        messageRef = FirebaseService.firebaseSerivce.currentUserRef.childByAppendingPath("messages")
+        messageRef = FirebaseService.firebaseSerivce.FirebaseRef.childByAppendingPath("messages")
         
     }
     
@@ -87,7 +94,7 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         let itemRef = messageRef.childByAutoId()
-        let messageItem = ["text": text, "senderId": senderId]
+        let messageItem = ["text": text, "senderId": senderId, "name": name, "receieverName": receiever]
         itemRef.setValue(messageItem)
         
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
@@ -97,12 +104,23 @@ class ChatViewController: JSQMessagesViewController {
     private func observeMessages() {
         let messagesQuery = messageRef.queryLimitedToLast(25)
         messagesQuery.observeEventType(.ChildAdded) { (snapshot: FDataSnapshot!) in
-            let id = snapshot.value["senderId"] as! String
+            if (snapshot.value["senderId"] as! String) == (NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String) || (snapshot.value["senderId"] as! String) == self.receiever {
+                let id = snapshot.value["senderId"] as! String
             let text = snapshot.value["text"] as! String
             self.addMessage(id, text: text)
             
             self.finishReceivingMessage()
+            }
+            
         }
     }
+    
+    func loadUserProfile () {
+        FirebaseService.firebaseSerivce.currentUserRef.observeEventType(.Value) { (snapshot: FDataSnapshot!) in
+            self.currentUser = snapshot.value as? Dictionary<String, AnyObject>
+            self.name = self.currentUser!["name"] as? String
+        }
+    }
+    
     
 }

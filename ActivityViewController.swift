@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+var currentUsername: String!
+
 class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var genderTextField: UITextField!
@@ -26,6 +28,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     var chatUser = []
     var filterGender = String()
     var filteredUsers = [User]()
+    var receieverKey = String()
     
     
     
@@ -37,17 +40,8 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         buttons()
         filterUsers()
         
-        
         genderPickerView.showsSelectionIndicator = true
         toolBar.barStyle = UIBarStyle.Default
-        
-        //        let doneButton = UIBarButtonItem(title: "Done", style:.Plain, target: self, action:#selector(ActivityViewController.doneButton))
-        //        toolBar.setItems([doneButton], animated: false)
-        //        toolBar.userInteractionEnabled = true
-        
-        
-        
-        
         genderPickerView.delegate = self
         genderPickerView.dataSource = self
         distancePickerView.delegate = self
@@ -57,27 +51,52 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         genderTextField.inputAccessoryView = toolBar
         distanceTextField.inputView = distancePickerView
         
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+//        if segue.identifier == "DirectMessageSegue" {
+            let naVc = segue.destinationViewController as! UINavigationController
+            let chatVc = naVc.viewControllers.first as! ChatViewController
+            chatVc.senderId = FirebaseService.firebaseSerivce.currentUserRef.authData.uid
+            chatVc.senderDisplayName = ""
+            chatVc.receiever = receieverKey
+            print(receieverKey)
+            
+//            let button = sender as! UIButton
+//            let cell = button.superview as! ActivityTableViewCell
+//            let indexPath = self.activityTableView.indexPathForCell(cell)
+//            let user = self.users[indexPath!.row]
+//            chatVc.receiever = user.userName
+//        } else {
         
+//        }
+        //        chatVc.receiever = FirebaseService.firebaseSerivce.userRef.authData.uid
         
     }
     
     
-    
-    func filterUsers(){
+    @IBAction func ViewProfile(sender: AnyObject) {
+        
+        
+    }
+    @IBAction func DirectMessageButton(sender: AnyObject) {
+        
+        let cell = sender.superview!!.superview as! ActivityTableViewCell
+
         for user in users {
-            if user.userGender == filterGender {
-                filteredUsers.append(user)
-                activityTableView?.reloadData()
-                print("Users reloading")
+            if "\(user.userName), \(user.userAge), \(user.userGender)" == cell.nameAgeLabel.text {
+                self.receieverKey = user.userKey
+                print("\(user.userKey)")
+                performSegueWithIdentifier("DirectMessageSegue", sender: nil)
             }
         }
         
-        
-        
-        
+
     }
     
-    // DataSource
+    // MARK : TABLEVIEW DELEGATE
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
     }
@@ -88,11 +107,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             return users.count
         }
-        
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 363.0;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -106,10 +120,14 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             cell.nameAgeLabel.text = "\(user.userName), \(user.userAge), \(user.userGender)"
             cell.photoImageView.image = conversion(user.userPhoto)
         }
+        
         return cell
         
     }
     
+    
+    
+    //    MARK : PICKER VIEW
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 101 {
             return genderOption.count
@@ -137,16 +155,12 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             distanceTextField.text = distanceOption[row]
         }
         print("Users picked")
-        
+        filterUsers()
         self.activityTableView.reloadData()
         self.view.endEditing(true)
-        
-        
-        
-        
-        
     }
     //        MARK : CUSTOM FUNC
+    //    MARK : CUSTOM BUTTONS
     func buttons() {
         let menuItemImage = UIImage(named: "bg-menuitem")!
         let menuItemHighlitedImage = UIImage(named: "bg-menuitem-highlighted")!
@@ -156,28 +170,17 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         let soccerImage = UIImage(named: "gamepadc40")!
         let bowlingImage = UIImage(named: "dogc40")!
         
-        
         let menuItem1 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: basketballImage)
-        
         let menuItem2 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: baseballImage)
-        
         let menuItem3 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: volleyballImage)
-        
         let menuItem4 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: soccerImage)
-        
         let menuItem5 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: bowlingImage)
-        
-        
-        
-        
-        
         let items = [menuItem1, menuItem2, menuItem3, menuItem4, menuItem5]
         
         let startItem = PathMenuItem(image: UIImage(named: "bg-addbutton")!,
                                      highlightedImage: UIImage(named: "bg-addbutton-highlighted"),
                                      contentImage: UIImage(named: "icon-plus"),
                                      highlightedContentImage: UIImage(named: "icon-plus-highlighted"))
-        
         let menu = PathMenu(frame: view.bounds, startItem: startItem, items: items)
         menu.delegate = self
         menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width/2, view.frame.size.height - 30.0)
@@ -188,12 +191,11 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         menu.nearRadius     = 90.0
         menu.endRadius      = 80.0
         menu.animationDuration = 0.5
-        
         view.addSubview(menu)
         view.backgroundColor = UIColor(red:0.96, green:0.94, blue:0.92, alpha:1)
         
     }
-    
+    //    MARK : LOAD ALL USERS / NO FILTERS
     func loadUsers() {
         FirebaseService.firebaseSerivce.FirebaseUserRef.observeEventType(.Value, withBlock: { snapshot in
             self.users = []
@@ -203,18 +205,27 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
                         let key = snap.key
                         let user = User(key: key, dictionary: userDictionary)
                         self.users.insert(user, atIndex: 0)
-                        
                     }
                 }
             }
             print("Total Number of Registered Users: \(self.users.count.description)")
             print("Total Number of Filtered Users: \(self.filteredUsers.count.description)")
-            
             self.filterUsers()
             self.activityTableView.reloadData()
         })
     }
     
+    func filterUsers(){
+        for user in users {
+            if user.userGender == genderTextField.text {
+                filteredUsers.append(user)
+                activityTableView?.reloadData()
+                print("Users reloading")
+            }
+        }
+    }
+    
+    //    MARK : PHOTO STRING -> IMAGE / CONVERSION
     func conversion(photo: String) -> UIImage {
         let imageData = NSData(base64EncodedString: photo, options: [] )
         let image = UIImage(data: imageData!)
@@ -230,32 +241,23 @@ extension ActivityViewController: PathMenuDelegate {
     func pathMenu(menu: PathMenu, didSelectIndex idx: Int) {
         print("Select the index : \(idx)")
     }
-    
     func pathMenuWillAnimateOpen(menu: PathMenu) {
         print("Menu will open")
     }
-    
     func pathMenuWillAnimateClose(menu: PathMenu) {
         print("Menu will close")
     }
-    
     func pathMenuDidFinishAnimationOpen(menu: PathMenu) {
         print("Menu was open")
     }
-    
     func pathMenuDidFinishAnimationClose(menu: PathMenu) {
         print("Menu was closed")
     }
-    
     func doneButton() {
         genderTextField.resignFirstResponder()
     }
-    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
-    
-    
-    
 }
 

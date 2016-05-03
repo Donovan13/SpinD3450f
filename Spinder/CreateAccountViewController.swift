@@ -9,8 +9,9 @@
 import UIKit
 import CoreImage
 import Firebase
+import CoreLocation
 
-class CreateAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
+class CreateAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -20,9 +21,9 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var homeTownTextFiled: UITextField!
+    @IBOutlet weak var zipCodeTextFiled: UITextField!
     
-    
+    var locationManager = CLLocationManager()
     var genderPickerView = UIPickerView()
     let agePickerView = UIPickerView()
     
@@ -31,6 +32,8 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
         
         genderPickerView.delegate = self
         genderPickerView.tag = 201
@@ -87,6 +90,28 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         userDescriptionTextView.text = ""
     }
     
+    @IBAction func currentLocation(sender: AnyObject) {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.first
+        if location?.verticalAccuracy < 100 && location?.horizontalAccuracy < 100 {
+            reverseGeodcode(location!)
+            locationManager.stopUpdatingLocation()
+        }
+    }
+    func reverseGeodcode(location:CLLocation) {
+        let geoCoder = CLGeocoder()
+        geoCoder.reverseGeocodeLocation(location) { (placemarks:[CLPlacemark]?, error:NSError?) in
+            let placemark = placemarks?.first
+
+            self.zipCodeTextFiled.text = placemark?.postalCode
+        }
+        
+    }
     
     @IBAction func backButtonTapped(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -101,9 +126,9 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         let gender = genderTextField.text
         let photo = profileImageView.image
         let description = userDescriptionTextView.text
-        let homeTown = homeTownTextFiled.text
+        let zipCode = zipCodeTextFiled.text
         
-        if name != "" && email != "" && password != "" && age != "" && gender != "" && homeTown != "" && photo != nil {
+        if name != "" && email != "" && password != "" && age != "" && gender != "" && zipCode != "" && photo != nil {
             if password == confirmPassword {
                     FirebaseService.firebaseSerivce.FirebaseRef.createUser(email, password: password) { (error, result) in
                         if error != nil {
@@ -111,12 +136,16 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                             self.errorAlert("Oops! Something went wrong", message: "please try again")
                         } else {
                             FirebaseService.firebaseSerivce.FirebaseRef.authUser(email, password: password, withCompletionBlock: { (error, authData) in
-                                let user = ["profilePicture": self.coversion(photo!), "email": email!, "name": name!, "age": age!, "gender": gender!, "description": description!, "homeTown": homeTown!]
+                                if error != nil {
+                                    print("Account created but not logged in :\(error)")
+                                } else {
+                                let user = ["profilePicture": self.coversion(photo!), "email": email!, "name": name!, "age": age!, "gender": gender!, "description": description!, "zipCode": zipCode!]
                                 FirebaseService.firebaseSerivce.createNewAccount(authData.uid, user: user)
-                                self.performSegueWithIdentifier("createAccountSegue", sender: self)
+                                  self.dismissViewControllerAnimated(true, completion: nil)
+//                                self.performSegueWithIdentifier("createProfileSegue", sender: self)
+                                }
                             })
                         }
-    
                 }
             } else {
                 errorAlert("Password Does Not Match", message: "Please check your password")

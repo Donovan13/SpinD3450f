@@ -15,6 +15,7 @@ class FirebaseService {
     
     var ref = Firebase(url: "https://spinder.firebaseio.com/")
     var userRef = Firebase(url: "https://spinder.firebaseio.com/users")
+    var activeUserRef = Firebase(url: "https://spinder.firebaseio.com/activeUsers")
     
     var FirebaseRef: Firebase {
         return ref
@@ -22,6 +23,10 @@ class FirebaseService {
     
     var FirebaseUserRef: Firebase {
         return userRef
+    }
+    
+    var FirebaseActiveUserRef: Firebase {
+        return activeUserRef
     }
     
     var currentUserRef: Firebase {
@@ -32,6 +37,11 @@ class FirebaseService {
     
     func createNewAccount(uid: String, user: Dictionary<String, String>) {
         userRef.childByAppendingPath(uid).setValue(user)
+    }
+    
+    func postActiveUser(post: Dictionary<String,AnyObject>) {
+        let firebaseNewPost = FirebaseActiveUserRef.childByAutoId()
+        firebaseNewPost.setValue(post)
     }
 }
 

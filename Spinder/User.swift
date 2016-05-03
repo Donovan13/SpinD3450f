@@ -21,10 +21,15 @@ class User {
     private var _userPhoto: String!
     private var _userDescription: String!
     private var _userGender: String!
-    private var _userHomeTown: String!
+    private var _userZipCode: String!
+//    private var _userActivity: String!
+//    private var _activityDetail: String!
+//    private var _currentLocation: [String]!
 
     
-    
+    var userKey: String {
+        return _userKey
+    }
     
     var userName: String {
         return _userName
@@ -46,9 +51,21 @@ class User {
         return _userDescription
     }
     
-    var userHomeTown: String {
-        return _userHomeTown
+    var userZipCode: String {
+        return _userZipCode
     }
+    
+//    var userActivity: String {
+//        return _userActivity
+//    }
+//    
+//    var activityDetail: String {
+//        return _activityDetail
+//    }
+//    
+//    var currentLocation: [String] {
+//        return _currentLocation
+//    }
     
     
     init(key: String, dictionary: Dictionary<String, AnyObject>) {
@@ -69,14 +86,18 @@ class User {
         if let gender = dictionary["gender"] as? String {
             self._userGender = gender
         }
-        if let homeTown = dictionary["homeTown"] as? String {
-            self._userHomeTown = homeTown
+        if let zipCode = dictionary["zipCode"] as? String {
+            self._userZipCode = zipCode
         }
         
         self.userRef = FirebaseService.firebaseSerivce.userRef.childByAppendingPath(self._userKey)
     }
     
-    
+//    init(activity: String, detail: String) {
+//        
+//    }
+//    
+//    
     
     
     
