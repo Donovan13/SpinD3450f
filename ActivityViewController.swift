@@ -23,6 +23,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     var lastOffsetY :CGFloat = 0
     var hamburgerView: HamburgerView?
     var receieverKey = String()
+    var receieverName = String()
     
     
     
@@ -34,7 +35,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         filterUsers()
         
         // Side Menu
-        navigationController!.navigationBar.clipsToBounds = true
+     //  navigationController!.navigationBar.clipsToBounds = true
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ActivityViewController.hamburgerViewTapped))
         hamburgerView = HamburgerView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
@@ -68,17 +69,14 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             let chatVc = segue.destinationViewController as! ChatViewController
             chatVc.senderId = FirebaseService.firebaseSerivce.currentUserRef.authData.uid
             chatVc.senderDisplayName = ""
-            chatVc.receiever = receieverKey
+            chatVc.receieverID = receieverKey
+            chatVc.receieverName = receieverName
             print(receieverKey)
         } else {
         }
     }
     
     
-    @IBAction func ViewProfile(sender: AnyObject) {
-        
-        
-    }
     @IBAction func DirectMessageButton(sender: AnyObject) {
         
         let cell = sender.superview!!.superview as! ActivityTableViewCell
@@ -86,6 +84,8 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         for user in users {
             if "\(user.userName), \(user.userAge), \(user.userGender)" == cell.nameAgeLabel.text {
                 self.receieverKey = user.userKey
+                self.receieverName = user.userName
+                
                 print("\(user.userKey)")
                 performSegueWithIdentifier("DirectMessageSegue", sender: nil)
             }

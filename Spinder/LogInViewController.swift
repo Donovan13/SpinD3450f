@@ -88,8 +88,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+//    override func prefersStatusBarHidden() -> Bool {
+//        return false
+//    }
 }
 

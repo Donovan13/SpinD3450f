@@ -12,7 +12,7 @@ import Firebase
 
 
 class ChatViewController: JSQMessagesViewController {
-
+    
     
     var messages = [JSQMessage]()
     var outgoingBubbleImageView: JSQMessagesBubbleImage!
@@ -22,7 +22,8 @@ class ChatViewController: JSQMessagesViewController {
     
     var currentUser:Dictionary<String, AnyObject>?
     var name: String!
-    var receiever: String!
+    var receieverID: String!
+    var receieverName: String!
     
     
     
@@ -41,7 +42,7 @@ class ChatViewController: JSQMessagesViewController {
         super.viewDidAppear(animated)
         observeMessages()
     }
-//    MARK : JSQCollectionView Delegate
+    //    MARK : JSQCollectionView Delegate
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
         return messages[indexPath.item]
     }
@@ -49,7 +50,7 @@ class ChatViewController: JSQMessagesViewController {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return messages.count
     }
-//    MARK : Message Bubble Colors
+    //    MARK : Message Bubble Colors
     private func setupBubbles() {
         let factory = JSQMessagesBubbleImageFactory()
         outgoingBubbleImageView = factory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
@@ -57,7 +58,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     
-//    MARK : Set Bubble Image
+    //    MARK : Set Bubble Image
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
         let message = messages[indexPath.item]
         if message.senderId == senderId {
@@ -67,12 +68,12 @@ class ChatViewController: JSQMessagesViewController {
         }
     }
     
-//    MARK : DO NOT DISPLAY AVATER
+    //    MARK : DO NOT DISPLAY AVATER
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         return nil
     }
     
-//    MARK : SET TEXT COLOR
+    //    MARK : SET TEXT COLOR
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell
         let message = messages[indexPath.item]
@@ -94,7 +95,7 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         let itemRef = messageRef.childByAutoId()
-        let messageItem = ["text": text, "senderId": senderId, "name": name, "receieverName": receiever]
+        let messageItem = ["text": text, "senderId": senderId, "senderName": name, "receieverId": receieverID, "receieverName": receieverName]
         itemRef.setValue(messageItem)
         
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
@@ -104,14 +105,13 @@ class ChatViewController: JSQMessagesViewController {
     private func observeMessages() {
         let messagesQuery = messageRef.queryLimitedToLast(25)
         messagesQuery.observeEventType(.ChildAdded) { (snapshot: FDataSnapshot!) in
-            if (snapshot.value["senderId"] as! String) == (NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String) || (snapshot.value["senderId"] as! String) == self.receiever {
+            if (snapshot.value["senderId"] as! String) == (NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String) || (snapshot.value["senderId"] as! String) == self.receieverID {
                 let id = snapshot.value["senderId"] as! String
-            let text = snapshot.value["text"] as! String
-            self.addMessage(id, text: text)
-            
-            self.finishReceivingMessage()
+                let text = snapshot.value["text"] as! String
+                self.addMessage(id, text: text)
+                
+                self.finishReceivingMessage()
             }
-            
         }
     }
     
