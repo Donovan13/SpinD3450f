@@ -60,7 +60,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     self.userDefault.setValue(authData.uid, forKey: "uid")
                     print("\(authData.uid)")
 //                    print(FirebaseService.firebaseSerivce.currentUserRef)
-                    self.performSegueWithIdentifier("loginSegue", sender: self)
+                    self.performSegueWithIdentifier("LogInSeuge", sender: self)
                 }
             }
         } else {

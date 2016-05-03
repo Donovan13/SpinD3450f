@@ -11,23 +11,17 @@ import Firebase
 
 var currentUsername: String!
 
-class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     @IBOutlet weak var genderTextField: UITextField!
-    @IBOutlet weak var distanceTextField: UITextField!
     
     @IBOutlet weak var activityTableView: ActivityTableView!
-    var genderPickerView = UIPickerView()
-    let agePickerView = UIPickerView()
-    let distancePickerView = UIPickerView()
-    var toolBar = UIToolbar()
-    var genderOption = ["Male", "Female"]
-    var distanceOption = ["Within 1 Miles", "Within 2 Miles", "Within 3 Miles", "Within 4 Miles", "Within 5 Miles"]
-    var activity = ["Fitness", "Sports", "Gaming", "Dog Walks", "Coding"]
     var users = [User]()
-    var chatUser = []
     var filterGender = String()
     var filteredUsers = [User]()
+    var locationRef: Firebase!
+    var lastOffsetY :CGFloat = 0
+    var hamburgerView: HamburgerView?
     var receieverKey = String()
     
     
@@ -37,43 +31,47 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         
         loadUsers()
-        buttons()
         filterUsers()
         
-        genderPickerView.showsSelectionIndicator = true
-        toolBar.barStyle = UIBarStyle.Default
-        genderPickerView.delegate = self
-        genderPickerView.dataSource = self
-        distancePickerView.delegate = self
-        genderPickerView.tag = 101
-        distancePickerView.tag = 102
-        genderTextField.inputView = genderPickerView
-        genderTextField.inputAccessoryView = toolBar
-        distanceTextField.inputView = distancePickerView
+        // Side Menu
+        navigationController!.navigationBar.clipsToBounds = true
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ActivityViewController.hamburgerViewTapped))
+        hamburgerView = HamburgerView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        hamburgerView!.addGestureRecognizer(tapGestureRecognizer)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)
+    }
+    
+    func hamburgerViewTapped() {
+        let navigationController = parentViewController as! UINavigationController
+        let containerViewController = navigationController.parentViewController as! ContainerViewController
+        containerViewController.hideOrShowMenu(!containerViewController.showingMenu, animated: true)
+    }
+    
+    var menuItem: NSDictionary? {
+        didSet {
+            if let newMenuItem = menuItem {
+                view.backgroundColor = UIColor(colorArray: newMenuItem["colors"] as! NSArray)
+            }
+        }
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView){
+        lastOffsetY = scrollView.contentOffset.y
     }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         if segue.identifier == "DirectMessageSegue" {
-            let naVc = segue.destinationViewController as! UINavigationController
-            let chatVc = naVc.viewControllers.first as! ChatViewController
+
+            let chatVc = segue.destinationViewController as! ChatViewController
             chatVc.senderId = FirebaseService.firebaseSerivce.currentUserRef.authData.uid
             chatVc.senderDisplayName = ""
             chatVc.receiever = receieverKey
             print(receieverKey)
-            
-//            let button = sender as! UIButton
-//            let cell = button.superview as! ActivityTableViewCell
-//            let indexPath = self.activityTableView.indexPathForCell(cell)
-//            let user = self.users[indexPath!.row]
-//            chatVc.receiever = user.userName
         } else {
-        
         }
-        //        chatVc.receiever = FirebaseService.firebaseSerivce.userRef.authData.uid
-        
     }
     
     
@@ -125,77 +123,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    
-    
-    //    MARK : PICKER VIEW
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView.tag == 101 {
-            return genderOption.count
-        } else if pickerView.tag == 102 {
-            return distanceOption.count
-        }
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView.tag == 101 {
-            return genderOption[row]
-        } else if pickerView.tag == 102 {
-            return distanceOption[row]
-        }
-        
-        return " "
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        if pickerView.tag == 101 {
-            genderTextField.text = genderOption[row]
-        } else if pickerView.tag == 102 {
-            distanceTextField.text = distanceOption[row]
-        }
-        print("Users picked")
-        filterUsers()
-        self.activityTableView.reloadData()
-        self.view.endEditing(true)
-    }
-    //        MARK : CUSTOM FUNC
-    //    MARK : CUSTOM BUTTONS
-    func buttons() {
-        let menuItemImage = UIImage(named: "bg-menuitem")!
-        let menuItemHighlitedImage = UIImage(named: "bg-menuitem-highlighted")!
-        let basketballImage = UIImage(named: "footballc40")!
-        let baseballImage = UIImage(named: "bikec40")!
-        let volleyballImage = UIImage(named: "weightsc40")!
-        let soccerImage = UIImage(named: "gamepadc40")!
-        let bowlingImage = UIImage(named: "dogc40")!
-        
-        let menuItem1 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: basketballImage)
-        let menuItem2 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: baseballImage)
-        let menuItem3 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: volleyballImage)
-        let menuItem4 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: soccerImage)
-        let menuItem5 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: bowlingImage)
-        let items = [menuItem1, menuItem2, menuItem3, menuItem4, menuItem5]
-        
-        let startItem = PathMenuItem(image: UIImage(named: "bg-addbutton")!,
-                                     highlightedImage: UIImage(named: "bg-addbutton-highlighted"),
-                                     contentImage: UIImage(named: "icon-plus"),
-                                     highlightedContentImage: UIImage(named: "icon-plus-highlighted"))
-        let menu = PathMenu(frame: view.bounds, startItem: startItem, items: items)
-        menu.delegate = self
-        menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width/2, view.frame.size.height - 30.0)
-        menu.menuWholeAngle = (CGFloat(M_PI) - CGFloat(M_PI/5))
-        menu.rotateAngle    = -CGFloat(M_PI_2) + CGFloat(M_PI/5) * 1/2
-        menu.timeOffset     = 0.05
-        menu.farRadius      = 110.0
-        menu.nearRadius     = 90.0
-        menu.endRadius      = 80.0
-        menu.animationDuration = 0.5
-        view.addSubview(menu)
-        view.backgroundColor = UIColor(red:0.96, green:0.94, blue:0.92, alpha:1)
-        
-    }
-    //    MARK : LOAD ALL USERS / NO FILTERS
+       //    MARK : LOAD ALL USERS / NO FILTERS
     func loadUsers() {
         FirebaseService.firebaseSerivce.FirebaseUserRef.observeEventType(.Value, withBlock: { snapshot in
             self.users = []
@@ -217,7 +145,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     func filterUsers(){
         for user in users {
-            if user.userGender == genderTextField.text {
+            if user.userGender == "" {
                 filteredUsers.append(user)
                 activityTableView?.reloadData()
                 print("Users reloading")
@@ -233,31 +161,11 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
+    @IBAction func dismiss(segue: UIStoryboardSegue) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
 }
 
-extension ActivityViewController: PathMenuDelegate {
-    func pathMenu(menu: PathMenu, didSelectIndex idx: Int) {
-        print("Select the index : \(idx)")
-    }
-    func pathMenuWillAnimateOpen(menu: PathMenu) {
-        print("Menu will open")
-    }
-    func pathMenuWillAnimateClose(menu: PathMenu) {
-        print("Menu will close")
-    }
-    func pathMenuDidFinishAnimationOpen(menu: PathMenu) {
-        print("Menu was open")
-    }
-    func pathMenuDidFinishAnimationClose(menu: PathMenu) {
-        print("Menu was closed")
-    }
-    func doneButton() {
-        genderTextField.resignFirstResponder()
-    }
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-}
 
