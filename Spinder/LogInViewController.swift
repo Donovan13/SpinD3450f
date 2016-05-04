@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import MediaPlayer
+import AVKit
 
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
@@ -17,33 +19,52 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     
+    @IBOutlet var pageContol: UIPageControl!
+    @IBOutlet var backgroundView: UIView!
+    @IBOutlet var firstLabel: UILabel!
+    @IBOutlet var secondLabel: UILabel!
+
+    
     //    MARK : VARIABLES AND LET S
     let userDefault = NSUserDefaults.standardUserDefaults()
+    
+    var images: [UIImage] = []
+    var image1 = UIImage(named: "firstMessage.png")
+    var image2 = UIImage(named: "secondMessage.png")
+    var image3 = UIImage(named: "thirdMessage.png")
+    
+    var textHeadingArray = ["Hello Chicago!", "New friends await!", "Time to login!"]
+    var textContentArray = ["So much to see!", "Dont be shy!", "Go have fun!!"]
+    
+    var moviePlayerController = MPMoviePlayerController()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let item1 = ParallaxItem(image: UIImage(named: "image1")!, text: "Go run with someone!")
-        let item2 = ParallaxItem(image: UIImage(named: "image2")!, text: "Puppy Play Date!")
-        let item3 = ParallaxItem(image: UIImage(named: "image3")!, text: "Beach games with new friends!!")
-        let item4 = ParallaxItem(image: UIImage(named: "image4")!, text: "Walk your baby with another mom! Woo!!")
+
+        let filePath = NSBundle.mainBundle().pathForResource("black", ofType: "mp4")
+        print("\(filePath)")
         
+        self.moviePlayerController.contentURL = NSURL.fileURLWithPath(filePath!)
+        self.moviePlayerController.prepareToPlay()
+        self.moviePlayerController.view.frame = UIScreen.mainScreen().bounds
         
+        self.moviePlayerController.controlStyle = .None
+        self.moviePlayerController.scalingMode = MPMovieScalingMode.Fill
+        self.moviePlayerController.repeatMode = MPMovieRepeatMode.One
+        self.backgroundView.addSubview(self.moviePlayerController.view)
         
-        let ParallaxViewController = Parallax(items: [item1, item2, item3, item4], motion: false)
-        ParallaxViewController.completionHandler = {
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                ParallaxViewController.view.alpha = 0.0
-            })
-        }
+        let leftswap = UISwipeGestureRecognizer(target: self, action: #selector(LogInViewController.handleSwap(_:)))
+        let rightswap = UISwipeGestureRecognizer(target: self, action: #selector(LogInViewController.handleSwap(_:)))
         
-        // Adding parallax view controller.
-        self.addChildViewController(ParallaxViewController)
-        self.view.addSubview(ParallaxViewController.view)
-        ParallaxViewController.didMoveToParentViewController(self)
+        leftswap.direction = .Left
+        rightswap.direction = .Right
+        view.addGestureRecognizer(leftswap)
+        view.addGestureRecognizer(rightswap)
+        
         
 //        print("\(FirebaseService.firebaseSerivce.currentUserRef.authData)")
-
 //        print("\(FirebaseService.firebaseSerivce.currentUserRef)")
     }
     
@@ -68,6 +89,26 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func handleSwap(sender:UISwipeGestureRecognizer){
+        if(sender.direction == .Left){
+            pageContol.currentPage += 1
+            firstLabel.text = textHeadingArray[pageContol.currentPage]
+            secondLabel.text = textContentArray[pageContol.currentPage]
+            
+        }
+        
+        if(sender.direction == .Right){
+            pageContol.currentPage -= 1
+            firstLabel.text = textHeadingArray[pageContol.currentPage]
+            secondLabel.text = textContentArray[pageContol.currentPage]
+        }
+    }
+    
+    @IBAction func slideTheScreen(sender: AnyObject) {
+        firstLabel.text = textHeadingArray[pageContol.currentPage]
+        secondLabel.text = textContentArray[pageContol.currentPage]
+    }
+    
     //    MARK : TEXTFIELD DELEGATE
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if emailTextField.isFirstResponder() {
@@ -88,8 +129,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-//    override func prefersStatusBarHidden() -> Bool {
-//        return false
-//    }
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 }
 

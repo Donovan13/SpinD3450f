@@ -12,6 +12,7 @@ import Firebase
 import CoreLocation
 
 class CreateAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, CLLocationManagerDelegate {
+
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -38,6 +39,25 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         genderPickerView.delegate = self
         genderPickerView.tag = 201
         genderTextField.inputView = genderPickerView
+     
+        let item1 = ParallaxItem(image: UIImage(named: "image1")!, text: "Go run with someone!")
+        let item2 = ParallaxItem(image: UIImage(named: "image2")!, text: "Puppy Play Date!")
+        let item3 = ParallaxItem(image: UIImage(named: "image3")!, text: "Beach games with new friends!!")
+        let item4 = ParallaxItem(image: UIImage(named: "image4")!, text: "Walk your baby with another mom! Woo!!")
+        
+        
+        
+        let ParallaxViewController = Parallax(items: [item1, item2, item3, item4], motion: false)
+        ParallaxViewController.completionHandler = {
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                ParallaxViewController.view.alpha = 0.0
+            })
+        }
+        
+        // Adding parallax view controller.
+        self.addChildViewController(ParallaxViewController)
+        self.view.addSubview(ParallaxViewController.view)
+        ParallaxViewController.didMoveToParentViewController(self)
         
     }
     

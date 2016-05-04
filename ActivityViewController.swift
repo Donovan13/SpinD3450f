@@ -13,7 +13,7 @@ var currentUsername: String!
 
 class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
-
+    @IBOutlet weak var messagesButton: BadgeButton!
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var activityTableView: ActivityTableView!
     
@@ -35,7 +35,9 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         loadUsers()
         filterUsers()
 
-
+        messagesButton.badgeString = "19"
+        messagesButton.badgeTextColor = UIColor.whiteColor()
+        messagesButton.badgeEdgeInsets = UIEdgeInsetsMake(10, 6, 0, 0)
         
         
         // Side Menu
