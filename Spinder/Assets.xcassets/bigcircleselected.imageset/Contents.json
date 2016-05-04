@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "basketball32.png",
+      "filename" : "bigcircleselected.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "basketball-player-scoring.png",
       "scale" : "2x"
     },
     {

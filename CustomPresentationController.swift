@@ -73,8 +73,7 @@ class CustomPresentationController: UIPresentationController {
         
         // We don't want the presented view to fill the whole container view, so inset it's frame
         var frame = containerView.bounds;
-        frame = CGRectInset(frame, 50.0, 200.0)
-        
+        frame = CGRectInset(frame, frame.width/8, frame.height/7)
         return frame
     }
     

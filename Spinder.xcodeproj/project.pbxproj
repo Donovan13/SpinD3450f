@@ -18,13 +18,16 @@
 		09CBA2B21CC97916002BF15E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CBA2B11CC97916002BF15E /* CoreLocation.framework */; };
 		09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D570291CC59BF100442D07 /* CoreImage.framework */; };
 		09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5702D1CC5A43F00442D07 /* SpinderCell.swift */; };
+		09E20E921CD9578C00D6F25F /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E20E901CD9578C00D6F25F /* PathMenu.swift */; };
+		09E20E931CD9578C00D6F25F /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E20E911CD9578C00D6F25F /* PathMenuItem.swift */; };
+		09E20E961CD9579400D6F25F /* LoginParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E20E941CD9579400D6F25F /* LoginParallax.swift */; };
+		09E20E971CD9579400D6F25F /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E20E951CD9579400D6F25F /* ParallaxItem.swift */; };
+		09E20E991CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09E20E981CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf */; };
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
 		7B2A71C41CD5621E00C55FAA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C31CD5621E00C55FAA /* PostViewController.swift */; };
 		7B2A71C61CD69C8E00C55FAA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */; };
 		7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* User.swift */; };
 		7B9F88B91CD280B300845CDF /* Pods_Spinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */; };
-		7B9F88C01CD286EF00845CDF /* LoginParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BE1CD286EF00845CDF /* LoginParallax.swift */; };
-		7B9F88C11CD286EF00845CDF /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BF1CD286EF00845CDF /* ParallaxItem.swift */; };
 		7BC779A51CD70430002E256A /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779A41CD70430002E256A /* ActiveUser.swift */; };
 		7BC779A81CD91102002E256A /* CustomPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779A61CD91102002E256A /* CustomPresentationAnimationController.swift */; };
 		7BC779A91CD91102002E256A /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779A71CD91102002E256A /* CustomPresentationController.swift */; };
@@ -34,8 +37,6 @@
 		7BC779B41CD9114C002E256A /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779AE1CD9114C002E256A /* MenuItemCell.swift */; };
 		7BC779B51CD9114C002E256A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779AF1CD9114C002E256A /* MenuViewController.swift */; };
 		7BC779B61CD9114C002E256A /* MenuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BC779B01CD9114C002E256A /* MenuItems.plist */; };
-		7BC779B91CD9118E002E256A /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779B71CD9118E002E256A /* PathMenu.swift */; };
-		7BC779BA1CD9118E002E256A /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779B81CD9118E002E256A /* PathMenuItem.swift */; };
 		7BC779BC1CD916AA002E256A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC779BB1CD916AA002E256A /* MainStoryboard.storyboard */; };
 		7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,13 +55,16 @@
 		09CBA2B11CC97916002BF15E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		09D570291CC59BF100442D07 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		09D5702D1CC5A43F00442D07 /* SpinderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpinderCell.swift; path = Spinder/SpinderCell.swift; sourceTree = "<group>"; };
+		09E20E901CD9578C00D6F25F /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathMenu.swift; path = Spinder/PathMenu.swift; sourceTree = SOURCE_ROOT; };
+		09E20E911CD9578C00D6F25F /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathMenuItem.swift; path = Spinder/PathMenuItem.swift; sourceTree = SOURCE_ROOT; };
+		09E20E941CD9579400D6F25F /* LoginParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginParallax.swift; path = Spinder/LoginParallax.swift; sourceTree = SOURCE_ROOT; };
+		09E20E951CD9579400D6F25F /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParallaxItem.swift; path = Spinder/ParallaxItem.swift; sourceTree = SOURCE_ROOT; };
+		09E20E981CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "linotypezapfino-one_[allfont.net].ttf"; sourceTree = "<group>"; };
 		7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Spinder/FirebaseService.swift; sourceTree = "<group>"; };
 		7B2A71C31CD5621E00C55FAA /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7B31D63C1CC7DD4B0066AFA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spinder/User.swift; sourceTree = "<group>"; };
 		7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Spinder.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/Pods_Spinder.framework"; sourceTree = "<group>"; };
-		7B9F88BE1CD286EF00845CDF /* LoginParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginParallax.swift; sourceTree = "<group>"; };
-		7B9F88BF1CD286EF00845CDF /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxItem.swift; sourceTree = "<group>"; };
 		7BC779A41CD70430002E256A /* ActiveUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
 		7BC779A61CD91102002E256A /* CustomPresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationAnimationController.swift; sourceTree = "<group>"; };
 		7BC779A71CD91102002E256A /* CustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
@@ -70,8 +74,6 @@
 		7BC779AE1CD9114C002E256A /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		7BC779AF1CD9114C002E256A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7BC779B01CD9114C002E256A /* MenuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuItems.plist; sourceTree = "<group>"; };
-		7BC779B71CD9118E002E256A /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenu.swift; sourceTree = "<group>"; };
-		7BC779B81CD9118E002E256A /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenuItem.swift; sourceTree = "<group>"; };
 		7BC779BB1CD916AA002E256A /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E9C0BB779281BDAC1466E757 /* Pods-Spinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spinder/Pods-Spinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,8 +97,8 @@
 		096014171CD11A1A00F6ABAD /* Animated Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				7BC779B71CD9118E002E256A /* PathMenu.swift */,
-				7BC779B81CD9118E002E256A /* PathMenuItem.swift */,
+				09E20E901CD9578C00D6F25F /* PathMenu.swift */,
+				09E20E911CD9578C00D6F25F /* PathMenuItem.swift */,
 			);
 			name = "Animated Buttons";
 			path = /Users/mingu/Desktop/SpinderFB/SpinderFB;
@@ -105,8 +107,8 @@
 		0960141C1CD11A2C00F6ABAD /* Parallax Effect */ = {
 			isa = PBXGroup;
 			children = (
-				7B9F88BE1CD286EF00845CDF /* LoginParallax.swift */,
-				7B9F88BF1CD286EF00845CDF /* ParallaxItem.swift */,
+				09E20E941CD9579400D6F25F /* LoginParallax.swift */,
+				09E20E951CD9579400D6F25F /* ParallaxItem.swift */,
 			);
 			name = "Parallax Effect";
 			path = /Users/mingu/Desktop/SpinderFB/SpinderFB;
@@ -173,6 +175,7 @@
 		7BE369DC1CD27BFA00B4D987 /* Customs */ = {
 			isa = PBXGroup;
 			children = (
+				09E20E981CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf */,
 				7BC779A61CD91102002E256A /* CustomPresentationAnimationController.swift */,
 				7BC779A71CD91102002E256A /* CustomPresentationController.swift */,
 				096014221CD1249C00F6ABAD /* ActivityTableView.swift */,
@@ -273,6 +276,7 @@
 				096D20F41CC5351000FDE8D5 /* LaunchScreen.storyboard in Resources */,
 				7BC779BC1CD916AA002E256A /* MainStoryboard.storyboard in Resources */,
 				096D20F11CC5351000FDE8D5 /* Assets.xcassets in Resources */,
+				09E20E991CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,28 +337,28 @@
 			files = (
 				096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */,
 				7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */,
-				7BC779B91CD9118E002E256A /* PathMenu.swift in Sources */,
 				7BC779B11CD9114C002E256A /* ContainerViewController.swift in Sources */,
 				096014251CD1249C00F6ABAD /* ActivityTableViewCell.swift in Sources */,
 				7B2A71C41CD5621E00C55FAA /* PostViewController.swift in Sources */,
-				7BC779BA1CD9118E002E256A /* PathMenuItem.swift in Sources */,
 				09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */,
 				096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */,
 				7BC779B51CD9114C002E256A /* MenuViewController.swift in Sources */,
+				09E20E931CD9578C00D6F25F /* PathMenuItem.swift in Sources */,
 				7B2A71C61CD69C8E00C55FAA /* ProfileViewController.swift in Sources */,
+				09E20E921CD9578C00D6F25F /* PathMenu.swift in Sources */,
 				7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */,
 				7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */,
 				096014201CD11D8500F6ABAD /* ActivityViewController.swift in Sources */,
 				7BC779B21CD9114C002E256A /* Extensions.swift in Sources */,
+				09E20E961CD9579400D6F25F /* LoginParallax.swift in Sources */,
 				7BC779B41CD9114C002E256A /* MenuItemCell.swift in Sources */,
+				09E20E971CD9579400D6F25F /* ParallaxItem.swift in Sources */,
 				7BC779A91CD91102002E256A /* CustomPresentationController.swift in Sources */,
 				096014241CD1249C00F6ABAD /* ActivityTableView.swift in Sources */,
 				7BC779B31CD9114C002E256A /* HamburgerView.swift in Sources */,
-				7B9F88C01CD286EF00845CDF /* LoginParallax.swift in Sources */,
 				7BC779A51CD70430002E256A /* ActiveUser.swift in Sources */,
 				7BC779A81CD91102002E256A /* CustomPresentationAnimationController.swift in Sources */,
 				096D20EA1CC5351000FDE8D5 /* AppDelegate.swift in Sources */,
-				7B9F88C11CD286EF00845CDF /* ParallaxItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,9 +13,10 @@ var currentUsername: String!
 
 class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
+
     @IBOutlet weak var genderTextField: UITextField!
-    
     @IBOutlet weak var activityTableView: ActivityTableView!
+    
     var users = [User]()
     var filterGender = String()
     var filteredUsers = [User]()
@@ -33,6 +34,9 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
         loadUsers()
         filterUsers()
+
+
+        
         
         // Side Menu
      //  navigationController!.navigationBar.clipsToBounds = true
@@ -41,6 +45,9 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         hamburgerView = HamburgerView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         hamburgerView!.addGestureRecognizer(tapGestureRecognizer)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)
+    
+        
+        
     }
     
     func hamburgerViewTapped() {
