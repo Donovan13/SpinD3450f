@@ -28,12 +28,20 @@ class ActiveUser {
         userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as? String
         let activeUserRef = FirebaseService.firebaseSerivce.activeUserRef.childByAutoId()
         
-        userName = currentUsername
+        userName = currentUserName
+        userAge = currentUserAge
+        userPhoto = currentUserProfilePicture
+        userDescription = currentUserDescription
+        userGender = currentUserGender
+        userZipCode = currentUserZipcode
+        
+        
+        
         userActivity = activity
         activityDetail = detail
         
         userZipCode = "\(locationPlacemark?.postalCode!)"
-        currentLocation = CLLocationCoordinate2D(latitude: locationPlacemark!.location!.coordinate.latitude, longitude: locationPlacemark!.location!.coordinate.longitude)
+//        currentLocation = CLLocationCoordinate2D(latitude: locationPlacemark!.location!.coordinate.latitude, longitude: locationPlacemark!.location!.coordinate.longitude)
         
         let userDictionary = [
             "userID": userID!,
@@ -45,8 +53,8 @@ class ActiveUser {
             "zipCode" : userZipCode!,
             "userActivity" : userActivity!,
             "activityDetail" : activityDetail!,
-            "longitude" : currentLocation!.longitude as Double,
-            "latitude" : currentLocation.latitude as Double
+//            "longitude" : currentLocation!.longitude as Double,
+//            "latitude" : currentLocation.latitude as Double
             ]
         
             activeUserRef.setValue(userDictionary)
@@ -62,7 +70,7 @@ class ActiveUser {
         userZipCode = dictionary["zipCode"] as? String
         userActivity = dictionary["userActivity"] as? String
         activityDetail = dictionary["activityDetail"] as? String
-        currentLocation = dictionary["currentLocation"] as? CLLocationCoordinate2D
+//        currentLocation = dictionary["currentLocation"] as? CLLocationCoordinate2D
         
         
         

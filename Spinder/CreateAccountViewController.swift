@@ -162,7 +162,6 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                                 let user = ["profilePicture": self.coversion(photo!), "email": email!, "name": name!, "age": age!, "gender": gender!, "description": description!, "zipCode": zipCode!]
                                 FirebaseService.firebaseSerivce.createNewAccount(authData.uid, user: user)
                                   self.dismissViewControllerAnimated(true, completion: nil)
-//                                self.performSegueWithIdentifier("createProfileSegue", sender: self)
                                 }
                             })
                         }

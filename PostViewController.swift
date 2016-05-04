@@ -13,12 +13,26 @@ import CoreLocation
 class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate{
     var startItem: PathMenuItem?
     var locationMnager:CLLocationManager!
+    var activeUser:ActiveUser!
+    var currentUser = Dictionary<String, AnyObject>?()
+
     
+    @IBOutlet weak var activityTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         locationMnager = CLLocationManager()
         locationMnager.delegate = self
         buttons()
+        
+        print("\(currentUser)")
+        
+    }
+    
+    @IBAction func postButtonTapped(sender: AnyObject) {
+        self.activeUser = ActiveUser.init(activity: "", detail: activityTextView.text, locationPlacemark: nil)
+//       self.activeUser = ActiveUser.init(activity: "", detail: activityTextView.text, locationPlacemark: nil)
+        dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     

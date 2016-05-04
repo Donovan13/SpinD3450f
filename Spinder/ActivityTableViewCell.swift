@@ -13,7 +13,7 @@ class ActivityTableViewCell:UITableViewCell, ActivityTableViewTransform {
 ;
     
     @IBOutlet weak var activityDescription: UITextView!
-    @IBOutlet weak var nameAgeLabel: UILabel!
+    @IBOutlet weak var nameAgeLabel: UIButton!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var scaleView: UIView!
     override func prepareForReuse() {
