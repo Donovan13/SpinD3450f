@@ -50,6 +50,7 @@ class MenuViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("MenuItemCell") as! MenuItemCell
         let menuItem = menuItems[indexPath.row] as! NSDictionary
         cell.configureForMenuItem(menuItem)
+        
         return cell
     }
     
