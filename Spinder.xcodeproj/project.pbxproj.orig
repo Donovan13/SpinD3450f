@@ -15,30 +15,28 @@
 		096D20F11CC5351000FDE8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F01CC5351000FDE8D5 /* Assets.xcassets */; };
 		096D20F41CC5351000FDE8D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */; };
 		096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */; };
+		09B7A7271CD289D000EFD7CD /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A7251CD289D000EFD7CD /* PathMenu.swift */; };
+		09B7A7281CD289D000EFD7CD /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A7261CD289D000EFD7CD /* PathMenuItem.swift */; };
+		09B7A72B1CD289E400EFD7CD /* LoginParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A7291CD289E400EFD7CD /* LoginParallax.swift */; };
+		09B7A72C1CD289E400EFD7CD /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7A72A1CD289E400EFD7CD /* ParallaxItem.swift */; };
 		09CBA2B21CC97916002BF15E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CBA2B11CC97916002BF15E /* CoreLocation.framework */; };
 		09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D570291CC59BF100442D07 /* CoreImage.framework */; };
 		09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5702D1CC5A43F00442D07 /* SpinderCell.swift */; };
-		09E20E921CD9578C00D6F25F /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E20E901CD9578C00D6F25F /* PathMenu.swift */; };
-		09E20E931CD9578C00D6F25F /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E20E911CD9578C00D6F25F /* PathMenuItem.swift */; };
-		09E20E961CD9579400D6F25F /* LoginParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E20E941CD9579400D6F25F /* LoginParallax.swift */; };
-		09E20E971CD9579400D6F25F /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E20E951CD9579400D6F25F /* ParallaxItem.swift */; };
-		09E20E991CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09E20E981CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf */; };
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
-		7B280FE91CD99F7B009C4747 /* ViewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */; };
 		7B2A71C41CD5621E00C55FAA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C31CD5621E00C55FAA /* PostViewController.swift */; };
 		7B2A71C61CD69C8E00C55FAA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */; };
 		7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* User.swift */; };
 		7B9F88B91CD280B300845CDF /* Pods_Spinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */; };
+<<<<<<< HEAD
+		7B9F88BC1CD286DB00845CDF /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BA1CD286DB00845CDF /* PathMenu.swift */; };
+		7B9F88BD1CD286DB00845CDF /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BB1CD286DB00845CDF /* PathMenuItem.swift */; };
+		7B9F88C01CD286EF00845CDF /* LoginParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BE1CD286EF00845CDF /* LoginParallax.swift */; };
+		7B9F88C11CD286EF00845CDF /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F88BF1CD286EF00845CDF /* ParallaxItem.swift */; };
 		7BC779A51CD70430002E256A /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779A41CD70430002E256A /* ActiveUser.swift */; };
-		7BC779A81CD91102002E256A /* CustomPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779A61CD91102002E256A /* CustomPresentationAnimationController.swift */; };
-		7BC779A91CD91102002E256A /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779A71CD91102002E256A /* CustomPresentationController.swift */; };
-		7BC779B11CD9114C002E256A /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779AB1CD9114C002E256A /* ContainerViewController.swift */; };
-		7BC779B21CD9114C002E256A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779AC1CD9114C002E256A /* Extensions.swift */; };
-		7BC779B31CD9114C002E256A /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779AD1CD9114C002E256A /* HamburgerView.swift */; };
-		7BC779B41CD9114C002E256A /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779AE1CD9114C002E256A /* MenuItemCell.swift */; };
-		7BC779B51CD9114C002E256A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779AF1CD9114C002E256A /* MenuViewController.swift */; };
-		7BC779B61CD9114C002E256A /* MenuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BC779B01CD9114C002E256A /* MenuItems.plist */; };
-		7BC779BC1CD916AA002E256A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC779BB1CD916AA002E256A /* MainStoryboard.storyboard */; };
+=======
+		7BE369CF1CD1179400B4D987 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE369CE1CD1179400B4D987 /* Message.swift */; };
+>>>>>>> 0f08867949a2158e85a8f9879d8e10b5da8ac5f5
+		7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */; };
 		7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,30 +51,28 @@
 		096D20F31CC5351000FDE8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		096D20F51CC5351000FDE8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		096D213D1CC5958500FDE8D5 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Spinder/CreateAccountViewController.swift; sourceTree = "<group>"; };
+		09B7A7251CD289D000EFD7CD /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathMenu.swift; path = Spinder/PathMenu.swift; sourceTree = SOURCE_ROOT; };
+		09B7A7261CD289D000EFD7CD /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathMenuItem.swift; path = Spinder/PathMenuItem.swift; sourceTree = SOURCE_ROOT; };
+		09B7A7291CD289E400EFD7CD /* LoginParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginParallax.swift; path = Spinder/LoginParallax.swift; sourceTree = SOURCE_ROOT; };
+		09B7A72A1CD289E400EFD7CD /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParallaxItem.swift; path = Spinder/ParallaxItem.swift; sourceTree = SOURCE_ROOT; };
 		09CBA2B11CC97916002BF15E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		09D570291CC59BF100442D07 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		09D5702D1CC5A43F00442D07 /* SpinderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpinderCell.swift; path = Spinder/SpinderCell.swift; sourceTree = "<group>"; };
-		09E20E901CD9578C00D6F25F /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathMenu.swift; path = Spinder/PathMenu.swift; sourceTree = SOURCE_ROOT; };
-		09E20E911CD9578C00D6F25F /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathMenuItem.swift; path = Spinder/PathMenuItem.swift; sourceTree = SOURCE_ROOT; };
-		09E20E941CD9579400D6F25F /* LoginParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginParallax.swift; path = Spinder/LoginParallax.swift; sourceTree = SOURCE_ROOT; };
-		09E20E951CD9579400D6F25F /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParallaxItem.swift; path = Spinder/ParallaxItem.swift; sourceTree = SOURCE_ROOT; };
-		09E20E981CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "linotypezapfino-one_[allfont.net].ttf"; sourceTree = "<group>"; };
 		7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Spinder/FirebaseService.swift; sourceTree = "<group>"; };
-		7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileViewController.swift; sourceTree = "<group>"; };
 		7B2A71C31CD5621E00C55FAA /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7B31D63C1CC7DD4B0066AFA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spinder/User.swift; sourceTree = "<group>"; };
 		7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Spinder.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/Pods_Spinder.framework"; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		7B9F88BA1CD286DB00845CDF /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenu.swift; sourceTree = "<group>"; };
+		7B9F88BB1CD286DB00845CDF /* PathMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenuItem.swift; sourceTree = "<group>"; };
+		7B9F88BE1CD286EF00845CDF /* LoginParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginParallax.swift; sourceTree = "<group>"; };
+		7B9F88BF1CD286EF00845CDF /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxItem.swift; sourceTree = "<group>"; };
 		7BC779A41CD70430002E256A /* ActiveUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
-		7BC779A61CD91102002E256A /* CustomPresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationAnimationController.swift; sourceTree = "<group>"; };
-		7BC779A71CD91102002E256A /* CustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
-		7BC779AB1CD9114C002E256A /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		7BC779AC1CD9114C002E256A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		7BC779AD1CD9114C002E256A /* HamburgerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
-		7BC779AE1CD9114C002E256A /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
-		7BC779AF1CD9114C002E256A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		7BC779B01CD9114C002E256A /* MenuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuItems.plist; sourceTree = "<group>"; };
-		7BC779BB1CD916AA002E256A /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+=======
+		7BE369CE1CD1179400B4D987 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Spinder/Message.swift; sourceTree = "<group>"; };
+>>>>>>> 0f08867949a2158e85a8f9879d8e10b5da8ac5f5
+		7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E9C0BB779281BDAC1466E757 /* Pods-Spinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spinder/Pods-Spinder.debug.xcconfig"; sourceTree = "<group>"; };
 		F08A36530B80864884B40105 /* Pods-Spinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spinder/Pods-Spinder.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,8 +95,8 @@
 		096014171CD11A1A00F6ABAD /* Animated Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				09E20E901CD9578C00D6F25F /* PathMenu.swift */,
-				09E20E911CD9578C00D6F25F /* PathMenuItem.swift */,
+				09B7A7251CD289D000EFD7CD /* PathMenu.swift */,
+				09B7A7261CD289D000EFD7CD /* PathMenuItem.swift */,
 			);
 			name = "Animated Buttons";
 			path = /Users/mingu/Desktop/SpinderFB/SpinderFB;
@@ -109,8 +105,8 @@
 		0960141C1CD11A2C00F6ABAD /* Parallax Effect */ = {
 			isa = PBXGroup;
 			children = (
-				09E20E941CD9579400D6F25F /* LoginParallax.swift */,
-				09E20E951CD9579400D6F25F /* ParallaxItem.swift */,
+				09B7A7291CD289E400EFD7CD /* LoginParallax.swift */,
+				09B7A72A1CD289E400EFD7CD /* ParallaxItem.swift */,
 			);
 			name = "Parallax Effect";
 			path = /Users/mingu/Desktop/SpinderFB/SpinderFB;
@@ -139,8 +135,8 @@
 		096D20E81CC5351000FDE8D5 /* Spinder */ = {
 			isa = PBXGroup;
 			children = (
-				7BC779BB1CD916AA002E256A /* MainStoryboard.storyboard */,
 				096D20E91CC5351000FDE8D5 /* AppDelegate.swift */,
+				7BF568911CC87AD600E32E5B /* MainStoryboard.storyboard */,
 				096D20F01CC5351000FDE8D5 /* Assets.xcassets */,
 				096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */,
 				096D20F51CC5351000FDE8D5 /* Info.plist */,
@@ -156,38 +152,20 @@
 				0960141F1CD11D8500F6ABAD /* ActivityViewController.swift */,
 				7B2A71C31CD5621E00C55FAA /* PostViewController.swift */,
 				7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */,
-				7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */,
 				7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		7BC779AA1CD9113F002E256A /* SideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				7BC779AB1CD9114C002E256A /* ContainerViewController.swift */,
-				7BC779AC1CD9114C002E256A /* Extensions.swift */,
-				7BC779AD1CD9114C002E256A /* HamburgerView.swift */,
-				7BC779AE1CD9114C002E256A /* MenuItemCell.swift */,
-				7BC779AF1CD9114C002E256A /* MenuViewController.swift */,
-				7BC779B01CD9114C002E256A /* MenuItems.plist */,
-			);
-			name = SideMenu;
-			sourceTree = "<group>";
-		};
 		7BE369DC1CD27BFA00B4D987 /* Customs */ = {
 			isa = PBXGroup;
 			children = (
-				09E20E981CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf */,
-				7BC779A61CD91102002E256A /* CustomPresentationAnimationController.swift */,
-				7BC779A71CD91102002E256A /* CustomPresentationController.swift */,
 				096014221CD1249C00F6ABAD /* ActivityTableView.swift */,
 				096014231CD1249C00F6ABAD /* ActivityTableViewCell.swift */,
 				7B31D63C1CC7DD4B0066AFA9 /* User.swift */,
 				7BC779A41CD70430002E256A /* ActiveUser.swift */,
 				09D5702D1CC5A43F00442D07 /* SpinderCell.swift */,
 				7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */,
-				7BC779AA1CD9113F002E256A /* SideMenu */,
 				096014171CD11A1A00F6ABAD /* Animated Buttons */,
 				0960141C1CD11A2C00F6ABAD /* Parallax Effect */,
 			);
@@ -275,11 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC779B61CD9114C002E256A /* MenuItems.plist in Resources */,
 				096D20F41CC5351000FDE8D5 /* LaunchScreen.storyboard in Resources */,
-				7BC779BC1CD916AA002E256A /* MainStoryboard.storyboard in Resources */,
 				096D20F11CC5351000FDE8D5 /* Assets.xcassets in Resources */,
-				09E20E991CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf in Resources */,
+				7BF568921CC87AD600E32E5B /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,29 +316,25 @@
 			files = (
 				096D213E1CC5958500FDE8D5 /* CreateAccountViewController.swift in Sources */,
 				7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */,
-				7BC779B11CD9114C002E256A /* ContainerViewController.swift in Sources */,
 				096014251CD1249C00F6ABAD /* ActivityTableViewCell.swift in Sources */,
 				7B2A71C41CD5621E00C55FAA /* PostViewController.swift in Sources */,
 				09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */,
 				096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */,
-				7BC779B51CD9114C002E256A /* MenuViewController.swift in Sources */,
-				09E20E931CD9578C00D6F25F /* PathMenuItem.swift in Sources */,
 				7B2A71C61CD69C8E00C55FAA /* ProfileViewController.swift in Sources */,
-				09E20E921CD9578C00D6F25F /* PathMenu.swift in Sources */,
 				7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */,
 				7BF568A01CC9648D00E32E5B /* ChatViewController.swift in Sources */,
 				096014201CD11D8500F6ABAD /* ActivityViewController.swift in Sources */,
-				7BC779B21CD9114C002E256A /* Extensions.swift in Sources */,
-				09E20E961CD9579400D6F25F /* LoginParallax.swift in Sources */,
-				7BC779B41CD9114C002E256A /* MenuItemCell.swift in Sources */,
-				09E20E971CD9579400D6F25F /* ParallaxItem.swift in Sources */,
-				7BC779A91CD91102002E256A /* CustomPresentationController.swift in Sources */,
+				09B7A7271CD289D000EFD7CD /* PathMenu.swift in Sources */,
 				096014241CD1249C00F6ABAD /* ActivityTableView.swift in Sources */,
-				7B280FE91CD99F7B009C4747 /* ViewProfileViewController.swift in Sources */,
-				7BC779B31CD9114C002E256A /* HamburgerView.swift in Sources */,
+<<<<<<< HEAD
+				7B9F88C01CD286EF00845CDF /* LoginParallax.swift in Sources */,
 				7BC779A51CD70430002E256A /* ActiveUser.swift in Sources */,
-				7BC779A81CD91102002E256A /* CustomPresentationAnimationController.swift in Sources */,
+=======
+				09B7A7281CD289D000EFD7CD /* PathMenuItem.swift in Sources */,
+				09B7A72B1CD289E400EFD7CD /* LoginParallax.swift in Sources */,
+>>>>>>> 0f08867949a2158e85a8f9879d8e10b5da8ac5f5
 				096D20EA1CC5351000FDE8D5 /* AppDelegate.swift in Sources */,
+				09B7A72C1CD289E400EFD7CD /* ParallaxItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

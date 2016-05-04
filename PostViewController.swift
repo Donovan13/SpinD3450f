@@ -11,10 +11,9 @@ import Firebase
 import CoreLocation
 
 class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate{
-    
+    var startItem: PathMenuItem?
     var locationMnager:CLLocationManager!
     var activeUser:ActiveUser!
-    var items = [PathMenuItem]()
     var currentUser = Dictionary<String, AnyObject>?()
 
     
@@ -32,6 +31,7 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
     @IBAction func postButtonTapped(sender: AnyObject) {
         self.activeUser = ActiveUser.init(activity: "", detail: activityTextView.text, locationPlacemark: nil)
 //       self.activeUser = ActiveUser.init(activity: "", detail: activityTextView.text, locationPlacemark: nil)
+
     }
     
     
@@ -134,27 +134,33 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
         let menuItem14 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: Image14)
         let menuItem15 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: Image15)
         
-        self.items = [menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6, menuItem7, menuItem8, menuItem9, menuItem10, menuItem11, menuItem12, menuItem13, menuItem14, menuItem15, ]
-        let startItem = PathMenuItem(image: UIImage(named: "bg-addbutton")!, highlightedImage: UIImage(named: "bg-addbutton-highlighted"), contentImage: UIImage(named: "icon-plus"), highlightedContentImage: UIImage(named: "icon-plus-highlighted"))
+        let items = [menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6, menuItem7, menuItem8, menuItem9, menuItem10, menuItem11, menuItem12, menuItem13, menuItem14, menuItem15]
         
-        let menu = PathMenu(frame: view.bounds, startItem: startItem, items: self.items)
+        startItem = PathMenuItem(image: UIImage(named: "bigcircle")!, highlightedImage: UIImage(named: "bigcircleselected"), contentImage: UIImage(named: "addwhite"), highlightedContentImage: UIImage(named: "addwhiteselected"))
+        
+        let menu = PathMenu(frame: view.bounds, startItem: startItem, items: items)
         menu.delegate = self
-        menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width - 255, view.frame.size.height - 600.0)
-        menu.menuWholeAngle = (CGFloat(M_PI) - CGFloat(M_PI/5))
+        menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width - 260, view.frame.size.height - 425)
+        menu.menuWholeAngle = (CGFloat(M_PI) - CGFloat(M_PI/5)) * 2.5
         menu.rotateAngle    = -CGFloat(M_PI_2) + CGFloat(M_PI/5) * 1/2
         menu.timeOffset     = 0.05
         menu.farRadius      = 110.0
-        menu.nearRadius     = 90.0
+        menu.nearRadius     = 130.0
         menu.endRadius      = 130.0
         menu.animationDuration = 0.5
         view.addSubview(menu)
         view.backgroundColor = UIColor(red:0.96, green:0.94, blue:0.92, alpha:1)
+        
+        
     }
     
 }
 
 extension PostViewController: PathMenuDelegate {
     func pathMenu(menu: PathMenu, didSelectIndex idx: Int) {
+        
+        let item = menu.menuItems[idx]
+        startItem?.contentImageView?.image = item.contentImageView?.image
         print("Select the index : \(idx)")
     }
     func pathMenuWillAnimateOpen(menu: PathMenu) {
