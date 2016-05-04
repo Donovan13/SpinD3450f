@@ -16,6 +16,7 @@ class FirebaseService {
     var ref = Firebase(url: "https://spinder.firebaseio.com/")
     var userRef = Firebase(url: "https://spinder.firebaseio.com/users")
     var activeUserRef = Firebase(url: "https://spinder.firebaseio.com/activeUsers")
+    var messagesRef = Firebase(url: "https://spinder.firebaseio.com/messages")
     
     var FirebaseRef: Firebase {
         return ref
@@ -27,6 +28,10 @@ class FirebaseService {
     
     var FirebaseActiveUserRef: Firebase {
         return activeUserRef
+    }
+    
+    var FirebaseMessageRef: Firebase {
+        return messagesRef
     }
     
     var currentUserRef: Firebase {

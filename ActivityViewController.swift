@@ -90,7 +90,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         } else if segue.identifier == "PostSegue" {
             let postVc = segue.destinationViewController as! PostViewController
             postVc.currentUser = self.currentUser
-        } else {
+        } else if segue.identifier == "ViewProfileSegue" {
             let profileVc = segue.destinationViewController as! ViewProfileViewController
             profileVc.receieverName = self.receieverName
             profileVc.receieverAge = self.receieverAge
@@ -98,6 +98,8 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             profileVc.receieverUserProfilePicture = self.receieverProfilePicture
             profileVc.receieverUserHomeTown = self.receieverHomeTown
             profileVc.receieverDescription = self.receieverDescription
+        } else if segue.identifier == "InboxSegue" {
+            
         }
     }
     
@@ -123,6 +125,12 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         
         performSegueWithIdentifier("ViewProfileSegue", sender: nil)
     }
+    @IBAction func inboxButtonTapped(sender: AnyObject) {
+        performSegueWithIdentifier("InboxSegue", sender: nil)
+        
+    }
+    
+    
     @IBAction func DirectMessageButton(sender: AnyObject) {
         
         let cell = sender.superview!!.superview as! ActivityTableViewCell

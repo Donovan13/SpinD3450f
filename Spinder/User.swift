@@ -22,9 +22,7 @@ class User {
     private var _userDescription: String!
     private var _userGender: String!
     private var _userZipCode: String!
-//    private var _userActivity: String!
-//    private var _activityDetail: String!
-//    private var _currentLocation: [String]!
+
 
     
     var userKey: String {
@@ -54,6 +52,8 @@ class User {
     var userZipCode: String {
         return _userZipCode
     }
+    
+    
     
 //    var userActivity: String {
 //        return _userActivity

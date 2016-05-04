@@ -25,6 +25,8 @@
 		09E20E991CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09E20E981CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf */; };
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
 		7B280FE91CD99F7B009C4747 /* ViewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */; };
+		7B280FEB1CDA48C3009C4747 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B280FEA1CDA48C3009C4747 /* InboxViewController.swift */; };
+		7B280FED1CDA633C009C4747 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B280FEC1CDA633B009C4747 /* Message.swift */; };
 		7B2A71C41CD5621E00C55FAA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C31CD5621E00C55FAA /* PostViewController.swift */; };
 		7B2A71C61CD69C8E00C55FAA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */; };
 		7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* User.swift */; };
@@ -63,6 +65,8 @@
 		09E20E981CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "linotypezapfino-one_[allfont.net].ttf"; sourceTree = "<group>"; };
 		7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Spinder/FirebaseService.swift; sourceTree = "<group>"; };
 		7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileViewController.swift; sourceTree = "<group>"; };
+		7B280FEA1CDA48C3009C4747 /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
+		7B280FEC1CDA633B009C4747 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7B2A71C31CD5621E00C55FAA /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7B31D63C1CC7DD4B0066AFA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spinder/User.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */,
 				7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */,
 				7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */,
+				7B280FEA1CDA48C3009C4747 /* InboxViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				096014221CD1249C00F6ABAD /* ActivityTableView.swift */,
 				096014231CD1249C00F6ABAD /* ActivityTableViewCell.swift */,
 				7B31D63C1CC7DD4B0066AFA9 /* User.swift */,
+				7B280FEC1CDA633B009C4747 /* Message.swift */,
 				7BC779A41CD70430002E256A /* ActiveUser.swift */,
 				09D5702D1CC5A43F00442D07 /* SpinderCell.swift */,
 				7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */,
@@ -345,6 +351,7 @@
 				7B2A71C41CD5621E00C55FAA /* PostViewController.swift in Sources */,
 				09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */,
 				096D20EC1CC5351000FDE8D5 /* LogInViewController.swift in Sources */,
+				7B280FEB1CDA48C3009C4747 /* InboxViewController.swift in Sources */,
 				7BC779B51CD9114C002E256A /* MenuViewController.swift in Sources */,
 				09E20E931CD9578C00D6F25F /* PathMenuItem.swift in Sources */,
 				7B2A71C61CD69C8E00C55FAA /* ProfileViewController.swift in Sources */,
@@ -358,6 +365,7 @@
 				09E20E971CD9579400D6F25F /* ParallaxItem.swift in Sources */,
 				7BC779A91CD91102002E256A /* CustomPresentationController.swift in Sources */,
 				096014241CD1249C00F6ABAD /* ActivityTableView.swift in Sources */,
+				7B280FED1CDA633C009C4747 /* Message.swift in Sources */,
 				7B280FE91CD99F7B009C4747 /* ViewProfileViewController.swift in Sources */,
 				7BC779B31CD9114C002E256A /* HamburgerView.swift in Sources */,
 				7BC779A51CD70430002E256A /* ActiveUser.swift in Sources */,
