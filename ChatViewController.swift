@@ -35,6 +35,7 @@ class ChatViewController: JSQMessagesViewController {
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
         messageRef = FirebaseService.firebaseSerivce.FirebaseRef.childByAppendingPath("messages")
+        print("loaded")
         
     }
     

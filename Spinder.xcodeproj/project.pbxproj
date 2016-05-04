@@ -19,6 +19,7 @@
 		09D5702A1CC59BF100442D07 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D570291CC59BF100442D07 /* CoreImage.framework */; };
 		09D5702E1CC5A43F00442D07 /* SpinderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5702D1CC5A43F00442D07 /* SpinderCell.swift */; };
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
+		7B280FE91CD99F7B009C4747 /* ViewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */; };
 		7B2A71C41CD5621E00C55FAA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C31CD5621E00C55FAA /* PostViewController.swift */; };
 		7B2A71C61CD69C8E00C55FAA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */; };
 		7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* User.swift */; };
@@ -55,6 +56,7 @@
 		09D570291CC59BF100442D07 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		09D5702D1CC5A43F00442D07 /* SpinderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpinderCell.swift; path = Spinder/SpinderCell.swift; sourceTree = "<group>"; };
 		7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Spinder/FirebaseService.swift; sourceTree = "<group>"; };
+		7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileViewController.swift; sourceTree = "<group>"; };
 		7B2A71C31CD5621E00C55FAA /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7B31D63C1CC7DD4B0066AFA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spinder/User.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				0960141F1CD11D8500F6ABAD /* ActivityViewController.swift */,
 				7B2A71C31CD5621E00C55FAA /* PostViewController.swift */,
 				7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */,
+				7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */,
 				7BF5689F1CC9648D00E32E5B /* ChatViewController.swift */,
 			);
 			name = ViewControllers;
@@ -349,6 +352,7 @@
 				7BC779B41CD9114C002E256A /* MenuItemCell.swift in Sources */,
 				7BC779A91CD91102002E256A /* CustomPresentationController.swift in Sources */,
 				096014241CD1249C00F6ABAD /* ActivityTableView.swift in Sources */,
+				7B280FE91CD99F7B009C4747 /* ViewProfileViewController.swift in Sources */,
 				7BC779B31CD9114C002E256A /* HamburgerView.swift in Sources */,
 				7B9F88C01CD286EF00845CDF /* LoginParallax.swift in Sources */,
 				7BC779A51CD70430002E256A /* ActiveUser.swift in Sources */,

@@ -13,13 +13,25 @@ import CoreLocation
 class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate{
     
     var locationMnager:CLLocationManager!
+    var activeUser:ActiveUser!
+    var items = [PathMenuItem]()
+    var currentUser = Dictionary<String, AnyObject>?()
+
     
+    @IBOutlet weak var activityTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         locationMnager = CLLocationManager()
         locationMnager.delegate = self
         buttons()
         
+        print("\(currentUser)")
+        
+    }
+    
+    @IBAction func postButtonTapped(sender: AnyObject) {
+        self.activeUser = ActiveUser.init(activity: "", detail: activityTextView.text, locationPlacemark: nil)
+//       self.activeUser = ActiveUser.init(activity: "", detail: activityTextView.text, locationPlacemark: nil)
     }
     
     
@@ -122,10 +134,10 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
         let menuItem14 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: Image14)
         let menuItem15 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: Image15)
         
-        let items = [menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6, menuItem7, menuItem8, menuItem9, menuItem10, menuItem11, menuItem12, menuItem13, menuItem14, menuItem15, ]
+        self.items = [menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6, menuItem7, menuItem8, menuItem9, menuItem10, menuItem11, menuItem12, menuItem13, menuItem14, menuItem15, ]
         let startItem = PathMenuItem(image: UIImage(named: "bg-addbutton")!, highlightedImage: UIImage(named: "bg-addbutton-highlighted"), contentImage: UIImage(named: "icon-plus"), highlightedContentImage: UIImage(named: "icon-plus-highlighted"))
         
-        let menu = PathMenu(frame: view.bounds, startItem: startItem, items: items)
+        let menu = PathMenu(frame: view.bounds, startItem: startItem, items: self.items)
         menu.delegate = self
         menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width - 255, view.frame.size.height - 600.0)
         menu.menuWholeAngle = (CGFloat(M_PI) - CGFloat(M_PI/5))
