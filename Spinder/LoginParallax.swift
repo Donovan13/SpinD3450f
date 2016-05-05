@@ -106,9 +106,9 @@ class Parallax : UIViewController, UIScrollViewDelegate {
             
             //
             
-            let textView = UITextView(frame: CGRectMake(5.0, self.view.frame.size.height / 2.0, rect.size.width, rect.size.height))
+            let textView = UITextView(frame: CGRectMake(5.0, self.view.frame.size.height / 1.5, rect.size.width, rect.size.height))
             textView.text = item.text
-            textView.textColor = UIColor.whiteColor()
+            textView.textColor = UIColor.greenColor()
             textView.backgroundColor = UIColor.clearColor()
             textView.userInteractionEnabled = false
             imageView.image = item.image

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import CoreLocation
 
-class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate{
+class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate, UITextViewDelegate{
     var startItem: PathMenuItem?
     var locationMnager:CLLocationManager!
     var activeUser:ActiveUser!
@@ -25,10 +25,22 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
         locationMnager.delegate = self
         buttons()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LogInViewController.keyboardFrameWillChange(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LogInViewController.keyboardFrameWillChange(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
 
-        
+        activityTextView.delegate = self
     }
+    
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        } else {
+            return true
+        }
+    }
+    
     
     func keyboardFrameWillChange(notification: NSNotification) {
         let keyboardBeginFrame = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardFrameBeginUserInfoKey)!.CGRectValue

@@ -151,10 +151,12 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func DirectMessageButton(sender: AnyObject) {
-        let cell = sender.superview!!.superview as! ActivityTableViewCell
-        for user in users {
+        let cell = sender.superview!?.superview?.superview as! ActivityTableViewCell
+//        let cell = sender.superview!!.superview as! ActivityTableViewCell
+        let otherArray = activeUsers + filteredUsers
+        for user in otherArray {
             if "\(user.userName)" == cell.nameAgeLabel.titleLabel?.text {
-                self.receieverKey = user.userKey
+                self.receieverKey = user.userID
                 self.receieverName = user.userName
             }
         }
@@ -175,11 +177,44 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath) as! ActivityTableViewCell;
+        let cell = tableView.dequeueReusableCellWithIdentifier("FilterCell", forIndexPath: indexPath) as! ActivityTableViewCell;
         if filteredUsers.count > 0 {
             let user = filteredUsers[indexPath.row]
             cell.nameAgeLabel.setTitle(user.userName, forState: .Normal)
             cell.photoImageView.image = conversion(user.userPhoto)
+            cell.activityList.text = user.userActivity
+            cell.activityDescription.text = user.activityDetail
+            if user.userActivity == "Baseball" {
+                cell.backgroundColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1.0)
+            } else if user.userActivity == "Basketball" {
+                cell.backgroundColor = UIColor(red: 300/255, green: 59/255, blue: 55/255, alpha: 1.0)
+            } else if user.userActivity == "Bike Ride" {
+                cell.backgroundColor = UIColor(red: 44/255, green: 194/255, blue: 7/255, alpha: 1.0)
+            } else if user.userActivity == "Bowling" {
+                cell.backgroundColor = UIColor(red: 99/255, green: 22/255, blue: 122/255, alpha: 1.0)
+            } else if user.userActivity == "Fighting" {
+                cell.backgroundColor = UIColor(red: 207/255, green: 34/255, blue: 156/255, alpha: 1.0)
+            } else if user.userActivity == "Golf" {
+                cell.backgroundColor = UIColor(red: 14/255, green: 222/255, blue: 149/255, alpha: 1.0)
+            } else if user.userActivity == "Hockey" {
+                cell.backgroundColor = UIColor(red: 150/255, green: 193/255, blue: 231/255, alpha: 1.0)
+            } else if user.userActivity == "Lifting" {
+                cell.backgroundColor = UIColor(red: 240/255, green: 122/255, blue: 180/255, alpha: 1.0)
+            } else if user.userActivity == "Ping Pong" {
+                cell.backgroundColor = UIColor(red: 201/255, green: 199/255, blue: 32/255, alpha: 1.0)
+            } else if user.userActivity == "Running" {
+                cell.backgroundColor = UIColor(red: 126/255, green: 100/255, blue: 222/255, alpha: 1.0)
+            } else if user.userActivity == "Skateboard" {
+                cell.backgroundColor = UIColor(red: 165/255, green: 172/255, blue: 44/255, alpha: 1.0)
+            } else if user.userActivity == "Soccer" {
+                cell.backgroundColor = UIColor(red: 100/255, green: 200/255, blue: 100/255, alpha: 1.0)
+            } else if user.userActivity == "Tennis" {
+                cell.backgroundColor = UIColor(red: 100/255, green: 99/255, blue: 199/255, alpha: 1.0)
+            } else if user.userActivity == "Volleyball" {
+                cell.backgroundColor = UIColor(red: 110/255, green: 166/255, blue: 66/255, alpha: 1.0)
+            } else if user.userActivity == "Yoga" {
+                cell.backgroundColor = UIColor(red: 134/255, green: 44/255, blue: 233/255, alpha: 1.0)
+            }
         } else {
             let activeUser = activeUsers[indexPath.row]
             cell.nameAgeLabel.setTitle(activeUser.userName, forState: .Normal)

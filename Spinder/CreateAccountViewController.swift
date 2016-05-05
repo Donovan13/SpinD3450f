@@ -40,10 +40,10 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         genderPickerView.tag = 201
         genderTextField.inputView = genderPickerView
      
-        let item1 = ParallaxItem(image: UIImage(named: "image1")!, text: "Go run with someone!")
-        let item2 = ParallaxItem(image: UIImage(named: "image2")!, text: "Puppy Play Date!")
-        let item3 = ParallaxItem(image: UIImage(named: "image3")!, text: "Beach games with new friends!!")
-        let item4 = ParallaxItem(image: UIImage(named: "image4")!, text: "Walk your baby with another mom! Woo!!")
+        let item1 = ParallaxItem(image: UIImage(named: "image1")!, text: "Post activities that interest you!")
+        let item2 = ParallaxItem(image: UIImage(named: "image2")!, text: "Search other users and filter your results!")
+        let item3 = ParallaxItem(image: UIImage(named: "image3")!, text: "Hash out the details through direct message!")
+        let item4 = ParallaxItem(image: UIImage(named: "image4")!, text: "Create an account to find new freinds in Chicago now!!")
         
         
         
