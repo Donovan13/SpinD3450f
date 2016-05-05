@@ -64,12 +64,42 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(rightswap)
         
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LogInViewController.keyboardFrameWillChange(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        
+        
 //        print("\(FirebaseService.firebaseSerivce.currentUserRef.authData)")
 //        print("\(FirebaseService.firebaseSerivce.currentUserRef)")
+    }
+    // Change view for keyboard
+    
+    func keyboardFrameWillChange(notification: NSNotification) {
+        let keyboardBeginFrame = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardFrameBeginUserInfoKey)!.CGRectValue
+        let keyboardEndFrame = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardFrameEndUserInfoKey)!.CGRectValue
+        
+        let animationCurve = UIViewAnimationCurve(rawValue: (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationCurveUserInfoKey)!.integerValue)
+        
+        let animationDuration: NSTimeInterval = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationDurationUserInfoKey)!.doubleValue
+        
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(animationDuration)
+        UIView.setAnimationCurve(animationCurve!)
+        
+        var newFrame = self.view.frame
+        let keyboardFrameEnd = self.view.convertRect(keyboardEndFrame, toView: nil)
+        let keyboardFrameBegin = self.view.convertRect(keyboardBeginFrame, toView: nil)
+        
+        newFrame.origin.y -= (keyboardFrameBegin.origin.y - keyboardFrameEnd.origin.y)
+        self.view.frame = newFrame;
+        
+        UIView.commitAnimations()
     }
     
     override func viewDidDisappear(animated: Bool) {
         self.moviePlayerController.stop()
+//        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    override func viewDidAppear(animated: Bool) {
+        self.moviePlayerController.play()
     }
     
     //    MARK : LOGIN BUTTON
@@ -117,7 +147,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if emailTextField.isFirstResponder() {
             emailTextField.resignFirstResponder()
-            passwordTextField.becomeFirstResponder()
+            
         } else if passwordTextField.isFirstResponder() {
             loginButtonTapped(logInButton)
         }
