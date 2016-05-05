@@ -24,7 +24,6 @@
 		09E20E971CD9579400D6F25F /* ParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E20E951CD9579400D6F25F /* ParallaxItem.swift */; };
 		09E20E991CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09E20E981CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf */; };
 		09E20EA31CDA576200D6F25F /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E20EA21CDA576200D6F25F /* BadgeButton.swift */; };
-		09F8CCD61CDA940E00A051DE /* black.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 09F8CCD51CDA940500A051DE /* black.mp4 */; };
 		7B13416A1CC6B8CF00F2CEE5 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */; };
 		7B280FE91CD99F7B009C4747 /* ViewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */; };
 		7B280FEB1CDA48C3009C4747 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B280FEA1CDA48C3009C4747 /* InboxViewController.swift */; };
@@ -32,6 +31,7 @@
 		7B2A71C41CD5621E00C55FAA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C31CD5621E00C55FAA /* PostViewController.swift */; };
 		7B2A71C61CD69C8E00C55FAA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */; };
 		7B31D63D1CC7DD4B0066AFA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D63C1CC7DD4B0066AFA9 /* User.swift */; };
+		7B3A1FCF1CDB993A00B8556C /* black.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7B3A1FCE1CDB990B00B8556C /* black.mp4 */; };
 		7B9F88B91CD280B300845CDF /* Pods_Spinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */; };
 		7BC779A51CD70430002E256A /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779A41CD70430002E256A /* ActiveUser.swift */; };
 		7BC779A81CD91102002E256A /* CustomPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC779A61CD91102002E256A /* CustomPresentationAnimationController.swift */; };
@@ -66,7 +66,6 @@
 		09E20E951CD9579400D6F25F /* ParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParallaxItem.swift; path = Spinder/ParallaxItem.swift; sourceTree = SOURCE_ROOT; };
 		09E20E981CD9A82000D6F25F /* linotypezapfino-one_[allfont.net].ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "linotypezapfino-one_[allfont.net].ttf"; sourceTree = "<group>"; };
 		09E20EA21CDA576200D6F25F /* BadgeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeButton.swift; sourceTree = "<group>"; };
-		09F8CCD51CDA940500A051DE /* black.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = black.mp4; sourceTree = "<group>"; };
 		7B1341691CC6B8CF00F2CEE5 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Spinder/FirebaseService.swift; sourceTree = "<group>"; };
 		7B280FE81CD99F7B009C4747 /* ViewProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileViewController.swift; sourceTree = "<group>"; };
 		7B280FEA1CDA48C3009C4747 /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		7B2A71C31CD5621E00C55FAA /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		7B2A71C51CD69C8E00C55FAA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7B31D63C1CC7DD4B0066AFA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spinder/User.swift; sourceTree = "<group>"; };
+		7B3A1FCE1CDB990B00B8556C /* black.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = black.mp4; sourceTree = "<group>"; };
 		7B9F88B81CD280B300845CDF /* Pods_Spinder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Spinder.framework; path = "../../Library/Developer/Xcode/DerivedData/Spinder-eaqmaoxwqjyefxeztzzviaadcydl/Build/Products/Debug-iphonesimulator/Pods_Spinder.framework"; sourceTree = "<group>"; };
 		7BC779A41CD70430002E256A /* ActiveUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
 		7BC779A61CD91102002E256A /* CustomPresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationAnimationController.swift; sourceTree = "<group>"; };
@@ -149,9 +149,9 @@
 			children = (
 				7BC779BB1CD916AA002E256A /* MainStoryboard.storyboard */,
 				096D20E91CC5351000FDE8D5 /* AppDelegate.swift */,
+				7B3A1FCE1CDB990B00B8556C /* black.mp4 */,
 				096D20F01CC5351000FDE8D5 /* Assets.xcassets */,
 				096D20F21CC5351000FDE8D5 /* LaunchScreen.storyboard */,
-				09F8CCD51CDA940500A051DE /* black.mp4 */,
 				096D20F51CC5351000FDE8D5 /* Info.plist */,
 			);
 			path = Spinder;
@@ -287,7 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09F8CCD61CDA940E00A051DE /* black.mp4 in Resources */,
+				7B3A1FCF1CDB993A00B8556C /* black.mp4 in Resources */,
 				7BC779B61CD9114C002E256A /* MenuItems.plist in Resources */,
 				096D20F41CC5351000FDE8D5 /* LaunchScreen.storyboard in Resources */,
 				7BC779BC1CD916AA002E256A /* MainStoryboard.storyboard in Resources */,

@@ -8,6 +8,10 @@
 
 import UIKit
 
+
+//var filterSelected = String()
+
+
 class MenuViewController: UITableViewController {
     
     lazy var menuItems: NSArray = {
@@ -15,12 +19,19 @@ class MenuViewController: UITableViewController {
         return NSArray(contentsOfFile: path!)!
     }()
     
+    var containerViewController: ContainerViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    // Remove the drop shadow from the navigation bar
-//        navigationController!.navigationBar.clipsToBounds = true
+        // Remove the drop shadow from the navigation bar
+        //        navigationController!.navigationBar.clipsToBounds = true
         
         (navigationController!.parentViewController as! ContainerViewController).menuItem = (menuItems[0] as! NSDictionary)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        print("yo")
     }
     
     //  UITableViewDelegate
@@ -28,9 +39,53 @@ class MenuViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let menuItem = menuItems[indexPath.row] as! NSDictionary
         (navigationController!.parentViewController as! ContainerViewController).menuItem = menuItem
-        print(indexPath.row)
+        //        print(indexPath.row)
         
+        
+        if "\(indexPath.row)" == "0" {
+            filterSelected = "Baseball"
+            print("\(filterSelected)")
+        } else if "\(indexPath.row)" == "1" {
+            filterSelected = "Basketball"
+        } else if "\(indexPath.row)" == "2" {
+            filterSelected = "Bike Ride"
+        } else if "\(indexPath.row)" == "3" {
+            filterSelected = "Bowling"
+        } else if "\(indexPath.row)" == "4" {
+            filterSelected = "Fighting"
+        } else if "\(indexPath.row)" == "5" {
+            filterSelected = "Golf"
+        } else if "\(indexPath.row)" == "6" {
+            filterSelected = "Hockey"
+        } else if "\(indexPath.row)" == "7" {
+            filterSelected = "Lifting"
+        } else if "\(indexPath.row)" == "8" {
+            filterSelected = "Ping Pong"
+        } else if "\(indexPath.row)" == "9" {
+            filterSelected = "Running"
+        } else if "\(indexPath.row)" == "10" {
+            filterSelected = "Skateboard"
+        } else if "\(indexPath.row)" == "11" {
+            filterSelected = "Soccer"
+        } else if "\(indexPath.row)" == "12" {
+            filterSelected = "Tennis"
+        } else if "\(indexPath.row)" == "13" {
+            filterSelected = "Volleyball"
+        } else if "\(indexPath.row)" == "14" {
+            filterSelected = "Yoga"
+        }
+        
+        //        let storyboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
+        //        let controller = storyboard.instantiateViewControllerWithIdentifier("ActivityViewController") as! ActivityViewController
+        //        controller.selectedActivity = selectedNumber
+        //        print("\(selectedNumber)")
     }
+    
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //        let navC = segue.destinationViewController as? UINavigationController
+    //        containerViewController = navC?.topViewController as? ContainerViewController
+    //        containerViewController!.selectedNumber = selectedNumber
+    //    }
     
     //  Table View
     

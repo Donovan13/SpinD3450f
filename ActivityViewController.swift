@@ -16,22 +16,22 @@ var currentUserProfilePicture: String!
 var currentUserZipcode: String!
 var currentUserDescription: String!
 
+var filterSelected: String!
+
+
 class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     @IBOutlet weak var messagesButton: BadgeButton!
-    @IBOutlet weak var genderTextField: UITextField!
-    
-
     @IBOutlet weak var activityTableView: ActivityTableView!
+    
     var users = [User]()
+    var activeUsers = [ActiveUser]()
     var filterGender = String()
-    var filteredUsers = [User]()
+    var filteredUsers = [ActiveUser]()
     var locationRef: Firebase!
     var lastOffsetY :CGFloat = 0
     var hamburgerView: HamburgerView?
-
     var currentUser = Dictionary<String, AnyObject>?()
-    
     var receieverKey = String()
     var receieverName = String()
     var receieverGender = String()
@@ -43,20 +43,18 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        filterSelected = ""
+
         loadUsers()
-        filterUsers()
+        loadUserProfile()
 
         messagesButton.badgeString = "19"
         messagesButton.badgeTextColor = UIColor.whiteColor()
         messagesButton.badgeEdgeInsets = UIEdgeInsetsMake(10, 6, 0, 0)
         
-        loadUserProfile()
         
-
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ActivityViewController.hamburgerViewTapped))
         hamburgerView = HamburgerView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
@@ -64,10 +62,27 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        print("test1")
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        filterUsers()
+        print("test2")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print("test3")
+    }
+    
+    
     func hamburgerViewTapped() {
         let navigationController = parentViewController as! UINavigationController
         let containerViewController = navigationController.parentViewController as! ContainerViewController
         containerViewController.hideOrShowMenu(!containerViewController.showingMenu, animated: true)
+        print("tapp")
     }
     
     var menuItem: NSDictionary? {
@@ -80,6 +95,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView){
         lastOffsetY = scrollView.contentOffset.y
+        print("testScroll")
     }
     
     
@@ -91,7 +107,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             chatVc.senderDisplayName = ""
             chatVc.receieverID = receieverKey
             chatVc.receieverName = receieverName
-            print(receieverKey)
         } else if segue.identifier == "PostSegue" {
             let postVc = segue.destinationViewController as! PostViewController
             postVc.currentUser = self.currentUser
@@ -114,41 +129,32 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func viewProfileButton(sender: AnyObject) {
         let cell = sender.superview!!.superview as! ActivityTableViewCell
-        for user in users {
-            if "\(user.userName)" == cell.nameAgeLabel.titleLabel?.text {
-                self.receieverName = user.userName
-                self.receieverGender = user.userGender
-                self.receieverAge = user.userAge
-                self.receieverHomeTown = user.userZipCode
-                self.receieverDescription = user.userDescription
-                self.receieverProfilePicture = user.userPhoto
-                
+        for activeUser in activeUsers {
+            if "\(activeUser.userName)" == cell.nameAgeLabel.titleLabel?.text {
+                self.receieverName = activeUser.userName
+                self.receieverGender = activeUser.userGender
+                self.receieverAge = activeUser.userAge
+                self.receieverHomeTown = activeUser.userZipCode
+                self.receieverDescription = activeUser.userDescription
+                self.receieverProfilePicture = activeUser.userPhoto
             }
-            
         }
-        
-        
         performSegueWithIdentifier("ViewProfileSegue", sender: nil)
     }
+    
     @IBAction func inboxButtonTapped(sender: AnyObject) {
         performSegueWithIdentifier("InboxSegue", sender: nil)
-        
     }
     
-    
     @IBAction func DirectMessageButton(sender: AnyObject) {
-        
         let cell = sender.superview!!.superview as! ActivityTableViewCell
-
         for user in users {
             if "\(user.userName)" == cell.nameAgeLabel.titleLabel?.text {
                 self.receieverKey = user.userKey
                 self.receieverName = user.userName
-//                print("\(user.userKey)")
             }
         }
         performSegueWithIdentifier("DirectMessageSegue", sender: nil)
-
     }
     
     // MARK : TABLEVIEW DELEGATE
@@ -160,7 +166,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         if filteredUsers.count > 0 {
             return filteredUsers.count
         } else {
-            return users.count
+            return activeUsers.count
         }
     }
     
@@ -171,13 +177,44 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             cell.nameAgeLabel.setTitle(user.userName, forState: .Normal)
             cell.photoImageView.image = conversion(user.userPhoto)
         } else {
-            let user = users[indexPath.row]
-            cell.nameAgeLabel.setTitle(user.userName, forState: .Normal)
-            cell.photoImageView.image = conversion(user.userPhoto)
+            let activeUser = activeUsers[indexPath.row]
+            cell.nameAgeLabel.setTitle(activeUser.userName, forState: .Normal)
+            cell.photoImageView.image = conversion(activeUser.userPhoto)
+            cell.activityList.text = activeUser.userActivity
+            cell.activityDescription.text = activeUser.activityDetail
+            if activeUser.userActivity == "Baseball" {
+                cell.backgroundColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Basketball" {
+                cell.backgroundColor = UIColor(red: 300/255, green: 59/255, blue: 55/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Bike Ride" {
+                cell.backgroundColor = UIColor(red: 44/255, green: 194/255, blue: 7/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Bowling" {
+                cell.backgroundColor = UIColor(red: 99/255, green: 22/255, blue: 122/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Fighting" {
+                cell.backgroundColor = UIColor(red: 207/255, green: 34/255, blue: 156/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Golf" {
+                cell.backgroundColor = UIColor(red: 14/255, green: 222/255, blue: 149/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Hockey" {
+                cell.backgroundColor = UIColor(red: 150/255, green: 193/255, blue: 231/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Lifting" {
+                cell.backgroundColor = UIColor(red: 240/255, green: 122/255, blue: 180/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Ping Pong" {
+                cell.backgroundColor = UIColor(red: 201/255, green: 199/255, blue: 32/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Running" {
+                cell.backgroundColor = UIColor(red: 126/255, green: 100/255, blue: 222/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Skateboard" {
+                cell.backgroundColor = UIColor(red: 165/255, green: 172/255, blue: 44/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Soccer" {
+                cell.backgroundColor = UIColor(red: 100/255, green: 200/255, blue: 100/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Tennis" {
+                cell.backgroundColor = UIColor(red: 100/255, green: 99/255, blue: 199/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Volleyball" {
+                cell.backgroundColor = UIColor(red: 110/255, green: 166/255, blue: 66/255, alpha: 1.0)
+            } else if activeUser.userActivity == "Yoga" {
+                cell.backgroundColor = UIColor(red: 134/255, green: 44/255, blue: 233/255, alpha: 1.0)
+            }
         }
-        
         return cell
-        
     }
     
        //    MARK : LOAD ALL USERS / NO FILTERS
@@ -194,33 +231,34 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func loadUsers() {
-//        FirebaseService.firebaseSerivce.FirebaseUserRef.observeEventType
         FirebaseService.firebaseSerivce.FirebaseActiveUserRef.observeEventType(.Value, withBlock: { snapshot in
-            self.users = []
+            self.activeUsers = []
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 for snap in snapshots {
                     if let userDictionary = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let user = User(key: key, dictionary: userDictionary)
-                        self.users.insert(user, atIndex: 0)
+                        let activeUser = ActiveUser(dictionary: userDictionary)
+                        self.activeUsers.insert(activeUser, atIndex: 0)
                     }
                 }
             }
-            print("Total Number of Registered Users: \(self.users.count.description)")
+            print("Total Number of Registered Users: \(self.activeUsers.count.description)")
             print("Total Number of Filtered Users: \(self.filteredUsers.count.description)")
             self.filterUsers()
             self.activityTableView.reloadData()
         })
     }
     
-    func filterUsers(){
-        for user in users {
-            if user.userGender == "" {
-                filteredUsers.append(user)
+    func filterUsers() {
+        for activeUser in activeUsers {
+            if activeUser.userActivity == "\(filterSelected)" {
+                print("\(activeUser.userActivity)")
+                print("\(filterSelected)")
+                filteredUsers.append(activeUser)
                 activityTableView?.reloadData()
                 print("Users reloading")
             }
         }
+        
     }
     
     //    MARK : PHOTO STRING -> IMAGE / CONVERSION
@@ -229,13 +267,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         let image = UIImage(data: imageData!)
         return image!
     }
-    
-    
-    @IBAction func dismiss(segue: UIStoryboardSegue) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
 }
 
 

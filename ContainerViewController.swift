@@ -12,6 +12,9 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var menuContainerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var selectedNumber = String()
+
+    
     private var activityViewController: ActivityViewController?
     
     var menuItem: NSDictionary? {

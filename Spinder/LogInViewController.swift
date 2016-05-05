@@ -68,6 +68,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 //        print("\(FirebaseService.firebaseSerivce.currentUserRef)")
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        self.moviePlayerController.stop()
+    }
+    
     //    MARK : LOGIN BUTTON
     @IBAction func loginButtonTapped(sender: AnyObject) {
         let email = emailTextField.text

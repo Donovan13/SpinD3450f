@@ -12,6 +12,7 @@ class ActivityTableViewCell:UITableViewCell, ActivityTableViewTransform {
     let miniumScale:CGFloat = 0.9
 ;
     
+    @IBOutlet weak var activityList: UILabel!
     @IBOutlet weak var activityDescription: UITextView!
     @IBOutlet weak var nameAgeLabel: UIButton!
     @IBOutlet weak var photoImageView: UIImageView!

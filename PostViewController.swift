@@ -25,17 +25,14 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
         locationMnager.delegate = self
         buttons()
         
-//        print("\(currentUser)")
-        
     }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-//        print("\(activity)")
+    
+    @IBAction func cancelButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func postButtonTapped(sender: AnyObject) {
         self.activeUser = ActiveUser.init(activity: activity, detail: activityTextView.text, locationPlacemark: nil)
-        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
