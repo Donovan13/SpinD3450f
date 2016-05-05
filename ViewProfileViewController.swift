@@ -11,8 +11,6 @@ import Firebase
 
 class ViewProfileViewController: UIViewController {
 
-
-    
     var receieverName: String!
     var receieverAge: String!
     var receieverGender: String!
@@ -21,24 +19,19 @@ class ViewProfileViewController: UIViewController {
     var receieverDescription: String!
 
     @IBOutlet weak var userImage: UIImageView!
-    
     @IBOutlet weak var userName: UILabel!
-
     @IBOutlet weak var userGender: UILabel!
-    
     @IBOutlet weak var userAge: UILabel!
     @IBOutlet weak var userTown: UILabel!
     @IBOutlet weak var userDescription: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         userImage.image = conversion(receieverUserProfilePicture)
         userName.text = receieverName
         userAge.text = receieverAge
         userTown.text = receieverUserHomeTown
         userDescription.text = receieverDescription
-        
-        
     }
     
     
@@ -49,6 +42,4 @@ class ViewProfileViewController: UIViewController {
         let image = UIImage(data: imageData!)
         return image!
     }
-    
-
 }

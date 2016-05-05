@@ -13,30 +13,23 @@ import Firebase
 
 class ChatViewController: JSQMessagesViewController {
     
-    
     var messages = [JSQMessage]()
     var outgoingBubbleImageView: JSQMessagesBubbleImage!
     var incomingBubbleImageView: JSQMessagesBubbleImage!
     var messageRef: Firebase!
-    
-    
     var currentUser:Dictionary<String, AnyObject>?
     var name: String!
     var receieverID: String!
     var receieverName: String!
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUserProfile()
-        title = "Messages"
+        title = receieverName
         setupBubbles()
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
         messageRef = FirebaseService.firebaseSerivce.FirebaseRef.childByAppendingPath("messages")
-        print("loaded")
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -51,13 +44,13 @@ class ChatViewController: JSQMessagesViewController {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return messages.count
     }
+    
     //    MARK : Message Bubble Colors
     private func setupBubbles() {
         let factory = JSQMessagesBubbleImageFactory()
         outgoingBubbleImageView = factory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
         incomingBubbleImageView = factory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
     }
-    
     
     //    MARK : Set Bubble Image
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
@@ -86,19 +79,16 @@ class ChatViewController: JSQMessagesViewController {
         }
         return cell
     }
-    
-    
-    
+
     func addMessage(id: String, text: String) {
         let message = JSQMessage(senderId: id, displayName: "", text: text)
         messages.append(message)
     }
-    
+
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         let itemRef = messageRef.childByAutoId()
         let messageItem = ["text": text, "senderId": senderId, "senderName": name, "receieverId": receieverID, "receieverName": receieverName]
         itemRef.setValue(messageItem)
-        
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
     }
@@ -110,7 +100,6 @@ class ChatViewController: JSQMessagesViewController {
                 let id = snapshot.value["senderId"] as! String
                 let text = snapshot.value["text"] as! String
                 self.addMessage(id, text: text)
-                
                 self.finishReceivingMessage()
             }
         }

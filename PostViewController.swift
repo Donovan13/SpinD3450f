@@ -16,7 +16,7 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
     var activeUser:ActiveUser!
     var currentUser = Dictionary<String, AnyObject>?()
     var activity: String!
-
+    
     
     @IBOutlet weak var activityTextView: UITextView!
     override func viewDidLoad() {
@@ -25,25 +25,19 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
         locationMnager.delegate = self
         buttons()
         
-        print("\(currentUser)")
+//        print("\(currentUser)")
         
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        print("\(activity)")
+//        print("\(activity)")
     }
     
     @IBAction func postButtonTapped(sender: AnyObject) {
         self.activeUser = ActiveUser.init(activity: activity, detail: activityTextView.text, locationPlacemark: nil)
-//       self.activeUser = ActiveUser.init(activity: "", detail: activityTextView.text, locationPlacemark: nil)
-//        unwindForSegue(<#T##unwindSegue: UIStoryboardSegue##UIStoryboardSegue#>, towardsViewController: <#T##UIViewController#>)
+        
         dismissViewControllerAnimated(true, completion: nil)
-
     }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let activeVc = segue.destinationViewController as ActivityViewController
-//    }
     
     @IBAction func locationButton(sender: AnyObject) {
         locationMnager.requestWhenInUseAuthorization()
@@ -57,7 +51,6 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
             locationMnager.stopUpdatingLocation()
         }
     }
-    
     func reverseGeocode(location:CLLocation) {
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { (placemarks: [CLPlacemark]?, error:NSError?) in
@@ -66,7 +59,6 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
             print(address)
         }
     }
-    
     
     func errorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -110,34 +102,33 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
     
     // SweetButtons!
     func buttons() {
-        let menuItemImage = UIImage(named: "bg-menuitem")!
-        let menuItemHighlitedImage = UIImage(named: "bg-menuitem-highlighted")!
-        let baseball = UIImage(named: "baseballWhite")!
-        let basketball = UIImage(named: "basketballWhite")!
-        let bike = UIImage(named: "bikeWhite")!
-        let bowl = UIImage(named: "bowlWhite")!
-        let fight = UIImage(named: "fightWhite")!
-        let golf = UIImage(named: "golfWhite")!
-        let hockey = UIImage(named: "hockeyWhite")!
-        let lift = UIImage(named: "liftWhite")!
-        let pingpong = UIImage(named: "pingpongWhite")!
-        let run = UIImage(named: "runWhite")!
-        let skateboard = UIImage(named: "skateboardWhite")!
-        let soccer = UIImage(named: "soccerWhite")!
-        let tennis = UIImage(named: "tennisWhite")!
-        let volleyball = UIImage(named: "volleyballWhite")!
-        let yoga = UIImage(named: "yogaWhite")!
+        let menuItemImage           = UIImage(named: "bg-menuitem")!
+        let menuItemHighlitedImage  = UIImage(named: "bg-menuitem-highlighted")!
+        let baseball                = UIImage(named: "baseballWhite")!
+        let basketball              = UIImage(named: "basketballWhite")!
+        let bike                    = UIImage(named: "bikeWhite")!
+        let bowl                    = UIImage(named: "bowlWhite")!
+        let fight                   = UIImage(named: "fightWhite")!
+        let golf                    = UIImage(named: "golfWhite")!
+        let hockey                  = UIImage(named: "hockeyWhite")!
+        let lift                    = UIImage(named: "liftWhite")!
+        let pingpong                = UIImage(named: "pingpongWhite")!
+        let run                     = UIImage(named: "runWhite")!
+        let skateboard              = UIImage(named: "skateboardWhite")!
+        let soccer                  = UIImage(named: "soccerWhite")!
+        let tennis                  = UIImage(named: "tennisWhite")!
+        let volleyball              = UIImage(named: "volleyballWhite")!
+        let yoga                    = UIImage(named: "yogaWhite")!
         
-        let menuItem1 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: baseball)
-        let menuItem2 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: basketball)
-        
-        let menuItem3 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: bike)
-        let menuItem4 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: bowl)
-        let menuItem5 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: fight)
-        let menuItem6 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: golf)
-        let menuItem7 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: hockey)
-        let menuItem8 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: lift)
-        let menuItem9 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: pingpong)
+        let menuItem1  = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: baseball)
+        let menuItem2  = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: basketball)
+        let menuItem3  = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: bike)
+        let menuItem4  = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: bowl)
+        let menuItem5  = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: fight)
+        let menuItem6  = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: golf)
+        let menuItem7  = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: hockey)
+        let menuItem8  = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: lift)
+        let menuItem9  = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: pingpong)
         let menuItem10 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: run)
         let menuItem11 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: skateboard)
         let menuItem12 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: soccer)
@@ -146,9 +137,7 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
         let menuItem15 = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: yoga)
         
         let items = [menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6, menuItem7, menuItem8, menuItem9, menuItem10, menuItem11, menuItem12, menuItem13, menuItem14, menuItem15]
-        
         startItem = PathMenuItem(image: UIImage(named: "bigcircle")!, highlightedImage: UIImage(named: "bigcircleselected"), contentImage: UIImage(named: "addwhite"), highlightedContentImage: UIImage(named: "addwhiteselected"))
-        
         let menu = PathMenu(frame: view.bounds, startItem: startItem, items: items)
         menu.delegate = self
         menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width - 260, view.frame.size.height - 425)
@@ -169,11 +158,9 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
 
 extension PostViewController: PathMenuDelegate {
     func pathMenu(menu: PathMenu, didSelectIndex idx: Int) {
-        
         let item = menu.menuItems[idx]
         startItem?.contentImageView?.image = item.contentImageView?.image
-        
-        print("Select the index : \(idx)")
+//        print("Select the index : \(idx)")
         if idx == 0 {
             activity = "Baseball"
         } else if idx == 1 {
@@ -205,11 +192,7 @@ extension PostViewController: PathMenuDelegate {
         } else if idx == 14 {
             activity = "Yoga"
         }
-        
-        
-        
-        
-        }
+    }
     func pathMenuWillAnimateOpen(menu: PathMenu) {
         print("Menu will open")
     }

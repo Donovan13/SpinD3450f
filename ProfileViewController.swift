@@ -46,14 +46,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         editFalse()
         editButton.hidden = false
         doneButton.hidden = true
-        
         let editedUserDict = [
-            "name": self.nameText.text,
-            "gender": self.genderText.text,
-            "age": self.ageText.text,
-            "zipCode": self.zipCode.text,
-            "description": self.descriptionText.text,
-            "profilePicture": imageCoversion(self.profileImage.image!)]
+            "name"              : self.nameText.text,
+            "gender"            : self.genderText.text,
+            "age"               : self.ageText.text,
+            "zipCode"           : self.zipCode.text,
+            "description"       : self.descriptionText.text,
+            "profilePicture"    : imageCoversion(self.profileImage.image!)]
         FirebaseService.firebaseSerivce.currentUserRef.updateChildValues(editedUserDict)
     }
     
@@ -66,19 +65,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     @IBAction func logOutButton(sender: AnyObject) {
         FirebaseService.firebaseSerivce.currentUserRef.unauth()
-        print("\(FirebaseService.firebaseSerivce.currentUserRef.authData)")
-        print("\(FirebaseService.firebaseSerivce.currentUserRef)")
-        
         performSegueWithIdentifier("LogOutSegue", sender: self)
-        
-        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         self.profileImage.image = info[UIImagePickerControllerEditedImage] as? UIImage;
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
-    
     
     func loadUserProfile () {
         FirebaseService.firebaseSerivce.currentUserRef.observeEventType(.Value) { (snapshot: FDataSnapshot!) in

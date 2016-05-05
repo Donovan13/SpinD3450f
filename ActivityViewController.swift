@@ -32,8 +32,6 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
 
     var currentUser = Dictionary<String, AnyObject>?()
     
-    var cUser: String!
-    
     var receieverKey = String()
     var receieverName = String()
     var receieverGender = String()
