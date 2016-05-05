@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>image</key>
-		<string>baseball</string>
+		<string>baseballBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -16,7 +16,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>basketball</string>
+		<string>basketballBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -28,7 +28,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>bike</string>
+		<string>bikeBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -40,7 +40,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>bowl</string>
+		<string>bowlBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -52,7 +52,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>fight</string>
+		<string>fightBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -64,7 +64,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>golf</string>
+		<string>golfBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -76,7 +76,9 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>hockey</string>
+		<string>hockeyBlack</string>
+		<key>New item</key>
+		<string></string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -88,7 +90,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>lifting</string>
+		<string>liftBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -100,7 +102,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>pingpong</string>
+		<string>pingpongBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -112,7 +114,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>run</string>
+		<string>runBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -124,7 +126,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>skateboard</string>
+		<string>skateboardBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -136,7 +138,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>soccer</string>
+		<string>soccerBlack</string>
 		<key>New item - 2</key>
 		<string></string>
 		<key>New item</key>
@@ -152,7 +154,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>tennis</string>
+		<string>tennisBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -164,7 +166,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>volleyball</string>
+		<string>volleyballBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
@@ -176,7 +178,7 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>yoga</string>
+		<string>yogaBlack</string>
 		<key>bigImage</key>
 		<string></string>
 		<key>colors</key>
