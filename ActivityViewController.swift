@@ -66,6 +66,8 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         print(activity)
         filterActivity = activity
         print("\(filterActivity)")
+        print("\(activity)")
+        filterUsers()
     }
     
 //    func filteredUser(filter: String) {
@@ -160,10 +162,10 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     // MARK : TABLEVIEW DELEGATE
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1;
-    }
-    
+//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        return 1;
+//    }
+//    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if filteredUsers.count > 0 {
             return filteredUsers.count
