@@ -16,10 +16,11 @@ var currentUserProfilePicture: String!
 var currentUserZipcode: String!
 var currentUserDescription: String!
 
-var filterSelected: String!
+protocol FilterDelegate {
+    func filterOnActivity (activity: String)
+}
 
-
-class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, FilterDelegate {
     
     @IBOutlet weak var messagesButton: BadgeButton!
     @IBOutlet weak var activityTableView: ActivityTableView!
@@ -40,15 +41,14 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     var receieverDescription = String()
     var receieverProfilePicture = String()
 
-    
-    
+    var filterActivity = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filterSelected = ""
-
+        
         loadUsers()
         loadUserProfile()
+        filterUsers()
 
         messagesButton.badgeString = "19"
         messagesButton.badgeTextColor = UIColor.whiteColor()
@@ -61,21 +61,23 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         hamburgerView!.addGestureRecognizer(tapGestureRecognizer)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerView!)
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        print("test1")
-    }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        filterUsers()
-        print("test2")
+//    MARK : FilterDelegate
+    func filterOnActivity(activity: String) {
+        print(activity)
+        filterActivity = activity
+        print("\(filterActivity)")
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        print("test3")
-    }
+//    func filteredUser(filter: String) {
+//        for activeUser in activeUsers {
+//            if activeUser.userActivity == filter {
+//                filteredUsers.append(activeUser)
+//                activityTableView.reloadData()
+//            }
+//        }
+//
+//    }
+//    
     
     
     func hamburgerViewTapped() {
@@ -250,9 +252,9 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     func filterUsers() {
         for activeUser in activeUsers {
-            if activeUser.userActivity == "\(filterSelected)" {
-                print("\(activeUser.userActivity)")
-                print("\(filterSelected)")
+            if activeUser.userActivity == self.filterActivity {
+                print(activeUser.userActivity)
+                print(self.filterActivity)
                 filteredUsers.append(activeUser)
                 activityTableView?.reloadData()
                 print("Users reloading")
@@ -260,6 +262,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
     }
+    
     
     //    MARK : PHOTO STRING -> IMAGE / CONVERSION
     func conversion(photo: String) -> UIImage {

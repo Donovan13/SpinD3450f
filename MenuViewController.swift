@@ -9,10 +9,13 @@
 import UIKit
 
 
-//var filterSelected = String()
 
 
 class MenuViewController: UITableViewController {
+    var filterSelected: String!
+    
+    
+    var filterDelegate: FilterDelegate?
     
     lazy var menuItems: NSArray = {
         let path = NSBundle.mainBundle().pathForResource("MenuItems", ofType: "plist")
@@ -27,8 +30,18 @@ class MenuViewController: UITableViewController {
         //        navigationController!.navigationBar.clipsToBounds = true
         
         (navigationController!.parentViewController as! ContainerViewController).menuItem = (menuItems[0] as! NSDictionary)
+        for childVC in (navigationController?.parentViewController?.childViewControllers)! {
+            for granchildVC in childVC.childViewControllers {
+                if granchildVC is ActivityViewController {
+                    self.filterDelegate = (granchildVC as! ActivityViewController)
+                }
+            }
+        }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+    }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(true)
         print("yo")
@@ -74,6 +87,11 @@ class MenuViewController: UITableViewController {
         } else if "\(indexPath.row)" == "14" {
             filterSelected = "Yoga"
         }
+        
+//        if (delegate) != nil {
+//            delegate?.menuItemSelected(filterSelected)
+//        }
+        self.filterDelegate?.filterOnActivity(filterSelected)
         
         //        let storyboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
         //        let controller = storyboard.instantiateViewControllerWithIdentifier("ActivityViewController") as! ActivityViewController
