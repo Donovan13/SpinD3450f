@@ -15,6 +15,7 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
     var locationMnager:CLLocationManager!
     var activeUser:ActiveUser!
     var currentUser = Dictionary<String, AnyObject>?()
+    var activity: String!
 
     
     @IBOutlet weak var activityTextView: UITextView!
@@ -27,14 +28,22 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
         print("\(currentUser)")
         
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        print("\(activity)")
+    }
     
     @IBAction func postButtonTapped(sender: AnyObject) {
-        self.activeUser = ActiveUser.init(activity: "", detail: activityTextView.text, locationPlacemark: nil)
+        self.activeUser = ActiveUser.init(activity: activity, detail: activityTextView.text, locationPlacemark: nil)
 //       self.activeUser = ActiveUser.init(activity: "", detail: activityTextView.text, locationPlacemark: nil)
+//        unwindForSegue(<#T##unwindSegue: UIStoryboardSegue##UIStoryboardSegue#>, towardsViewController: <#T##UIViewController#>)
         dismissViewControllerAnimated(true, completion: nil)
 
     }
     
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let activeVc = segue.destinationViewController as ActivityViewController
+//    }
     
     @IBAction func locationButton(sender: AnyObject) {
         locationMnager.requestWhenInUseAuthorization()
@@ -162,8 +171,44 @@ extension PostViewController: PathMenuDelegate {
         
         let item = menu.menuItems[idx]
         startItem?.contentImageView?.image = item.contentImageView?.image
+        
         print("Select the index : \(idx)")
-    }
+        if idx == 0 {
+            activity = "Baseball"
+        } else if idx == 1 {
+            activity = "Basketball"
+        } else if idx == 2 {
+            activity = "Bike Ride"
+        } else if idx == 3 {
+            activity = "Bowling"
+        } else if idx == 4 {
+            activity = "Fighting"
+        } else if idx == 5 {
+            activity = "Golf"
+        } else if idx == 6 {
+            activity = "Hockey"
+        } else if idx == 7 {
+            activity = "Lifting"
+        } else if idx == 8 {
+            activity = "Ping Pong"
+        } else if idx == 9 {
+            activity = "Running"
+        } else if idx == 10 {
+            activity = "Skateboard"
+        } else if idx == 11 {
+            activity = "Soccer"
+        } else if idx == 12 {
+            activity = "Tennis"
+        } else if idx == 13 {
+            activity = "Volleyball"
+        } else if idx == 14 {
+            activity = "Yoga"
+        }
+        
+        
+        
+        
+        }
     func pathMenuWillAnimateOpen(menu: PathMenu) {
         print("Menu will open")
     }
