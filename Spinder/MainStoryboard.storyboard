@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J93-WI-IEG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aYg-Fh-ZXN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -137,7 +137,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home Town" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4D-OU-Wsd">
-                                <rect key="frame" x="20" y="476" width="97.5" height="30"/>
+                                <rect key="frame" x="20" y="476" width="98" height="30"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -370,7 +370,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="392"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y5W-07-2Ln" id="8un-zo-Vvb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="391.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="392"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GNO-lQ-8Es" userLabel="Scale View">
@@ -537,7 +537,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iVs-g2-Qb2" id="AAe-1K-CHN">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -570,15 +570,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VS6-MY-aao">
-                                <rect key="frame" x="165" y="8" width="270" height="145"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VS6-MY-aao">
+                                <rect key="frame" x="165" y="311" width="270" height="145"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="XUR-OF-NLc"/>
+                                    <constraint firstAttribute="width" constant="270" id="pxj-ZU-EIa"/>
+                                </constraints>
                                 <string key="text">Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! Enter Activity Description! </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yek-dG-FET">
-                                <rect key="frame" x="283" y="490" width="35" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yek-dG-FET">
+                                <rect key="frame" x="283" y="470" width="35" height="30"/>
                                 <state key="normal" title="Post!"/>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="183" y="267" width="35" height="30"/>
@@ -590,10 +594,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Yek-dG-FET" firstAttribute="top" secondItem="VS6-MY-aao" secondAttribute="bottom" constant="337" id="9oF-0M-1kE"/>
-                            <constraint firstItem="VS6-MY-aao" firstAttribute="top" secondItem="hJs-Cr-cXi" secondAttribute="bottom" constant="36" id="PZw-di-GBr"/>
-                            <constraint firstItem="VS6-MY-aao" firstAttribute="centerX" secondItem="cKJ-vK-hR5" secondAttribute="centerX" id="b3h-dp-hAf"/>
-                            <constraint firstItem="Yek-dG-FET" firstAttribute="centerX" secondItem="cKJ-vK-hR5" secondAttribute="centerX" id="qoc-jF-YV3"/>
+                            <constraint firstItem="VS6-MY-aao" firstAttribute="top" secondItem="hJs-Cr-cXi" secondAttribute="bottom" constant="311" id="CEd-3e-egd"/>
+                            <constraint firstItem="VS6-MY-aao" firstAttribute="centerX" secondItem="cKJ-vK-hR5" secondAttribute="centerX" id="RGy-vy-9bY"/>
+                            <constraint firstItem="Yek-dG-FET" firstAttribute="top" secondItem="VS6-MY-aao" secondAttribute="bottom" constant="14" id="aZt-nT-QEf"/>
+                            <constraint firstItem="Yek-dG-FET" firstAttribute="centerX" secondItem="cKJ-vK-hR5" secondAttribute="centerX" id="udE-0J-C3U"/>
                         </constraints>
                     </view>
                     <connections>

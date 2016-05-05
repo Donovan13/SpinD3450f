@@ -140,7 +140,7 @@ class PostViewController: UIViewController, CLLocationManagerDelegate, UIViewCon
         startItem = PathMenuItem(image: UIImage(named: "bigcircle")!, highlightedImage: UIImage(named: "bigcircleselected"), contentImage: UIImage(named: "addwhite"), highlightedContentImage: UIImage(named: "addwhiteselected"))
         let menu = PathMenu(frame: view.bounds, startItem: startItem, items: items)
         menu.delegate = self
-        menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width - 260, view.frame.size.height - 425)
+        menu.startPoint     = CGPointMake(UIScreen.mainScreen().bounds.width - 260, 160)
         menu.menuWholeAngle = (CGFloat(M_PI) - CGFloat(M_PI/5)) * 2.5
         menu.rotateAngle    = -CGFloat(M_PI_2) + CGFloat(M_PI/5) * 1/2
         menu.timeOffset     = 0.05
