@@ -58,8 +58,34 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         self.addChildViewController(ParallaxViewController)
         self.view.addSubview(ParallaxViewController.view)
         ParallaxViewController.didMoveToParentViewController(self)
-        
+     
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LogInViewController.keyboardFrameWillChange(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+
     }
+    // Change view for keyboard
+    
+    func keyboardFrameWillChange(notification: NSNotification) {
+        let keyboardBeginFrame = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardFrameBeginUserInfoKey)!.CGRectValue
+        let keyboardEndFrame = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardFrameEndUserInfoKey)!.CGRectValue
+        
+        let animationCurve = UIViewAnimationCurve(rawValue: (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationCurveUserInfoKey)!.integerValue)
+        
+        let animationDuration: NSTimeInterval = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationDurationUserInfoKey)!.doubleValue
+        
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(animationDuration)
+        UIView.setAnimationCurve(animationCurve!)
+        
+        var newFrame = self.view.frame
+        let keyboardFrameEnd = self.view.convertRect(keyboardEndFrame, toView: nil)
+        let keyboardFrameBegin = self.view.convertRect(keyboardBeginFrame, toView: nil)
+        
+        newFrame.origin.y -= (keyboardFrameBegin.origin.y - keyboardFrameEnd.origin.y)
+        self.view.frame = newFrame;
+        
+        UIView.commitAnimations()
+    }
+
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
